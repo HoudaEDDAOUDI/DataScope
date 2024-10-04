@@ -43,6 +43,8 @@ header li{
 header a{
     color: #8F9296;
     padding: 10px 10px;
+    display: flex;
+    align-items: center;
 }
 header a:hover{
     background-color: #EBEBFB;
@@ -75,7 +77,6 @@ li{
     font-size: 28px;
     margin: 0px;
 }
-
 .block_accueil p{
     font-size: 20px;
     text-align: center;
