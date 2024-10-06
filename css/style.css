@@ -3,7 +3,7 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: #EAEAEA;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
     display: flex;
 }
 a{
@@ -11,15 +11,41 @@ a{
 }
 .block_principale{
     background-color: #F7F7F7;
-    width: 50%;
+    width: 78%;
     margin: 35px auto;
-    padding: 0 13%;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.block_principale2{
+    background-color: #F7F7F7;
+    width: 78%;
+    margin: 35px auto;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    display: flex;
+   
+    align-items: center;
+}
+
+h1{
+    font-size: 28pt;
+}
+
+.h2_titre{
+    color:#4A4DD7;
+    font-size: 20pt;
+    text-align: center;
+    margin-top: 0;
+}
+
+.cadre_scroll{
+    overflow:scroll;
+    max-height: 700px;
+  }
 /* -----------------HEADER---------------- */
 header{
     background-color: white;
@@ -43,6 +69,8 @@ header li{
 header a{
     color: #8F9296;
     padding: 10px 10px;
+    display: flex;
+    align-items: center;
 }
 header a:hover{
     background-color: #EBEBFB;
@@ -50,6 +78,7 @@ header a:hover{
 }
 header a img{
     width: 15%;
+    margin-right: 12px;
 }
 ul{
     height: 85vh;
@@ -64,20 +93,32 @@ li{
     border-radius: 15px;
     font-weight: bold;
 }
+
+.logo_menu{
+    width: 80%;
+    margin-top: 10px;
+}
 /*-------------PAGE D'ACCUEIL--------------------------------*/
 .block_accueil{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    padding: 0 10%;
+    align-items: center;
 }
 .block_accueil img{
-    width: 90%;
+    width: 70%;
+    margin: auto;
 }
 .block_accueil h1{
     font-size: 28px;
     margin: 0px;
+    text-align: center;
+    font-size: 18pt;
 }
 
 .block_accueil p{
-    font-size: 20px;
+    font-size: 14pt;
     text-align: center;
     padding-bottom: 20px;
 }
@@ -88,4 +129,271 @@ li{
     padding: 5px 12px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    margin: auto;
 }
+
+/*-------------EN FRANCE--------------------------------*/
+.block_france{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.nb_inscrit_fr{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: #F5F5F5;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.tour1_france, .tour2_france{
+    background-color: #F5F5F5;
+    border-radius: 15px;
+    width: 50%;
+    height: 700px;
+}
+
+.tour1_france{
+    margin-right: 7.5px;
+}
+
+.tour2_france{
+    margin-left: 7.5px;
+}
+
+.tours_france{
+    width: 100%;
+    display: flex;
+}
+
+.tours_france, .titre_tours{
+    text-align: center;
+    color: #4A4DD7;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15pt;
+}
+
+.tour1_grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 84%;
+}
+
+.nb_votants{
+    grid-column: 1 /3;
+    grid-row: 1 / 2;
+}
+
+
+.item1{
+    grid-column: 1 /2;
+    grid-row: 2 / 4;
+    
+}
+
+.item3{
+    grid-column: 1 / 2;
+    grid-row: 4 / 6;
+}
+
+/* Adjust button colors */
+.item2 {
+    color: #C1A5DB;
+    grid-row: 2 /3;
+    grid-column: 2 /3;
+}
+
+.item4 {
+    grid-row: 3 /4;
+    grid-column: 2 /3;
+    color: #7a67ee;
+}
+
+.item5 {
+    grid-row: 4 /5;
+    grid-column: 2 /3;
+    color: #8CABED;
+}
+
+.item6 {
+    grid-row: 5 /6;
+    grid-column: 2 /3;
+    color: #71E3D0;
+}
+
+.item1, .item3, .tour2_item1, .tour2_item3 {
+    background-color: #e6f7ff;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.item1 h4, .item3 h4 {
+    margin-bottom: 10px;
+}
+
+.item2, .item4, .item5, .item6, .tour2_item2, .tour2_item4, .tour2_item5, .tour2_item6, .nb_votants{
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.tour2_grid-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 84%;
+
+}
+
+.tour2_item1{
+    grid-column: 2 /3;
+    grid-row: 2 / 4;
+    
+}
+
+.tour2_item3{
+    grid-column: 2 / 3;
+    grid-row: 4 / 6;
+}
+
+.tour2_item2 {
+    color: #C1A5DB;
+    grid-row: 2 /3;
+    grid-column: 1 /2;
+}
+
+.tour2_item4 {
+    grid-row: 3 /4;
+    grid-column: 1 /2;
+    color: #7a67ee;
+}
+
+.tour2_item5 {
+    grid-row: 4 /5;
+    grid-column: 1 /2;
+    color: #8CABED;
+}
+
+.tour2_item6 {
+    grid-row: 5 / 6;
+    grid-column: 1 /2;
+    color: #71E3D0;
+}
+
+                /*-----container graphique âge----*/
+
+#age_france{
+    background-color: #F5F5F5;
+    border-radius: 12px;
+
+}
+
+#graph_age_france{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    gap: 20px;
+    padding: 20px;
+    width: 97%;
+    
+}
+
+.item_age_titre, .item_age_legende, .item_age_graph{
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 20px;
+
+}
+
+.item_age_titre{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.item_age_legende{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.item_age_graph{
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+}
+
+                /*-----container graphique âge----*/
+#socio_france{
+    background-color: #F5F5F5;
+    border-radius: 12px;
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+
+#graph_socio_france{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    gap: 20px;
+    padding: 20px;
+    width: 97%;
+    
+}
+
+.item_socio_titre{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.item_socio_graph{
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.item_socio_graph, .item_socio_titre{
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/*-------------DEPARTEMENT--------------------------------*/
+
+/*-------------ANALYSE--------------------------------*/
+
+.block_analyse p{
+font-size: 14pt;
+
+}
+
+.p_analyse{
+    text-align: center;
+    width: 80%;
+
+}
+
+
+/*-------------COORDONNÉES--------------------------------*/
+
+/*-------------RÉFÉRENCES--------------------------------*/
