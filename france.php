@@ -60,10 +60,8 @@
                     </div>
 
                 </div>
-
-                <a href="depart.php" class="chang_page">Les chiffres par départements <span>&#10138;</span></a>
-
-    </div>
+<a href="depart.php" class="chang_page">Les chiffres par départements <span>&#10138;</span></a>
+</div>
 
 
 <?php

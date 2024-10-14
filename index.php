@@ -9,6 +9,8 @@
         <p>Retrouvez en ce moment notre analyse sur les élections présidentielles françaises de 2022. Où nous avons porter notre attention sur l’impact des variables sociodémographiques sur le comportement des électeurs.</p>
         <a href="france.php" class="chang_page">Découvrir <span>&#10138;</span></a>
         </div>
+
+        
     </div>
 
 <?php

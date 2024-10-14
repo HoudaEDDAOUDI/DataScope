@@ -10,14 +10,13 @@ a{
     text-decoration: none;
 }
 .block_principale{
-    background-color: #F7F7F7;
+    
     width: 78%;
     margin: 35px auto;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    background-color: #F7F7F7;
 }
 
 .block_principale2{
@@ -44,7 +43,8 @@ h1{
 
 .cadre_scroll{
     overflow:scroll;
-    max-height: 700px;
+    overflow-x: hidden;
+    max-height: calc(100vh - 70px);
   }
 /* -----------------HEADER---------------- */
 header{
@@ -55,6 +55,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    
 }
 header ul{
     padding: 0px 10px;
@@ -92,6 +93,7 @@ li{
     color: #4A4DD7;
     border-radius: 15px;
     font-weight: bold;
+   
 }
 
 .logo_menu{
@@ -380,11 +382,155 @@ li{
 
 /*-------------DEPARTEMENT--------------------------------*/
 
+
+
+.select_param_depart{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    border-radius: 12px;
+}
+
+#form_depart{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.grid_depart{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+    width: 96%;
+    height: 600px;
+    margin: 20px 0 20px 0;
+    background-color: #F5F5F5;
+    border-radius: 12px;
+}
+
+.item_carte, .item_classement, .item_inscrit_depart, .item_votants_depart, .item_repart_vote{
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;}
+
+.item_carte{
+    grid-column: 1/2;
+    grid-row: 1 / 5;
+}
+
+.item_classement{
+    grid-column: 2 / 4;
+    grid-row: 1/ 2;
+}
+
+.item_inscrit_depart{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+}
+
+.item_votants_depart{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+}
+
+.item_repart_vote{
+    grid-column: 2 /4;
+    grid-row: 3 / 5;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
+}
+
+.item_graph_votant, .item_text_abs, .item_text_blanc, .item_text_nul, .item_text_exprim{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 10px -2px, rgba(0, 0, 0, 0.04) 0px 3px 6px -2px; /* Ombre plus claire au départ */
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.item_graph_votant:hover, .item_text_abs:hover, .item_text_blanc:hover, .item_text_nul:hover, .item_text_exprim:hover{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.05) 0px 1px 3px -1px; /* Box-shadow réduit */
+    transform: translateY(4px) scale(0.96); /* Déplacement vers le bas et réduction légère de taille */
+}
+
+
+.item_graph_votant{
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+
+}
+
+.item_text_exprim{
+    grid-column: 2 / 3;
+    grid-row: 1 /2;
+
+}
+
+.item_text_blanc{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.item_text_abs{
+    grid-column: 2 /3;
+    grid-row: 2 / 3;
+}
+
+
+.item_text_nul {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    
+}
+
+
+.variable_socio_depart{
+    display: flex;
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+#part_csp{
+    width: 60%;
+    height: 400px;
+    background-color: white;
+    border-radius: 12px;
+    margin-right: 10px;
+}
+
+#part_age{
+    width: 40%;
+    height: 400px;
+    background-color: white;
+    border-radius: 12px;
+    margin-left: 10px;
+}
+
 /*-------------ANALYSE--------------------------------*/
 
 .block_analyse p{
 font-size: 14pt;
 
+}
+
+#analyse{
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .p_analyse{
@@ -395,5 +541,11 @@ font-size: 14pt;
 
 
 /*-------------COORDONNÉES--------------------------------*/
+
+#houda, #julie{
+    background-color: white;
+    width: 50%;
+    height: 50%;
+}
 
 /*-------------RÉFÉRENCES--------------------------------*/
