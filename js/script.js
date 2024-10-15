@@ -490,6 +490,38 @@ fetch('json/zone.json')
         zone.render();
     })
 
+// FRANCE - AFFICHAGE CHIFFRS CLEE TOUR 1
+fetch('json/resultats_t1.json')
+    .then(response => response.json())
+    .then(dataJson => {
+
+        let totalBlancsT1 = 0;
+        let totalAbstententionsT1 = 0;
+        let totalNulsT1 = 0;
+        let totalExprimesT1 = 0; 
+        let totalVotantT1 = 0;
+        let totalInscritsT1 = 0;
+
+        if (departmentData) {
+            totalExprimesT1 = departmentData.exprimes_t1; 
+            totalBlancsT1 = departmentData.blancs_t1;
+            totalNulsT1 = departmentData.nuls_t1;
+            totalAbstententionsT1 = departmentData.abstentions_t1;
+            totalVotantT1 = departmentData.votants_t1;
+            totalInscritsT1 = departmentData.inscrits_t1;
+        }
+
+        // Afficher le nombre de votes exprimés dans la div
+        document.getElementById('voteBlanc').innerHTML = `Votes blancs : ${totalBlancsT1}`;
+        document.getElementById('voteAbsten').innerHTML = `Abstentions : ${totalAbstententionsT1}`;
+        document.getElementById('voteNul').innerHTML = `Votes nuls : ${totalNulsT1}`;
+        document.getElementById('voteExprime').innerHTML = `Votes exprimés : ${totalExprimesT1}`;
+        document.getElementById('votant').innerHTML = `Votants : ${totalVotantT1}`;
+        document.getElementById('inscrit').innerHTML = `Inscrit : ${totalInscritsT1}`;
+    })
+    .catch(error => console.error("Erreur lors du chargement des données:", error));
+
+
 // PAGE DEPARTMENT ---------------------------------------------------------------------------------------------
 
 // DEPARTMENT - CARTE

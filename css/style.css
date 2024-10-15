@@ -26,7 +26,6 @@ a{
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     display: flex;
-   
     align-items: center;
 }
 
@@ -126,6 +125,7 @@ li{
     justify-content: center;
     padding: 0 10%;
     align-items: center;
+    height: 100%;
 }
 .block_accueil img{
     width: 70%;
