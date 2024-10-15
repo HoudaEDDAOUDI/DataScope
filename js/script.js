@@ -54,11 +54,11 @@ fetch('json/resultats_t1.json')
             },
             title: {
                 text: 'Répartition des Votes au Tour 1',
-                align: 'center', // Alignement du titre (optionnel)
+                align: 'center', 
                 style: {
-                    fontSize: '20px', // Taille de la police du titre
-                    fontWeight: 'bold', // Épaisseur de la police
-                    color: '#333' // Couleur du titre
+                    fontSize: '15px', 
+                    fontWeight: '300', 
+                    color: '#464646' 
                 }
             },
             plotOptions: {
@@ -72,24 +72,23 @@ fetch('json/resultats_t1.json')
                             }
                         }
                     },
-                    // Paramètres pour ajuster l'apparence des barres
-                    hollow: {
-                        margin: 15, // Marge entre le bord du graphique et le centre vide
-                        size: '40%' // Taille du centre vide
-                    },
+                    // hollow: {
+                    //     margin: 15, // Marge entre le bord du graphique et le centre vide
+                    //     size: '40%' // Taille du centre vide
+                    // },
                     // track: {
                     //     show: true, // Afficher le cercle de fond
                     //     background: '#e7e7e7', // Couleur de fond du cercle
                     //     strokeWidth: '97%', // Épaisseur de la ligne de fond
                     // },
                     // Ajuste la largeur des barres
-                    dataLabels: {
-                        show: true, // Afficher les étiquettes des barres
-                    },
-                    // Largeur des barres (un pourcentage de la largeur totale)
-                    barHeight: '100%', // Ajuster la hauteur des barres
-                    // Pour arrondir les barres
-                    rounded: true
+                    // dataLabels: {
+                    //     show: true, // Afficher les étiquettes des barres
+                    // },
+                    // // Largeur des barres (un pourcentage de la largeur totale)
+                    // barHeight: '100%', // Ajuster la hauteur des barres
+                    // // Pour arrondir les barres
+                    // rounded: true
                 }
             },
             labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
@@ -138,11 +137,11 @@ fetch('json/resultats_t2.json')
             },
             title: {
                 text: 'Répartition des Votes au Tour 2',
-                align: 'center', // Alignement du titre (optionnel)
+                align: 'center', 
                 style: {
-                    fontSize: '20px', // Taille de la police du titre
-                    fontWeight: 'bold', // Épaisseur de la police
-                    color: '#333' // Couleur du titre
+                    fontSize: '15px', 
+                    fontWeight: '300', 
+                    color: '#464646' 
                 }
             },
             plotOptions: {
@@ -378,16 +377,16 @@ fetch('json/vote_tour_age.json')
         // Configuration du graphique avec les données extraites
         var options = {
             series: [{
-                name: 'vote_aux_2_tours',
+                name: 'Vote au 2 tours',
                 data: vote_aux_2_tours_data
             }, {
-                name: 't1_seulement',
+                name: 'Tour 1 seulement',
                 data: t1_seulement_data
             }, {
-                name: 't2_seulement',
+                name: 'Tour 2 seulement',
                 data: t2_seulement_data
             }, {
-                name: 'pas_vote',
+                name: 'Pas voté',
                 data: pas_vote_data
             }],
             chart: {
@@ -498,30 +497,61 @@ fetch('json/resultats_t1.json')
         let totalBlancsT1 = 0;
         let totalAbstententionsT1 = 0;
         let totalNulsT1 = 0;
-        let totalExprimesT1 = 0; 
+        let totalExprimesT1 = 0;
         let totalVotantT1 = 0;
         let totalInscritsT1 = 0;
 
-        if (departmentData) {
-            totalExprimesT1 = departmentData.exprimes_t1; 
-            totalBlancsT1 = departmentData.blancs_t1;
-            totalNulsT1 = departmentData.nuls_t1;
-            totalAbstententionsT1 = departmentData.abstentions_t1;
-            totalVotantT1 = departmentData.votants_t1;
-            totalInscritsT1 = departmentData.inscrits_t1;
+        for (const departement in dataJson) {
+            totalExprimesT1 += dataJson[departement].exprimes_t1;
+            totalBlancsT1 += dataJson[departement].blancs_t1;
+            totalNulsT1 += dataJson[departement].nuls_t1;
+            totalAbstententionsT1 += dataJson[departement].abstentions_t1;
+            totalVotantT1 += dataJson[departement].votants_t1;
+            totalInscritsT1 += dataJson[departement].inscrits_t1;
         }
 
         // Afficher le nombre de votes exprimés dans la div
-        document.getElementById('voteBlanc').innerHTML = `Votes blancs : ${totalBlancsT1}`;
-        document.getElementById('voteAbsten').innerHTML = `Abstentions : ${totalAbstententionsT1}`;
-        document.getElementById('voteNul').innerHTML = `Votes nuls : ${totalNulsT1}`;
-        document.getElementById('voteExprime').innerHTML = `Votes exprimés : ${totalExprimesT1}`;
-        document.getElementById('votant').innerHTML = `Votants : ${totalVotantT1}`;
-        document.getElementById('inscrit').innerHTML = `Inscrit : ${totalInscritsT1}`;
+        document.getElementById('voteBlanc_t1').innerHTML = `${totalBlancsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> blancs`;
+        document.getElementById('voteAbsten_t1').innerHTML = `${totalAbstententionsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> abstentions`;
+        document.getElementById('voteNul_t1').innerHTML = `${totalNulsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> nuls`;
+        document.getElementById('voteExprime_t1').innerHTML = `${totalExprimesT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> exprimés `;
+        document.getElementById('votant_t1').innerHTML = `${totalVotantT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
+        document.getElementById('inscrit_t1').innerHTML = `${totalInscritsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
+
     })
     .catch(error => console.error("Erreur lors du chargement des données:", error));
 
+// FRANCE - AFFICHAGE CHIFFRS CLEE TOUR 2
+fetch('json/resultats_t2.json')
+    .then(response => response.json())
+    .then(dataJson => {
 
+        let totalBlancsT2 = 0;
+        let totalAbstententionsT2 = 0;
+        let totalNulsT2 = 0;
+        let totalExprimesT2 = 0;
+        let totalVotantT2 = 0;
+        // let totalInscritsT2 = 0;
+
+        for (const departement in dataJson) {
+            totalExprimesT2 += dataJson[departement].exprimes_t2;
+            totalBlancsT2 += dataJson[departement].blancs_t2;
+            totalNulsT2 += dataJson[departement].nuls_t2;
+            totalAbstententionsT2 += dataJson[departement].abstentions_t2;
+            totalVotantT2 += dataJson[departement].votants_t2;
+            // totalInscritsT2 += dataJson[departement].inscrits_t2;
+        }
+
+        // Afficher le nombre de votes exprimés dans la div
+        document.getElementById('voteBlanc_t2').innerHTML = `${totalBlancsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> blancs`;
+        document.getElementById('voteAbsten_t2').innerHTML = `${totalAbstententionsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> abstentions`;
+        document.getElementById('voteNul_t2').innerHTML = `${totalNulsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> nuls`;
+        document.getElementById('voteExprime_t2').innerHTML = `${totalExprimesT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> exprimés `;
+        document.getElementById('votant_t2').innerHTML = `${totalVotantT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
+        // document.getElementById('inscrit_t2').innerHTML = `${totalInscritsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> inscrits`;
+
+    })
+    .catch(error => console.error("Erreur lors du chargement des données:", error));
 // PAGE DEPARTMENT ---------------------------------------------------------------------------------------------
 
 // DEPARTMENT - CARTE
@@ -629,11 +659,10 @@ function liste() {
             }
         });
 
-        // Si "Tour 2" est sélectionné, colorer la carte selon les résultats
         if (selectedTour === 'tour2') {
-            carteCouleurT2(depart)
+            carteCouleurT2(depart);
         } else {
-            carteCouleurT1(depart)
+            carteCouleurT1(depart);
         }
     });
 }
@@ -802,12 +831,12 @@ function afficherRepartitionVoteT1(depart) {
                         type: 'radialBar',
                     },
                     title: {
-                        text: `Répartition des Votes au Tour 1 - Département ${depart}`,
+                        text: `Répartition des Votes`,
                         align: 'center',
                         style: {
-                            fontSize: '20px',
-                            fontWeight: 'bold',
-                            color: '#333'
+                            fontSize: '15px',
+                            fontWeight: '300',
+                            color: '#464646'
                         }
                     },
                     plotOptions: {
@@ -864,12 +893,14 @@ function afficherVoteExprimeT1(depart) {
             }
 
             // Afficher le nombre de votes exprimés dans la div
-            document.getElementById('voteBlanc').innerHTML = `Votes blancs : ${totalBlancsT1}`;
-            document.getElementById('voteAbsten').innerHTML = `Abstentions : ${totalAbstententionsT1}`;
-            document.getElementById('voteNul').innerHTML = `Votes nuls : ${totalNulsT1}`;
-            document.getElementById('voteExprime').innerHTML = `Votes exprimés : ${totalExprimesT1}`;
-            document.getElementById('votant').innerHTML = `Votants : ${totalVotantT1}`;
-            document.getElementById('inscrit').innerHTML = `Inscrit : ${totalInscritsT1}`;
+            document.getElementById('voteBlanc').innerHTML = `${totalBlancsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> blancs`;
+            document.getElementById('voteAbsten').innerHTML = `${totalAbstententionsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> abstentions`;
+            document.getElementById('voteNul').innerHTML = `${totalNulsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> nuls`;
+            document.getElementById('voteExprime').innerHTML = `${totalExprimesT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> exprimés`;
+            document.getElementById('votant').innerHTML = `${totalVotantT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
+            document.getElementById('inscrit').innerHTML = `${totalInscritsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
+            document.getElementById('nomDepart').innerHTML = `${depart}`;
+            document.getElementById('tour').innerHTML = `Tour 2`;
         })
         .catch(error => console.error("Erreur lors du chargement des données:", error));
 }
@@ -978,7 +1009,6 @@ function afficherRepartitionVoteT2(depart) {
     fetch('json/resultats_t2.json')
         .then(response => response.json())
         .then(dataJson => {
-            // Trouver le département correspondant dans le JSON
             const departmentData = dataJson.find(item => item.libelle_du_departement_t2 === depart);
 
             // const nomT2 =0;
@@ -1007,16 +1037,16 @@ function afficherRepartitionVoteT2(depart) {
                 var options = {
                     series: [totalExprimesT2, totalBlancsT2, totalNulsT2, totalAbstententionsT2],
                     chart: {
-                        height: 350,
+                        height: 250,
                         type: 'radialBar',
                     },
                     title: {
-                        text: `Répartition des Votes au Tour 2 - Département ${depart}`,
+                        text: `Répartition des Votes`,
                         align: 'center',
                         style: {
-                            fontSize: '20px',
-                            fontWeight: 'bold',
-                            color: '#333'
+                            fontSize: '15px',
+                            fontWeight: '300',
+                            color: '#464646'
                         }
                     },
                     plotOptions: {
@@ -1062,6 +1092,7 @@ function afficherVoteExprimeT2(depart) {
             let totalExprimesT2 = 0; // Utiliser let pour pouvoir modifier la variable
             let totalVotantT2 = 0;
             let totalInscritsT2 = 0;
+            // let nomDepart = '';
 
             if (departmentData) {
                 totalExprimesT2 = departmentData.exprimes_t2; // Utiliser la bonne clé pour obtenir le nombre de votes exprimés
@@ -1070,15 +1101,18 @@ function afficherVoteExprimeT2(depart) {
                 totalAbstententionsT2 = departmentData.abstentions_t2;
                 totalVotantT2 = departmentData.votants_t2;
                 totalInscritsT2 = departmentData.inscrits_t2;
+                // nomDepart = departmentData.libelle_du_departement_t2;
             }
 
             // Afficher le nombre de votes exprimés dans la div
-            document.getElementById('voteBlanc').innerHTML = `Votes blancs : ${totalBlancsT2}`;
-            document.getElementById('voteAbsten').innerHTML = `Abstentions : ${totalAbstententionsT2}`;
-            document.getElementById('voteNul').innerHTML = `Votes nuls : ${totalNulsT2}`;
-            document.getElementById('voteExprime').innerHTML = `Votes exprimés : ${totalExprimesT2}`;
-            document.getElementById('votant').innerHTML = `Votants : ${totalVotantT2}`;
-            document.getElementById('inscrit').innerHTML = `Inscrit : ${totalInscritsT2}`;
+            document.getElementById('voteBlanc').innerHTML = `${totalBlancsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> blancs`;
+            document.getElementById('voteAbsten').innerHTML = `${totalAbstententionsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> abstentions`;
+            document.getElementById('voteNul').innerHTML = `${totalNulsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> nuls`;
+            document.getElementById('voteExprime').innerHTML = `${totalExprimesT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> exprimés`;
+            document.getElementById('votant').innerHTML = `${totalVotantT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
+            document.getElementById('inscrit').innerHTML = `${totalInscritsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
+            document.getElementById('nomDepart').innerHTML = `${depart}`;
+            document.getElementById('tour').innerHTML = `Tour 2`;
         })
         .catch(error => console.error("Erreur lors du chargement des données:", error));
 }
@@ -1167,3 +1201,4 @@ function afficherCsp(depart) {
             document.querySelector("#csp").innerHTML = `Erreur lors du chargement des données pour : ${depart}`;
         });
 }
+

@@ -253,7 +253,8 @@ li{
 }
 
 .item1, .item3, .tour2_item1, .tour2_item3 {
-    background-color: #e6f7ff;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     border-radius: 12px;
     padding: 20px;
 }
@@ -346,6 +347,7 @@ li{
     font-weight: bold;
     border-radius: 12px;
     padding: 20px;
+    color: #464646;
 
 }
 
@@ -402,6 +404,7 @@ li{
     font-weight: bold;
     border-radius: 12px;
     padding: 20px;
+    color: #464646;
 }
 
 /*-------------DEPARTEMENT--------------------------------*/
@@ -465,6 +468,12 @@ li{
 .item_classement{
     grid-column: 2 / 4;
     grid-row: 1/ 2;
+    color: #464646;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .item_inscrit_depart{

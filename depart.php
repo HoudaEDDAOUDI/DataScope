@@ -6,16 +6,18 @@
         <h2 class="h2_titre">Les chiffres clés des élections présidentielles en France en 2022</h2>
         
         <div class="select_param_depart">
+            <div id="nomDepart"></div>
+            <div id="tour"></div>
             <!-- <form action="" id="form_depart"> -->
-            <label for="departements">Choisissez un département :</label>
+            <label for="departements"></label>
             <select id="departements"></select>
             <label>
-                <input type="radio" id="tour1" name="tour" value="tour1"/>
+                <input type="radio" id="tour1" name="choix" value="tour1"/>
                 Tour 1
                 <!-- <label for="tour1">Tour 1</label> -->
             </label>
             <label>
-                <input type="radio" id="tour2" name="tour" value="tour2"/>
+                <input type="radio" id="tour2" name="choix" value="tour2"/>
                 Tour 2
                 <!-- <label for="tour2">Tour 2</label> -->
             </label>
@@ -24,16 +26,16 @@
         </div>
 
         <div class="grid_depart">
-            <div id="map" class="item_carte">Carte departements</div>
-            <div class="item_classement">Classement des candidats</div>
-            <div id="inscrit" class="item_inscrit_depart">Nombre d'inscrits</div>
-            <div id="votant" class="item_votants_depart">Nombre de votants</div>
+            <div id="map" class="item_carte"></div>
+            <div class="item_classement">Veuillez choisir un département</div>
+            <div id="inscrit" class="item_inscrit_depart"></div>
+            <div id="votant" class="item_votants_depart"></div>
             <div class="item_repart_vote">
-                <div id="tendanceVote" class="item_graph_votant">Vote par rapport aux inscrits</div>
-                <div id="voteExprime" class="item_text_exprim"></div>
-                <div id="voteBlanc" class="item_text_blanc">Votes blanc</div>
-                <div id="voteAbsten" class="item_text_abs">Votes abstenus</div>
-                <div id="voteNul" class="item_text_nul">Votes nuls</div>
+                <div id="tendanceVote" class="item_graph_votant"></div>
+                <div id="voteExprime" class="item_text_exprim item2"></div>
+                <div id="voteBlanc" class="item_text_blanc item5"></div>
+                <div id="voteAbsten" class="item_text_abs item6"></div>
+                <div id="voteNul" class="item_text_nul item4"></div>
             </div>
         </div>
 <h3>Les variables socio démographique de </h3>

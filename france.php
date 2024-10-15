@@ -5,39 +5,39 @@
     <div class="block_principale block_france cadre_scroll">
         <h1>En France</h1>
         <h2 class="h2_titre">Les chiffres clés des élections présidentielles en France en 2022</h2>
-<div class="nb_inscrit_fr titre_tours"><p>Nombre d'inscrits</p></div>
+<div id="inscrit_t1" class="nb_inscrit_fr titre_tours"><p>Nombre d'inscrits</p></div>
     <div class="tours_france">
         <div class="tour1_france">
             <p class="titre_tours">Tour 1</p>
             <div class="tour1_grid-container">
-            <div class="nb_votants">Nombre de votants</div>
+            <div id="votant_t1" class="nb_votants"></div>
                     
                         <div id="chart" class="item1"></div>
 
-                        <div class="item2">EXPRIMÉ</div>
+                        <div id="voteExprime_t1" class="item2"></div>
                         
                         <canvas id="top3t1" class="item3"></canvas>
                         
-                        <div class="item4">VOTE NUL</div>
-                        <div class="item5">VOTE BLANC</div>
-                        <div class="item6">ABSTENTION</div>
+                        <div id="voteNul_t1" class="item4"></div>
+                        <div id="voteBlanc_t1" class="item5"></div>
+                        <div id="voteAbsten_t1" class="item6"></div>
                     </div>
                 </div>
                 <div class="tour2_france">
                     <p class="titre_tours">Tour 2</p>
                     <div class="tour2_grid-container">
-                    <div class="nb_votants">Nombre de votants</div>
+                    <div id="votant_t2" class="nb_votants"></div>
                             
                         
                             <div id="chartencore" class="tour2_item1"></div>
                         
-                            <div class="tour2_item2">EXPRIMÉ</div>
+                            <div id="voteExprime_t2" class="tour2_item2"></div>
                         
                             <canvas id="top2t2" class="tour2_item3"></canvas>
                         
-                            <div class="tour2_item4">VOTE NUL</div>
-                            <div class="tour2_item5">VOTE BLANC</div>
-                            <div class="tour2_item6">ABSTENTION</div>
+                            <div id="voteNul_t2" class="tour2_item4"></div>
+                            <div id="voteBlanc_t2" class="tour2_item5"></div>
+                            <div id="voteAbsten_t2" class="tour2_item6"></div>
                         </div>
                         </div>
             </div>
