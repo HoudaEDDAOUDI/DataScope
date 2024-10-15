@@ -1,0 +1,26 @@
+[
+  {
+    "zone_residence": "Urbain dense",
+    "Emmanuel_Macron": 29,
+    "Marin_le_Pen": 19,
+    "Jen_Luc_Mélanchon": 27
+  },
+  {
+    "zone_residence": "Urbain densité intermédiaire",
+    "Emmanuel_Macron": 28,
+    "Marin_le_Pen": 27,
+    "Jen_Luc_Mélanchon": 18
+  },
+  {
+    "zone_residence": "Rural autonome peu dense",
+    "Emmanuel_Macron": 25,
+    "Marin_le_Pen": 30,
+    "Jen_Luc_Mélanchon": 16
+  },
+  {
+    "zone_residence": "Rural autonome très peu dense",
+    "Emmanuel_Macron": 23,
+    "Marin_le_Pen": 29,
+    "Jen_Luc_Mélanchon": 16
+  }
+]

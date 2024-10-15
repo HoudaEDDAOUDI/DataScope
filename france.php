@@ -12,14 +12,12 @@
             <div class="tour1_grid-container">
             <div class="nb_votants">Nombre de votants</div>
                     
-                        <div class="item1">
-                            <h4>Répartition des Votes</h4>
-                        
-                        </div>
+                        <div id="chart" class="item1"></div>
+
                         <div class="item2">EXPRIMÉ</div>
-                        <div class="item3">
-                            <h4>Résultats Électoraux</h4>
-                        </div>
+                        
+                        <canvas id="top3t1" class="item3"></canvas>
+                        
                         <div class="item4">VOTE NUL</div>
                         <div class="item5">VOTE BLANC</div>
                         <div class="item6">ABSTENTION</div>
@@ -30,13 +28,13 @@
                     <div class="tour2_grid-container">
                     <div class="nb_votants">Nombre de votants</div>
                             
-                        <div class="tour2_item1">
-                            <h4>Répartition des Votes</h4>
-                        </div>
+                        
+                            <div id="chartencore" class="tour2_item1"></div>
+                        
                             <div class="tour2_item2">EXPRIMÉ</div>
-                            <div class="tour2_item3">
-                            <h4>Résultats Électoraux</h4>
-                        </div>
+                        
+                            <canvas id="top2t2" class="tour2_item3"></canvas>
+                        
                             <div class="tour2_item4">VOTE NUL</div>
                             <div class="tour2_item5">VOTE BLANC</div>
                             <div class="tour2_item6">ABSTENTION</div>
@@ -46,9 +44,9 @@
             <h3>Le vote selon les variables socio démographiques</h3>
                 <div id="age_france">
                     <div id="graph_age_france">
-                            <div class="item_age_titre">L’âge : Participation aux élections présidentielles selon l’âge en 2022</div>
+                            <div  class="item_age_titre">L’âge : Participation aux élections présidentielles selon l’âge en 2022</div>
                             <div class="item_age_legende">Légende</div>
-                            <div class="item_age_graph">Graphique âge</div>
+                            <div id="age" class="item_age_graph"></div>
 
                     </div>
 </div>
@@ -56,14 +54,12 @@
                     <div id="socio_france">
                     <div id="graph_socio_france">
                             <div class="item_socio_titre">La zone d’habitation : Score des principaux candidats au premier tour de l’élection présidentielle par zone de résidence</div>
-                            <div class="item_socio_graph">Graphique socio</div>
+                            <div id="zone" class="item_socio_graph"></div>
                     </div>
 
                 </div>
 <a href="depart.php" class="chang_page">Les chiffres par départements <span>&#10138;</span></a>
 </div>
-
-
 <?php
     include("autres_pages/footer.php");
 ?>

@@ -1,58 +1,58 @@
 [
-  {
-    "tranche_d_age": "18-29 ans",
-    "vote_aux_2_tours": "54,85",
-    "t1_seulement": "11,5",
-    "t2_seulement": "7,7",
-    "pas_vote": "25,95",
-  },
-  {
-    "tranche_d_age": "30-39 ans",
-    "vote_aux_2_tours": "62,45",
-    "t1_seulement": "9,9",
-    "t2_seulement": "6,05",
-    "pas_vote": "21,55",
-  },
-  {
-    "tranche_d_age": "40-49 ans",
-    "vote_aux_2_tours": "74,65",
-    "t1_seulement": 8,
-    "t2_seulement": "4,85",
-    "pas_vote": "12,6",
-  },
-  {
-    "tranche_d_age": "50-59 ans",
-    "vote_aux_2_tours": "77,95",
-    "t1_seulement": "6,25",
-    "t2_seulement": "4,9",
-    "pas_vote": "10,9",
-  },
+    {
+      "tranche_d_age": "18-29 ans",
+      "vote_aux_2_tours": "54,85",
+      "t1_seulement": "11,5",
+      "t2_seulement": "7,7",
+      "pas_vote": "25,95"
+    },
+    {
+      "tranche_d_age": "30-39 ans",
+      "vote_aux_2_tours": "62,45",
+      "t1_seulement": "9,9",
+      "t2_seulement": "6,05",
+      "pas_vote": "21,55"
+    },
+    {
+      "tranche_d_age": "40-49 ans",
+      "vote_aux_2_tours": "74,65",
+      "t1_seulement": 8,
+      "t2_seulement": "4,85",
+      "pas_vote": "12,6"
+    },
+    {
+      "tranche_d_age": "50-59 ans",
+      "vote_aux_2_tours": "77,95",
+      "t1_seulement": "6,25",
+      "t2_seulement": "4,9",
+      "pas_vote": "10,9"
+    },
   {
     "tranche_d_age": "60-69 ans",
     "vote_aux_2_tours": "78,25",
     "t1_seulement": "6,3",
     "t2_seulement": "5,25",
-    "pas_vote": "10,15",
+    "pas_vote": "10,15"
   },
   {
     "tranche_d_age": "70-79 ans",
     "vote_aux_2_tours": "77,3",
     "t1_seulement": "5,05",
     "t2_seulement": "4,35",
-    "pas_vote": "13,35",
+    "pas_vote": "13,35"
   },
   {
     "tranche_d_age": "80-89 ans",
     "vote_aux_2_tours": "61,05",
     "t1_seulement": "5,5",
     "t2_seulement": "5,6",
-    "pas_vote": "27,85",
+    "pas_vote": "27,85"
   },
   {
     "tranche_d_age": "90 ans ou plus",
     "vote_aux_2_tours": "33,8",
     "t1_seulement": "4,4",
     "t2_seulement": "5,1",
-    "pas_vote": "56,8",
+    "pas_vote": "56,8"
   }
 ]
