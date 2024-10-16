@@ -6,8 +6,7 @@
         <h2 class="h2_titre">Les chiffres clés des élections présidentielles en France en 2022</h2>
         
         <div class="select_param_depart">
-            <div id="nomDepart"></div>
-            <div id="tour"></div>
+            
             <!-- <form action="" id="form_depart"> -->
             <label for="departements"></label>
             <select id="departements"></select>
@@ -24,7 +23,9 @@
             <button type="submit" id="submitButton">Envoyer</button>
             <!-- </form> -->
         </div>
-
+        <div id="titre_depart"><p>Vous avez choisi le département </p><div id="nomDepart"></div><p>pour le </p>
+            <div id="tour"></div>
+        </div>
         <div class="grid_depart">
             <div id="map" class="item_carte"></div>
             <div class="item_classement">Veuillez choisir un département</div>

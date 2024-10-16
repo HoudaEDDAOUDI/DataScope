@@ -479,12 +479,25 @@ li{
 .item_inscrit_depart{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #4A4DD7;
+    font-size: 20px;
+
 
 }
 
 .item_votants_depart{
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #4A4DD7;
+    font-size: 20px;
 
 }
 
@@ -506,7 +519,7 @@ li{
     transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
-.item_graph_votant:hover, .item_text_abs:hover, .item_text_blanc:hover, .item_text_nul:hover, .item_text_exprim:hover{
+.item_text_abs:hover, .item_text_blanc:hover, .item_text_nul:hover, .item_text_exprim:hover{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.05) 0px 1px 3px -1px; /* Box-shadow réduit */
     transform: translateY(4px) scale(0.96); /* Déplacement vers le bas et réduction légère de taille */
 }
@@ -563,6 +576,10 @@ li{
     background-color: white;
     border-radius: 12px;
     margin-left: 10px;
+}
+
+#titre_depart{
+    display: flex;
 }
 
 /*-------------ANALYSE--------------------------------*/
