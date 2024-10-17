@@ -1,0 +1,709 @@
+[
+  {
+    "nom": "Ain",
+    "tranche1": "149 960",
+    "tranche2": "183 127",
+    "tranche3": "109 363",
+    "tranche4": "58 760"
+  },
+  {
+    "nom": "Aisne",
+    "tranche1": "113 454",
+    "tranche2": "132 390",
+    "tranche3": "98 737",
+    "tranche4": "52 526"
+  },
+  {
+    "nom": "Allier",
+    "tranche1": "62 147",
+    "tranche2": "83 062",
+    "tranche3": "72 415",
+    "tranche4": "48 998"
+  },
+  {
+    "nom": "Alpes-de-Haute-Provence",
+    "tranche1": "31 074",
+    "tranche2": "43 060",
+    "tranche3": "36 122",
+    "tranche4": "22 569"
+  },
+  {
+    "nom": "Hautes-Alpes",
+    "tranche1": "26 275",
+    "tranche2": "36 517",
+    "tranche3": "30 877",
+    "tranche4": "18 078"
+  },
+  {
+    "nom": "Alpes-Maritimes",
+    "tranche1": "237 498",
+    "tranche2": "287 295",
+    "tranche3": "203 675",
+    "tranche4": "148 963"
+  },
+  {
+    "nom": "Ardèche",
+    "tranche1": "61 742",
+    "tranche2": "87 158",
+    "tranche3": "70 314",
+    "tranche4": "42 922"
+  },
+  {
+    "nom": "Ardennes",
+    "tranche1": "55 376",
+    "tranche2": "68 630",
+    "tranche3": "52 860",
+    "tranche4": "27 818"
+  },
+  {
+    "nom": "Ariège",
+    "tranche1": "29 168",
+    "tranche2": "39 975",
+    "tranche3": "33 862",
+    "tranche4": "20 638"
+  },
+  {
+    "nom": "Aube",
+    "tranche1": "70 172",
+    "tranche2": "76 731",
+    "tranche3": "55 908",
+    "tranche4": "33 874"
+  },
+  {
+    "nom": "Aude",
+    "tranche1": "71 694",
+    "tranche2": "97 098",
+    "tranche3": "80 916",
+    "tranche4": "51 176"
+  },
+  {
+    "nom": "Aveyron",
+    "tranche1": "52 359",
+    "tranche2": "71 383",
+    "tranche3": "60 413",
+    "tranche4": "40 621"
+  },
+  {
+    "nom": "Bouches-du-Rhône",
+    "tranche1": "491 568",
+    "tranche2": "527 142",
+    "tranche3": "350 716",
+    "tranche4": "220 608"
+  },
+  {
+    "nom": "Calvados",
+    "tranche1": "159 523",
+    "tranche2": "172 763",
+    "tranche3": "132 798",
+    "tranche4": "74 909"
+  },
+  {
+    "nom": "Cantal",
+    "tranche1": "25 546",
+    "tranche2": "37 400",
+    "tranche3": "33 086",
+    "tranche4": "20 483"
+  },
+  {
+    "nom": "Charente",
+    "tranche1": "69 671",
+    "tranche2": "89 892",
+    "tranche3": "74 394",
+    "tranche4": "44 985"
+  },
+  {
+    "nom": "Charente-Maritime",
+    "tranche1": "123 247",
+    "tranche2": "168 391",
+    "tranche3": "150 530",
+    "tranche4": "93 602"
+  },
+  {
+    "nom": "Cher",
+    "tranche1": "58 379",
+    "tranche2": "74 021",
+    "tranche3": "63 615",
+    "tranche4": "39 602"
+  },
+  {
+    "nom": "Corrèze",
+    "tranche1": "44 643",
+    "tranche2": "60 149",
+    "tranche3": "52 266",
+    "tranche4": "34 052"
+  },
+  {
+    "nom": "Corse-du-Sud",
+    "tranche1": "33 264",
+    "tranche2": "45 215",
+    "tranche3": "31 582",
+    "tranche4": "20 499"
+  },
+  {
+    "nom": "Haute-Corse",
+    "tranche1": "42 927",
+    "tranche2": "49 963",
+    "tranche3": "36 206",
+    "tranche4": "22 027"
+  },
+  {
+    "nom": "Côte-d'Or",
+    "tranche1": "130 757",
+    "tranche2": "133 149",
+    "tranche3": "96 329",
+    "tranche4": "57 338"
+  },
+  {
+    "nom": "Côtes-d'Armor",
+    "tranche1": "112 316",
+    "tranche2": "154 041",
+    "tranche3": "130 065",
+    "tranche4": "79 392"
+  },
+  {
+    "nom": "Creuse",
+    "tranche1": "18 795",
+    "tranche2": "28 721",
+    "tranche3": "28 123",
+    "tranche4": "17 273"
+  },
+  {
+    "nom": "Dordogne",
+    "tranche1": "71 425",
+    "tranche2": "104 742",
+    "tranche3": "98 395",
+    "tranche4": "60 890"
+  },
+  {
+    "nom": "Doubs",
+    "tranche1": "132 459",
+    "tranche2": "138 173",
+    "tranche3": "90 978",
+    "tranche4": "54 964"
+  },
+  {
+    "nom": "Drôme",
+    "tranche1": "110 832",
+    "tranche2": "134 298",
+    "tranche3": "96 727",
+    "tranche4": "59 474"
+  },
+  {
+    "nom": "Eure",
+    "tranche1": "126 977",
+    "tranche2": "157 983",
+    "tranche3": "108 222",
+    "tranche4": "54 784"
+  },
+  {
+    "nom": "Eure-et-Loir",
+    "tranche1": "89 256",
+    "tranche2": "113 509",
+    "tranche3": "77 332",
+    "tranche4": "42 872"
+  },
+  {
+    "nom": "Finistère",
+    "tranche1": "192 902",
+    "tranche2": "237 620",
+    "tranche3": "187 803",
+    "tranche4": "109 396"
+  },
+  {
+    "nom": "Gard",
+    "tranche1": "153 782",
+    "tranche2": "195 819",
+    "tranche3": "150 865",
+    "tranche4": "88 767"
+  },
+  {
+    "nom": "Haute-Garonne",
+    "tranche1": "410 470",
+    "tranche2": "376 818",
+    "tranche3": "213 293",
+    "tranche4": "123 851"
+  },
+  {
+    "nom": "Gers",
+    "tranche1": "33 018",
+    "tranche2": "50 510",
+    "tranche3": "43 147",
+    "tranche4": "28 207"
+  },
+  {
+    "nom": "Gironde",
+    "tranche1": "426 124",
+    "tranche2": "441 875",
+    "tranche3": "277 349",
+    "tranche4": "162 476"
+  },
+  {
+    "nom": "Hérault",
+    "tranche1": "296 912",
+    "tranche2": "305 664",
+    "tranche3": "216 240",
+    "tranche4": "134 785"
+  },
+  {
+    "nom": "Ille-et-Vilaine",
+    "tranche1": "280 111",
+    "tranche2": "286 769",
+    "tranche3": "173 226",
+    "tranche4": "103 475"
+  },
+  {
+    "nom": "Indre",
+    "tranche1": "39 054",
+    "tranche2": "54 163",
+    "tranche3": "47 959",
+    "tranche4": "31 943"
+  },
+  {
+    "nom": "Indre-et-Loire",
+    "tranche1": "142 500",
+    "tranche2": "155 727",
+    "tranche3": "110 999",
+    "tranche4": "68 130"
+  },
+  {
+    "nom": "Isère",
+    "tranche1": "305 761",
+    "tranche2": "337 499",
+    "tranche3": "208 839",
+    "tranche4": "120 883"
+  },
+  {
+    "nom": "Jura",
+    "tranche1": "51 233",
+    "tranche2": "67 320",
+    "tranche3": "51 014",
+    "tranche4": "31 637"
+  },
+  {
+    "nom": "Landes",
+    "tranche1": "79 697",
+    "tranche2": "115 466",
+    "tranche3": "91 695",
+    "tranche4": "54 631"
+  },
+  {
+    "nom": "Loir-et-Cher",
+    "tranche1": "62 216",
+    "tranche2": "83 851",
+    "tranche3": "66 643",
+    "tranche4": "41 716"
+  },
+  {
+    "nom": "Loire",
+    "tranche1": "169 921",
+    "tranche2": "190 728",
+    "tranche3": "137 120",
+    "tranche4": "90 079"
+  },
+  {
+    "nom": "Haute-Loire",
+    "tranche1": "43 467",
+    "tranche2": "59 551",
+    "tranche3": "47 197",
+    "tranche4": "27 728"
+  },
+  {
+    "nom": "Loire-Atlantique",
+    "tranche1": "370 489",
+    "tranche2": "384 727",
+    "tranche3": "240 846",
+    "tranche4": "135 143"
+  },
+  {
+    "nom": "Loiret",
+    "tranche1": "155 434",
+    "tranche2": "173 563",
+    "tranche3": "118 062",
+    "tranche4": "69 526"
+  },
+  {
+    "nom": "Lot",
+    "tranche1": "29 435",
+    "tranche2": "44 213",
+    "tranche3": "42 928",
+    "tranche4": "26 441"
+  },
+  {
+    "nom": "Lot-et-Garonne",
+    "tranche1": "62 257",
+    "tranche2": "82 480",
+    "tranche3": "69 067",
+    "tranche4": "45 583"
+  },
+  {
+    "nom": "Lozère",
+    "tranche1": "14 789",
+    "tranche2": "20 043",
+    "tranche3": "16 496",
+    "tranche4": "9 487"
+  },
+  {
+    "nom": "Maine-et-Loire",
+    "tranche1": "189 238",
+    "tranche2": "205 982",
+    "tranche3": "143 062",
+    "tranche4": "86 111"
+  },
+  {
+    "nom": "Manche",
+    "tranche1": "97 478",
+    "tranche2": "124 502",
+    "tranche3": "104 403",
+    "tranche4": "61 403"
+  },
+  {
+    "nom": "Marne",
+    "tranche1": "137 618",
+    "tranche2": "141 022",
+    "tranche3": "98 390",
+    "tranche4": "53 568"
+  },
+  {
+    "nom": "Haute-Marne",
+    "tranche1": "34 265",
+    "tranche2": "41 984",
+    "tranche3": "35 994",
+    "tranche4": "21 295"
+  },
+  {
+    "nom": "Mayenne",
+    "tranche1": "62 892",
+    "tranche2": "78 150",
+    "tranche3": "56 087",
+    "tranche4": "34 644"
+  },
+  {
+    "nom": "Meurthe-et-Moselle",
+    "tranche1": "184 253",
+    "tranche2": "182 065",
+    "tranche3": "126 567",
+    "tranche4": "70 169"
+  },
+  {
+    "nom": "Meuse",
+    "tranche1": "36 624",
+    "tranche2": "45 563",
+    "tranche3": "37 415",
+    "tranche4": "20 092"
+  },
+  {
+    "nom": "Morbihan",
+    "tranche1": "148 083",
+    "tranche2": "200 127",
+    "tranche3": "166 294",
+    "tranche4": "95 928"
+  },
+  {
+    "nom": "Moselle",
+    "tranche1": "245 009",
+    "tranche2": "277 466",
+    "tranche3": "197 432",
+    "tranche4": "100 982"
+  },
+  {
+    "nom": "Nièvre",
+    "tranche1": "34 614",
+    "tranche2": "48 548",
+    "tranche3": "46 989",
+    "tranche4": "30 282"
+  },
+  {
+    "nom": "Nord",
+    "tranche1": "663 901",
+    "tranche2": "649 408",
+    "tranche3": "415 646",
+    "tranche4": "214 518"
+  },
+  {
+    "nom": "Oise",
+    "tranche1": "193 427",
+    "tranche2": "221 668",
+    "tranche3": "136 484",
+    "tranche4": "66 206"
+  },
+  {
+    "nom": "Orne",
+    "tranche1": "51 448",
+    "tranche2": "68 035",
+    "tranche3": "58 708",
+    "tranche4": "36 816"
+  },
+  {
+    "nom": "Pas-de-Calais",
+    "tranche1": "329 976",
+    "tranche2": "372 413",
+    "tranche3": "261 967",
+    "tranche4": "130 464"
+  },
+  {
+    "nom": "Puy-de-Dôme",
+    "tranche1": "155 174",
+    "tranche2": "170 398",
+    "tranche3": "122 515",
+    "tranche4": "72 218"
+  },
+  {
+    "nom": "Pyrénées-Atlantiques",
+    "tranche1": "143 895",
+    "tranche2": "183 999",
+    "tranche3": "138 172",
+    "tranche4": "87 975"
+  },
+  {
+    "nom": "Hautes-Pyrénées",
+    "tranche1": "45 140",
+    "tranche2": "58 712",
+    "tranche3": "50 059",
+    "tranche4": "31 560"
+  },
+  {
+    "nom": "Pyrénées-Orientales",
+    "tranche1": "94 374",
+    "tranche2": "124 827",
+    "tranche3": "101 841",
+    "tranche4": "65 605"
+  },
+  {
+    "nom": "Bas-Rhin",
+    "tranche1": "292 820",
+    "tranche2": "305 190",
+    "tranche3": "202 364",
+    "tranche4": "106 016"
+  },
+  {
+    "nom": "Haut-Rhin",
+    "tranche1": "171 494",
+    "tranche2": "207 843",
+    "tranche3": "142 019",
+    "tranche4": "74 968"
+  },
+  {
+    "nom": "Rhône",
+    "tranche1": "534 616",
+    "tranche2": "470 912",
+    "tranche3": "265 604",
+    "tranche4": "170 769"
+  },
+  {
+    "nom": "Haute-Saône",
+    "tranche1": "45 124",
+    "tranche2": "61 781",
+    "tranche3": "47 842",
+    "tranche4": "25 389"
+  },
+  {
+    "nom": "Saône-et-Loire",
+    "tranche1": "103 840",
+    "tranche2": "139 053",
+    "tranche3": "115 474",
+    "tranche4": "73 250"
+  },
+  {
+    "nom": "Sarthe",
+    "tranche1": "119 892",
+    "tranche2": "143 551",
+    "tranche3": "105 298",
+    "tranche4": "64 090"
+  },
+  {
+    "nom": "Savoie",
+    "tranche1": "99 189",
+    "tranche2": "119 792",
+    "tranche3": "80 416",
+    "tranche4": "45 834"
+  },
+  {
+    "nom": "Haute-Savoie",
+    "tranche1": "212 520",
+    "tranche2": "236 605",
+    "tranche3": "129 892",
+    "tranche4": "72 789"
+  },
+  {
+    "nom": "Paris",
+    "tranche1": "698 264",
+    "tranche2": "526 838",
+    "tranche3": "304 526",
+    "tranche4": "185 223"
+  },
+  {
+    "nom": "Seine-Maritime",
+    "tranche1": "298 797",
+    "tranche2": "307 993",
+    "tranche3": "222 941",
+    "tranche4": "125 697"
+  },
+  {
+    "nom": "Seine-et-Marne",
+    "tranche1": "361 803",
+    "tranche2": "386 845",
+    "tranche3": "211 974",
+    "tranche4": "103 832"
+  },
+  {
+    "nom": "Yvelines",
+    "tranche1": "345 419",
+    "tranche2": "394 725",
+    "tranche3": "211 976",
+    "tranche4": "124 469"
+  },
+  {
+    "nom": "Deux-Sèvres",
+    "tranche1": "73 610",
+    "tranche2": "98 844",
+    "tranche3": "73 953",
+    "tranche4": "43 744"
+  },
+  {
+    "nom": "Somme",
+    "tranche1": "133 775",
+    "tranche2": "141 794",
+    "tranche3": "100 983",
+    "tranche4": "55 465"
+  },
+  {
+    "nom": "Tarn",
+    "tranche1": "75 507",
+    "tranche2": "102 427",
+    "tranche3": "79 813",
+    "tranche4": "53 051"
+  },
+  {
+    "nom": "Tarn-et-Garonne",
+    "tranche1": "53 165",
+    "tranche2": "70 883",
+    "tranche3": "49 876",
+    "tranche4": "29 210"
+  },
+  {
+    "nom": "Var",
+    "tranche1": "222 944",
+    "tranche2": "280 198",
+    "tranche3": "224 818",
+    "tranche4": "156 919"
+  },
+  {
+    "nom": "Vaucluse",
+    "tranche1": "117 629",
+    "tranche2": "145 261",
+    "tranche3": "105 014",
+    "tranche4": "64 946"
+  },
+  {
+    "nom": "Vendée",
+    "tranche1": "134 432",
+    "tranche2": "180 700",
+    "tranche3": "148 997",
+    "tranche4": "88 765"
+  },
+  {
+    "nom": "Vienne",
+    "tranche1": "103 207",
+    "tranche2": "108 004",
+    "tranche3": "80 247",
+    "tranche4": "49 290"
+  },
+  {
+    "nom": "Haute-Vienne",
+    "tranche1": "79 565",
+    "tranche2": "92 345",
+    "tranche3": "74 235",
+    "tranche4": "47 209"
+  },
+  {
+    "nom": "Vosges",
+    "tranche1": "70 190",
+    "tranche2": "91 912",
+    "tranche3": "76 143",
+    "tranche4": "43 027"
+  },
+  {
+    "nom": "Yonne",
+    "tranche1": "63 727",
+    "tranche2": "85 107",
+    "tranche3": "67 694",
+    "tranche4": "40 385"
+  },
+  {
+    "nom": "Territoire de Belfort",
+    "tranche1": "31 285",
+    "tranche2": "35 644",
+    "tranche3": "24 339",
+    "tranche4": "13 944"
+  },
+  {
+    "nom": "Essonne",
+    "tranche1": "335 513",
+    "tranche2": "343 204",
+    "tranche3": "183 690",
+    "tranche4": "101 426"
+  },
+  {
+    "nom": "Hauts-de-Seine",
+    "tranche1": "458 773",
+    "tranche2": "439 264",
+    "tranche3": "220 666",
+    "tranche4": "128 017"
+  },
+  {
+    "nom": "Seine-Saint-Denis",
+    "tranche1": "474 891",
+    "tranche2": "429 520",
+    "tranche3": "206 409",
+    "tranche4": "90 696"
+  },
+  {
+    "nom": "Val-de-Marne",
+    "tranche1": "396 508",
+    "tranche2": "370 026",
+    "tranche3": "195 871",
+    "tranche4": "106 520"
+  },
+  {
+    "nom": "Val-d'Oise",
+    "tranche1": "329 763",
+    "tranche2": "327 655",
+    "tranche3": "175 610",
+    "tranche4": "81 632"
+  },
+  {
+    "nom": "Guadeloupe",
+    "tranche1": "71 299",
+    "tranche2": "103 413",
+    "tranche3": "77 129",
+    "tranche4": "37 066"
+  },
+  {
+    "nom": "Martinique",
+    "tranche1": "65 757",
+    "tranche2": "95 769",
+    "tranche3": "75 832",
+    "tranche4": "37 455"
+  },
+  {
+    "nom": "Guyane",
+    "tranche1": "82 967",
+    "tranche2": "64 088",
+    "tranche3": "23 919",
+    "tranche4": "7 352"
+  },
+  {
+    "nom": "La Réunion",
+    "tranche1": "203 823",
+    "tranche2": "236 340",
+    "tranche3": "130 915",
+    "tranche4": "50 120"
+  },
+  {
+    "nom": "Mayotte",
+    "tranche1": "82 450",
+    "tranche2": "47 554",
+    "tranche3": "10 545",
+    "tranche4": "2 782"
+  }
+]

@@ -36,7 +36,11 @@ include("autres_pages/header.php");
     <div id="nomDepart">Veuillez choisir un département</div>
     <div class="grid_depart">
         <div id="map" class="item_carte"></div>
-        <div class="item_classement"></div>
+        <div class="item_classement">
+            <div id="top1"></div>
+            <div id="top2"></div>
+            <div id="top3"></div>
+        </div>
         <div id="inscrit" class="item_inscrit_depart"></div>
         <div id="votant" class="item_votants_depart"></div>
         <div class="item_repart_vote">
@@ -47,14 +51,16 @@ include("autres_pages/header.php");
             <div id="voteNul" class="item_text_nul item4"></div>
         </div>
     </div>
-    <h3>Les variables socio démographique de </h3>
-    <div id="explication_socio"><p>Ci-dessous nous pouvons voir différents graphiques sur la population représentative du département choisi. Attention ces graphiques ne représentent pas uniquement les votants mais tous les citoyens du département. Ils n'ont donc pas un lien direct avec les élections. Néanmoins cela nous donne tout de même une idée sur les votants.</p></div>
+    <h3>Les variables socio démographique de <span id="titre"></span></h3>
+    <div id="explication_socio">
+        <p>Ci-dessous nous pouvons voir différents graphiques sur la population représentative du département choisi. Attention ces graphiques ne représentent pas uniquement les votants mais tous les citoyens du département. Ils n'ont donc pas un lien direct avec les élections. Néanmoins cela nous donne tout de même une idée sur les votants.</p>
+    </div>
     <div class="variable_socio_depart">
-        <div id="part_csp">Part des catégories socio professionnelles</div>
+        <div id="csp" class="part_csp">Part des catégories socio professionnelles</div>
 
-        <div id="part_age">Représentation des votants par âge</div>
-        <div id="indice_jeunesse">Indice jeunesse</div>
-        <div id="niv_diplome">niveau de diplome</div>
+        <div id="age_dep" class="part_age">Représentation des votants par âge</div>
+        <div id="indice_jeunesse" class="indice_jeunesse">Indice jeunesse</div>
+        <div id="graph_test" class="niv_diplome"></div>
 
         <!-- <div id="graph_test"></div> -->
 

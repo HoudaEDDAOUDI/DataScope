@@ -806,22 +806,22 @@ li{
     height: 700px;
 }
 
-#part_csp, #part_age, #indice_jeunesse, #niv_diplome{
+.part_csp, .part_age, .indice_jeunesse, .niv_diplome{
     background-color: white;
     border-radius: 12px;
 }
 
-#part_csp{
+.part_csp{
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
 
-#part_age{
+.part_age{
     grid-column: 2 / 3;
     grid-row: 1 /2;
 }
 
-#indice_jeunesse{
+.indice_jeunesse{
     grid-column: 2 /3;
     grid-row: 2 /3;
 }

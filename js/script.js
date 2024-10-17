@@ -234,6 +234,7 @@ fetch('json/resultats_t1.json')
         candidats.sort((a, b) => b.voix - a.voix);
         let top3Candidats = candidats.slice(0, 3);
 
+        
         const top3t1 = new Chart(
             document.getElementById('top3t1'),
             {
@@ -631,6 +632,7 @@ fetch('json/resultats_t2.json')
         });
     })
     .catch(error => console.error('Erreur lors du chargement du JSON :', error));
+
 let div = d3.select("body").append("div")
     .attr("class", "map-tooltip")
     .style("opacity", 0);
@@ -798,9 +800,11 @@ function carteCouleurT1(depart) {
             afficherRepartitionVoteT1(depart);
             afficherVoteExprimeT1(depart);
             afficherTop3Candidat(depart);
+            afficherIndiceDeJeune(depart);
+            afficherAge(depart);
             afficherCsp(depart);
             ajouterLegendeT1();
-            
+
         })
         .catch(error => console.error('Erreur lors du chargement du JSON pour le tour 1 :', error));
 }
@@ -846,7 +850,64 @@ function ajouterLegendeT1() {
             .text(candidat.nom + " en tête"); // Texte du candidat
     });
 }
+// DEPARTEMENT - graphique podium 
+function afficherTop3Candidat(depart) {
+    fetch('json/resultats_t1.json')
+        .then(response => response.json())
+        .then(dataJson => {
+            const departmentData = dataJson.find(item => item.libelle_du_departement_t1 === depart);
 
+            let totalMacronT1 = 0;
+            let totalLassaleT1 = 0;
+            let totalLePenT1 = 0;
+            let totalZemmourT1 = 0;
+            let totalMelanchonT1 = 0;
+            let totalPecresseT1 = 0;
+            let nomMacron = 0;
+            let nomLassale = 0;
+            let nomLePen = 0;
+            let nomZemmour = 0;
+            let nomMelanchon = 0;
+            let nomPecresse = 0;
+
+            if (departmentData) {
+                nomMacron = departmentData.nom_c1_t1;
+                totalMacronT1 = departmentData.voix_c1_t1;
+
+                nomLassale = departmentData.nom_c3_2;
+                totalLassaleT1 = departmentData.voix_c3_t1;
+
+                nomLePen = departmentData.nom_c2_t1;
+                totalLePenT1 = departmentData.voix_c2_t1;
+
+                nomZemmour = departmentData.nom_c4_t1;
+                totalZemmourT1 = departmentData.voix_c4_t1;
+
+                nomMelanchon = departmentData.nom_c5_t1;
+                totalMelanchonT1 = departmentData.voix_c5_t1;
+
+                nomPecresse = departmentData.nom_c6_t1;
+                totalPecresseT1 = departmentData.voix_c6_t1;
+            }
+
+            let candidats = [
+                { nom: nomMacron, voix: totalMacronT1 },
+                { nom: nomLassale, voix: totalLassaleT1 },
+                { nom: nomLePen, voix: totalLePenT1 },
+                { nom: nomZemmour, voix: totalZemmourT1 },
+                { nom: nomMelanchon, voix: totalMelanchonT1 },
+                { nom: nomPecresse, voix: totalPecresseT1 }
+            ];
+
+            candidats.sort((a, b) => b.voix - a.voix);
+            let top3Candidats = candidats.slice(0, 3);
+
+            document.getElementById('top1').innerHTML = `1. ${top3Candidats[0].nom}`;
+            document.getElementById('top2').innerHTML = `2. ${top3Candidats[1].nom}`;
+            document.getElementById('top3').innerHTML = ` 3. ${top3Candidats[2].nom}`;
+        })
+        .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
+}
 // DEPARTEMENT - REPARTITION VOTE T1
 function afficherRepartitionVoteT1(depart) {
     fetch('json/resultats_t1.json')
@@ -941,6 +1002,7 @@ function afficherVoteExprimeT1(depart) {
             document.getElementById('votant').innerHTML = `${totalVotantT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
             document.getElementById('inscrit').innerHTML = `${totalInscritsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
             document.getElementById('nomDepart').innerHTML = `Vous avez choisi le département ${depart} pour le Tour 1.`;
+            document.getElementById('titre').innerHTML = `${depart}`;
         })
         .catch(error => console.error("Erreur lors du chargement des données:", error));
 }
@@ -1004,9 +1066,11 @@ function carteCouleurT2(depart) {
             afficherRepartitionVoteT2(depart);
             afficherVoteExprimeT2(depart);
             afficherTop2Candidat(depart);
+            afficherIndiceDeJeune(depart);
+            afficherAge(depart);
             afficherCsp(depart);
             ajouterLegendeT2();
-            
+
         })
         .catch(error => console.error('Erreur lors du chargement du JSON pour le tour 2 :', error));
 }
@@ -1017,39 +1081,80 @@ function ajouterLegendeT2() {
 
     const legend = svg.append("g")
         .attr("class", "legend")
-        .attr("transform", "translate(10, 20)"); // Position de la légende
+        .attr("transform", "translate(10, 20)");
 
     legend.append("circle")
-        .attr("cx", 9) // Position horizontale du cercle
-        .attr("cy", 9) // Position verticale du cercle
-        .attr("r", 9) // Rayon du cercle
-        .attr("fill", "black"); // Couleur noire pour le département sélectionné
+        .attr("cx", 9)
+        .attr("cy", 9)
+        .attr("r", 9)
+        .attr("fill", "black");
 
     legend.append("text")
-        .attr("x", 25) // Position horizontale du texte
-        .attr("y", 14) // Position verticale du texte
-        .text("Département sélectionné"); // Texte pour le département sélectionné
-    // Ajouter un cercle pour la couleur de sélection
+        .attr("x", 25)
+        .attr("y", 14)
+        .style("font-size", "14px")
+        .text("Département sélectionné");
 
     const candidats = [
         { nom: "Macron", couleur: "#C1A5DB" },
         { nom: "Le Pen", couleur: "#8CABED" },
     ];
 
-    // Ajouter des cercles et du texte pour chaque candidat
     candidats.forEach((candidat, index) => {
-        legend.append("circle") // Créer un cercle pour chaque candidat
-            .attr("cx", 9) // Position horizontale du cercle
-            .attr("cy", (index + 1) * 25 + 9) // Position verticale du cercle
-            .attr("r", 9) // Rayon du cercle
-            .attr("fill", candidat.couleur); // Couleur du cercle
+        legend.append("circle")
+            .attr("cx", 9)
+            .attr("cy", (index + 1) * 25 + 9)
+            .attr("r", 9)
+            .attr("fill", candidat.couleur);
 
         legend.append("text")
-            .attr("x", 25) // Position horizontale du texte
-            .attr("y", (index + 1) * 25 + 14) // Position verticale du texte
-            .text(candidat.nom + " en tête"); // Texte du candidat
+            .attr("x", 25)
+            .attr("y", (index + 1) * 25 + 14)
+            .style("font-size", "10px")
+            .text(candidat.nom + " en tête");
     });
+}
 
+
+// DEPARTEMENT - PODIUM
+function afficherTop2Candidat(depart) {
+    fetch('json/resultats_t2.json')
+        .then(response => response.json())
+        .then(dataJson => {
+            const departmentData = dataJson.find(item => item.libelle_du_departement_t2 === depart);
+
+            let totalMacronT2 = 0;
+            let nomMacronT2 = '';
+            let totalLePenT2 = 0;
+            let nomLePenT2 = '';
+
+            if (departmentData) {
+                nomMacronT2 = departmentData.nom_c1_t2;
+                nomLePenT2 = departmentData.nom_c2_t2;
+                totalMacronT2 = departmentData.voix_c1_t2;
+                totalLePenT2 = departmentData.voix_c2_t2;
+            }
+
+            let cand = [
+                {
+                    nom: nomMacronT2,
+                    voix: totalMacronT2
+                },
+                {
+                    nom: nomLePenT2,
+                    voix: totalLePenT2
+                }
+            ];
+
+            cand.sort((a, b) => b.voix - a.voix);
+            let top2Candidats = cand.slice(0, 2);
+
+            document.getElementById('top1').innerHTML = `1. ${top2Candidats[0].nom}`;
+            document.getElementById('top2').innerHTML = `2. ${top2Candidats[1].nom}`;
+            document.getElementById('top3').innerHTML = ``;
+
+        })
+        .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
 }
 
 // DEPARTEMENT - REPARTITION VOTE T2
@@ -1159,10 +1264,12 @@ function afficherVoteExprimeT2(depart) {
             document.getElementById('votant').innerHTML = `${totalVotantT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
             document.getElementById('inscrit').innerHTML = `${totalInscritsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
             document.getElementById('nomDepart').innerHTML = `Vous avez choisi le département ${depart} pour le Tour 2.`;
+            document.getElementById('titre').innerHTML = `${depart}`;
         })
         .catch(error => console.error("Erreur lors du chargement des données:", error));
 }
 
+// GENERAL--------------------------------------------------------------------------------------------------------
 // DEPARTEMENT - CSP T1/T2
 function afficherCsp(depart) {
     fetch('json/csp.json')
@@ -1207,12 +1314,12 @@ function afficherCsp(depart) {
                             height: 350
                         },
                         title: {
-                            text: `Répartition des CSP - Département ${depart}`,
+                            text: `Répartition des CSP`,
                             align: 'center',
                             style: {
-                                fontSize: '20px',
-                                fontWeight: 'bold',
-                                color: '#333'
+                                fontSize: '15px',
+                                fontWeight: '300',
+                                color: '#464646'
                             }
                         },
                         plotOptions: {
@@ -1248,48 +1355,151 @@ function afficherCsp(depart) {
         });
 }
 
-// graph diplome 
-
-function afficherDiplome(depart){
+// DEPARTEMENT - graph diplome T1/T2
+function afficherDiplome(depart) {
     fetch('json/jeunesse_diplome_chom.json')
-    .then(response => response.json())
-    .then(dataJson => {
-        const departmentData = dataJson.find(item => item.libGeo === depart);
+        .then(response => response.json())
+        .then(dataJson => {
+            const departmentData = dataJson.find(item => item.libGeo === depart);
 
+            if (departmentData) {
 
-        if(departmentData){
+                const partPopSansDip = departmentData.partPopSansDip;
+                const partPopBepCap = departmentData.partPopBepCap;
+                const partPopBac = departmentData.partPopBac;
+                const partPopBacSup = departmentData.partPopBacSup;
 
-            const partPopSansDip = departmentData.partPopSansDip;
-            const partPopBepCap = departmentData.partPopBepCap;
-            const partPopBac = departmentData.partPopBac;
-            const partPopBacSup = departmentData.partPopBacSup;
+                // console.log('test', partPopSansDip, partPopBacSup, partPopBepCap, partPopSansDip);
+                var options = {
+                    series: [{
+                        name: 'En pourcentage ',
+                        data: [partPopSansDip, partPopBepCap, partPopBac, partPopBacSup],
+                    }],
+                    chart: {
+                        type: 'bar',
+                        height: '300px'
+                    },
+                    title: {
+                        text: 'Niveau de diplome',
+                        align: 'center',
+                        style: {
+                            fontSize: '15px',
+                            fontWeight: '300',
+                            color: '#464646'
+                        }
+                    },
+                    plotOptions: {
+                        bar: {
+                            horizontal: false,
+                            columnWidth: '25%',
+                            borderRadius: 8,
+                            endingShape: 'rounded'
+                        },
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        show: true,
+                        width: 2,
+                        colors: ['transparent']
+                    },
+                    // title: {
+                    //     text: 'Basic Radar Chart'
+                    // },
+                    yaxis: {
+                        stepSize: 20
+                    },
+                    xaxis: {
+                        categories: ['sans diplome', 'BEP/CAP', 'Niveau BAC', 'BAC+2 ou plus']
+                    },
+                    colors: ['#BC8FF4'],
+                    fill: {
+                        opacity: 1
+                    },
+                    tooltip: {
+                        y: {
+                            formatter: function (val) {
+                                return val + " % "
+                            }
+                        }
+                    }
+                };
+                var graph_test = new ApexCharts(document.querySelector("#graph_test"), options);
+                graph_test.render();
 
-
-       console.log('test',partPopSansDip, partPopBacSup, partPopBepCap, partPopSansDip);
-var options = {
-    series: [{
-    name: 'En pourcentage : ',
-    data: [partPopSansDip, partPopBepCap, partPopBac, partPopBacSup],
-  }],
-    chart: {
-    height: 350,
-    type: 'radar',
-  },
-  title: {
-    text: 'Basic Radar Chart'
-  },
-  yaxis: {
-    stepSize: 20
-  },
-  xaxis: {
-    categories: ['sans diplome', 'diplôme > au BAC', 'diplôme de niveau BAC', 'diplôme de niveau BAC+2 ou >']
-  }
-  };
-
-  var graph_test = new ApexCharts(document.querySelector("#graph_test"), options);
-  graph_test.render();
-
+            }
+        })
 }
-})
+
+//-----------------AFFICHE TANCHE AGE
+function afficherAge(depart) {
+    fetch('json/age_dep.json')
+        .then(response => response.json())
+        .then(dataJson => {
+            let departmentData = dataJson.find(item => item.nom === depart);
+            let nom = '';
+            let tranche1 = 0;
+            let tranche2 = 0;
+            let tranche3 = 0;
+            let tranche4 = 0;
+            if (departmentData) {
+                nom = departmentData.nom;
+                tranche1 = departmentData.tranche1;
+                tranche2 = departmentData.tranche2;
+                tranche3 = departmentData.tranche3;
+                tranche4 = departmentData.tranche4;
+
+            }
+            var options = {
+                series: [{
+                    name: 'Tranches d\'âge',
+                    data: [tranche1, tranche2, tranche3, tranche4],
+                }],
+                chart: {
+                    height: 350,
+                    type: 'radar',
+                },
+                title: {
+                    text: 'Représentation des votants par âge',
+                    align: 'center',
+                    style: {
+                        fontSize: '15px',
+                        fontWeight: '300',
+                        color: '#464646'
+                    }
+                },
+                yaxis: {
+                    show: false,
+                    labels: {
+                        formatter: function (value) {
+                            return value + "%";
+                        }
+                    }
+                },
+                xaxis: {
+                    categories: ['20-39 ans', '40-59 ans', '60-74 ans', '75 et plus']
+                },
+                colors: ['#C1A5DB']
+            };
+            document.querySelector("#age_dep").innerHTML = "";
+            var age_dep = new ApexCharts(document.querySelector("#age_dep"), options);
+            age_dep.render();
+
+        })
+}
+
+//-------------------INDICE DE JEUNESSE
+function afficherIndiceDeJeune(depart) {
+    fetch('json/jeunesse_diplome_chom.json')
+        .then(response => response.json())
+        .then(dataJson => {
+            const departmentData = dataJson.find(item => item.libGeo === depart);
+            let indiceJeunesse = 0;
+            if (departmentData) {
+                indiceJeunesse = departmentData.indiceJeunesse;
+            }
+            document.getElementById('indice_jeunesse').innerHTML = `Indice de jeunesse <br>${indiceJeunesse}`;
+        })
 }
 
