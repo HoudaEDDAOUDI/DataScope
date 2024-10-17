@@ -1333,7 +1333,7 @@ function afficherCsp(depart) {
                             enabled: false
                         },
                         xaxis: {
-                            categories: ['Agriculteurs', 'Artisans', 'Cadres', 'Professions intermédiaires', 'Employés', 'Ouvriers', 'Retraités', 'Autres'],
+                            categories: ['Agriculteurs', 'Artisans', 'Cadres', 'Professions intermédiaires', 'Employés', 'Ouvriers', 'Retraités', 'Autres inactifs'],
                         },
                         colors: ['#C1A5DB']
 
@@ -1499,7 +1499,7 @@ function afficherIndiceDeJeune(depart) {
             if (departmentData) {
                 indiceJeunesse = departmentData.indiceJeunesse;
             }
-            document.getElementById('indice_jeunesse').innerHTML = `Indice de jeunesse <br>${indiceJeunesse}`;
+            document.getElementById('indice_jeunesse').innerHTML = `<div id="div_titre_jeune"><img class="image_info" src="images/icones/information.png" alt="icone information"><p class="indice_titre">Indice de jeunesse</p><div class="vignette">L'indice de jeunesse est le rapport entre le nombre de jeunes et le nombre de personnes âgées dans une population.</br></br>indice supérieur à 1 = population jeune</br>indice inférieur à 1 = population vieillissante</div></div><p class="indice_chiffre">${indiceJeunesse}</p>`;
         })
 }
 

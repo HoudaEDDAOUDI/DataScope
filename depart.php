@@ -59,7 +59,7 @@ include("autres_pages/header.php");
         <div id="csp" class="part_csp">Part des catégories socio professionnelles</div>
 
         <div id="age_dep" class="part_age">Représentation des votants par âge</div>
-        <div id="indice_jeunesse" class="indice_jeunesse">Indice jeunesse</div>
+        <div id="indice_jeunesse" class="indice_jeunesse"></div>
         <div id="graph_test" class="niv_diplome"></div>
 
         <!-- <div id="graph_test"></div> -->

@@ -824,6 +824,51 @@ li{
 .indice_jeunesse{
     grid-column: 2 /3;
     grid-row: 2 /3;
+    
+}
+
+#div_titre_jeune{
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.vignette {
+    display: none; /* Cachée par défaut */
+    position: absolute; /* Position relative à la div parent */
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    z-index: 1000; /* S'assurer que la vignette soit au-dessus des autres éléments */
+    top: 0; /* Alignement vertical avec l'image */
+    right: 100%; /* Position initiale */
+}
+
+#div_titre_jeune:hover .vignette {
+    display: block; /* Affiche la vignette au survol */
+}
+
+/* dans le js */
+.indice_titre{
+    font-size: 20px;
+}
+/* dans le js */
+.indice_chiffre{
+    margin-top: 10%;
+    font-size: 80px;
+    font-weight: 600;
+    color: #4A4DD7;
+}
+
+.image_info{
+    margin: 20px 30px;
+    height: 40px;
 }
 
 #titre_depart{
@@ -847,6 +892,8 @@ li{
     margin-top: 20px;
     color: #464646;
 }
+
+
 /*-------------ANALYSE--------------------------------*/
 
 .block_analyse p{
