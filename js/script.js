@@ -794,12 +794,13 @@ function carteCouleurT1(depart) {
                     .filter(d => d.properties.libgeo === depart)
                     .attr("fill", "black");
             });
-
+            afficherDiplome(depart);
             afficherRepartitionVoteT1(depart);
             afficherVoteExprimeT1(depart);
             afficherTop3Candidat(depart);
             afficherCsp(depart);
             ajouterLegendeT1();
+            
         })
         .catch(error => console.error('Erreur lors du chargement du JSON pour le tour 1 :', error));
 }
@@ -999,11 +1000,13 @@ function carteCouleurT2(depart) {
             });
 
             // Appel des fonctions pour afficher les informations supplémentaires
+            afficherDiplome(depart);
             afficherRepartitionVoteT2(depart);
             afficherVoteExprimeT2(depart);
             afficherTop2Candidat(depart);
             afficherCsp(depart);
             ajouterLegendeT2();
+            
         })
         .catch(error => console.error('Erreur lors du chargement du JSON pour le tour 2 :', error));
 }
@@ -1243,5 +1246,50 @@ function afficherCsp(depart) {
             console.error("Erreur lors du chargement du fichier JSON :", error);
             document.querySelector("#csp").innerHTML = `Erreur lors du chargement des données pour : ${depart}`;
         });
+}
+
+// graph diplome 
+
+function afficherDiplome(depart){
+    fetch('json/jeunesse_diplome_chom.json')
+    .then(response => response.json())
+    .then(dataJson => {
+        const departmentData = dataJson.find(item => item.libGeo === depart);
+
+
+        if(departmentData){
+
+            const partPopSansDip = departmentData.partPopSansDip;
+            const partPopBepCap = departmentData.partPopBepCap;
+            const partPopBac = departmentData.partPopBac;
+            const partPopBacSup = departmentData.partPopBacSup;
+
+
+       console.log('test',partPopSansDip, partPopBacSup, partPopBepCap, partPopSansDip);
+var options = {
+    series: [{
+    name: 'En pourcentage : ',
+    data: [partPopSansDip, partPopBepCap, partPopBac, partPopBacSup],
+  }],
+    chart: {
+    height: 350,
+    type: 'radar',
+  },
+  title: {
+    text: 'Basic Radar Chart'
+  },
+  yaxis: {
+    stepSize: 20
+  },
+  xaxis: {
+    categories: ['sans diplome', 'diplôme > au BAC', 'diplôme de niveau BAC', 'diplôme de niveau BAC+2 ou >']
+  }
+  };
+
+  var graph_test = new ApexCharts(document.querySelector("#graph_test"), options);
+  graph_test.render();
+
+}
+})
 }
 

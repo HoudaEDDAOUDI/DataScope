@@ -45,7 +45,12 @@
                 <div id="age_france">
                     <div id="graph_age_france">
                             <div  class="item_age_titre">L’âge : Participation aux élections présidentielles selon l’âge en 2022</div>
-                            <div class="item_age_legende">Légende</div>
+                            <div class="item_age_legende">
+                                <div class="leg_1"><div class="couleur_leg_1"></div>Vote aux 2 tours</div>
+                                <div class="leg_2"><div class="couleur_leg_2"></div>Tour 1 seulement</div>
+                                <div class="leg_3"><div class="couleur_leg_3"></div>Tour 2 seulement</div>
+                                <div class="leg_4"><div class="couleur_leg_4"></div>Pas voté</div>
+                            </div>
                             <div id="age" class="item_age_graph"></div>
 
                     </div>

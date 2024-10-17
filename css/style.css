@@ -31,7 +31,7 @@ a{
 
 h1{
     font-size: 28pt;
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 .h2_titre{
@@ -39,6 +39,14 @@ h1{
     font-size: 20pt;
     text-align: center;
     margin-top: 0;
+}
+
+h3{
+    color: #464646;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
+    
 }
 
 .cadre_scroll{
@@ -354,12 +362,55 @@ li{
 .item_age_titre{
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    text-align:left;
+    
 }
 
 .item_age_legende{
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
 }
+
+.leg_1, .leg_2, .leg_3, .leg_4{
+    height: 45px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 400;
+
+}
+
+.couleur_leg_1, .couleur_leg_2, .couleur_leg_3, .couleur_leg_4{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.couleur_leg_1{
+    background-color: rgb(43, 54, 149);
+}
+
+.couleur_leg_2{
+    background-color: rgb(173, 180, 243);
+}
+
+.couleur_leg_3{
+    background-color: rgb(105, 118, 235);
+}
+
+.couleur_leg_4{
+    background-color: rgb(188, 143, 244);
+}
+
 
 .item_age_graph{
     grid-column: 1 / 3;
@@ -627,7 +678,8 @@ li{
 .item_carte, .item_classement, .item_inscrit_depart, .item_votants_depart, .item_repart_vote{
     border-radius: 12px;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;}
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
 
 .item_carte{
     grid-column: 1/2;
@@ -723,34 +775,78 @@ li{
     
 }
 
+#explication_socio{
+    width: 100%;
+    height: 100px;
+    background-color: #F5F5F5;
+    text-align: left;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#explication_socio p{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-weight: 500;
+}
+
 
 .variable_socio_depart{
-    display: flex;
+    display: grid;
+    grid-gap: 20px;
     background-color: #F5F5F5;
     padding: 20px;
+    border-radius: 12px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 700px;
+}
+
+#part_csp, #part_age, #indice_jeunesse, #niv_diplome{
+    background-color: white;
     border-radius: 12px;
 }
 
 #part_csp{
-    width: 60%;
-    height: 400px;
-    background-color: white;
-    border-radius: 12px;
-    margin-right: 10px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 #part_age{
-    width: 40%;
-    height: 400px;
-    background-color: white;
-    border-radius: 12px;
-    margin-left: 10px;
+    grid-column: 2 / 3;
+    grid-row: 1 /2;
+}
+
+#indice_jeunesse{
+    grid-column: 2 /3;
+    grid-row: 2 /3;
 }
 
 #titre_depart{
     display: flex;
 }
 
+
+/* #graph_test{
+    width: 25%;
+} */
+
+#nomDepart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    height: 70px;
+    width: 100%;
+    background-color: #F5F5F5;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #464646;
+}
 /*-------------ANALYSE--------------------------------*/
 
 .block_analyse p{
@@ -777,8 +873,143 @@ font-size: 14pt;
 
 #houda, #julie{
     background-color: white;
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 300px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    transition: transform 0.3s ease; /* Transition fluide pour l'effet de zoom */
+}
+
+#houda:hover, #julie:hover {
+    transform: scale(1.05); /* Agrandir l'élément de 5% lors du survol */
+}
+
+.avatar_houda{
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    background-color: #464646;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-image: url(../images/houda_avatar.jpg);
+    background-size: cover;
+
+}
+
+.avatar_julie{
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    background-color: #464646;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-image: url(../images/julie_avatar.jpg);
+    background-size: cover;
+}
+
+.pp_nom{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.nom_fiche{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nom_fiche h4{
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 25px;
+    color: #4A4DD7;
+    
+}
+
+#houda{
+    margin-right: 5%;
+}
+
+#julie{
+    margin-left: 5%;
+}
+
+.icone_coord{
+    height: 30px;
+    margin-right: 20px; 
+}
+
+#fiche_coord{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+    
+}
+
+.coord_perso a{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 25px 0 20px;
+    color: black;
+    
+}
+
+.coord_perso a:hover{
+    color: #4A4DD7;
 }
 
 /*-------------RÉFÉRENCES--------------------------------*/
+
+
+#references_grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+#insee_ref, #open_data_ref {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    background-color: white;
+    border-radius: 12px;
+    color: #464646;
+    position: relative;
+    overflow: hidden;
+    height: 150px; /* Hauteur initiale de la div */
+    transition: height 0.4s ease; /* Transition fluide pour l'agrandissement */
+}
+
+#insee_ref p, #insee_ref a, #open_data_ref p, #open_data_ref a {
+    opacity: 0; /* Cache le texte et le bouton au départ */
+    transition: opacity 0.3s ease; /* Transition fluide pour l'apparition du texte et du bouton */
+}
+
+#insee_ref img, #open_data_ref img {
+    margin-top: 20px;
+    height: 100px;
+    transition: transform 0.3s ease; /* Optionnel : animation de zoom sur l'image */
+}
+
+#insee_ref:hover, #open_data_ref:hover {
+    height: 108%; /* Hauteur agrandie pendant le survol */
+}
+
+#insee_ref:hover p, #insee_ref:hover a, #open_data_ref:hover p, #open_data_ref:hover a {
+    opacity: 1; /* Fait apparaître le texte et le bouton lors du survol */
+}
+
+#insee_ref:hover img, #open_data_ref:hover img{
+    transform: scale(1.05); /* Optionnel : effet de zoom sur l'image */
+}
+
+#insee_ref p, #open_data_ref p {
+    margin: 20px;
+}

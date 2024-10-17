@@ -1,0 +1,962 @@
+[
+    {
+      "libGeo": "Ain",
+      "indiceJeunesse": "1,6",
+      "txChom": "26,6",
+      "txEmp": "47,8",
+      "partPopSansDip": 49.5,
+      "partPopBepCap": 25.9,
+      "partPopBac": 14.5,
+      "partPopBacSup": 10.1
+    },
+    {
+      "libGeo": "Aisne",
+      "indiceJeunesse": "1,6",
+      "txChom": "42,3",
+      "txEmp": "35,7",
+      "partPopSansDip": "50,6",
+      "partPopBepCap": "27,8",
+      "partPopBac": "12,3",
+      "partPopBacSup": "9,3"
+    },
+    {
+      "libGeo": "Allier",
+      "indiceJeunesse": "1,1",
+      "txChom": "35,2",
+      "txEmp": "39,0",
+      "partPopSansDip": "48,0",
+      "partPopBepCap": "27,2",
+      "partPopBac": "13,3",
+      "partPopBacSup": "11,4"
+    },
+    {
+      "libGeo": "Alpes-de-Haute-Provence",
+      "indiceJeunesse": "1,2",
+      "txChom": "21,9",
+      "txEmp": "47,4",
+      "partPopSansDip": "39,2",
+      "partPopBepCap": "25,4",
+      "partPopBac": "17,5",
+      "partPopBacSup": "18,0"
+    },
+    {
+      "libGeo": "Hautes-Alpes",
+      "indiceJeunesse": "1,1",
+      "txChom": "18,1",
+      "txEmp": "57,0",
+      "partPopSansDip": "31,0",
+      "partPopBepCap": "28,6",
+      "partPopBac": "17,7",
+      "partPopBacSup": "22,7"
+    },
+    {
+      "libGeo": "Alpes-Maritimes",
+      "indiceJeunesse": "1,6",
+      "txChom": "23,1",
+      "txEmp": "47,4",
+      "partPopSansDip": "48,4",
+      "partPopBepCap": "24,1",
+      "partPopBac": "13,8",
+      "partPopBacSup": "13,6"
+    },
+    {
+      "libGeo": "Ardèche",
+      "indiceJeunesse": "1,4",
+      "txChom": "30,8",
+      "txEmp": "44,2",
+      "partPopSansDip": "44,4",
+      "partPopBepCap": "24,6",
+      "partPopBac": "16,4",
+      "partPopBacSup": "14,6"
+    },
+    {
+      "libGeo": "Ardennes",
+      "indiceJeunesse": "1,1",
+      "txChom": "41,8",
+      "txEmp": "35,0",
+      "partPopSansDip": "50,8",
+      "partPopBepCap": "27,9",
+      "partPopBac": "11,1",
+      "partPopBacSup": "10,2"
+    },
+    {
+      "libGeo": "Ariège",
+      "indiceJeunesse": "0,9",
+      "txChom": "30,8",
+      "txEmp": "46,8",
+      "partPopSansDip": "35,6",
+      "partPopBepCap": "26,2",
+      "partPopBac": "17,0",
+      "partPopBacSup": "21,2"
+    },
+    {
+      "libGeo": "Aube",
+      "indiceJeunesse": "2,0",
+      "txChom": "40,1",
+      "txEmp": "36,6",
+      "partPopSansDip": "50,4",
+      "partPopBepCap": "24,9",
+      "partPopBac": "12,9",
+      "partPopBacSup": "11,8"
+    },
+    {
+      "libGeo": "Aude",
+      "indiceJeunesse": "1,2",
+      "txChom": "33,7",
+      "txEmp": "40,0",
+      "partPopSansDip": "40,7",
+      "partPopBepCap": "24,3",
+      "partPopBac": "17,0",
+      "partPopBacSup": "18,0"
+    },
+    {
+      "libGeo": "Aveyron",
+      "indiceJeunesse": "1,6",
+      "txChom": "26,3",
+      "txEmp": "46,8",
+      "partPopSansDip": "37,3",
+      "partPopBepCap": "27,1",
+      "partPopBac": "16,6",
+      "partPopBacSup": "19,0"
+    },
+    {
+      "libGeo": "Bouches-du-Rhône",
+      "indiceJeunesse": "1,6",
+      "txChom": "26,6",
+      "txEmp": "40,9",
+      "partPopSansDip": "45,1",
+      "partPopBepCap": "22,4",
+      "partPopBac": "15,5",
+      "partPopBacSup": "17,0"
+    },
+    {
+      "libGeo": "Calvados",
+      "indiceJeunesse": "1,6",
+      "txChom": "30,2",
+      "txEmp": "42,5",
+      "partPopSansDip": "43,7",
+      "partPopBepCap": "28,4",
+      "partPopBac": "13,8",
+      "partPopBacSup": "14,0"
+    },
+    {
+      "libGeo": "Cantal",
+      "indiceJeunesse": "1,1",
+      "txChom": "24,8",
+      "txEmp": "49,5",
+      "partPopSansDip": "45,7",
+      "partPopBepCap": "33,7",
+      "partPopBac": "11,6",
+      "partPopBacSup": "9,0"
+    },
+    {
+      "libGeo": "Charente",
+      "indiceJeunesse": "1,6",
+      "txChom": "37,0",
+      "txEmp": "40,4",
+      "partPopSansDip": "42,7",
+      "partPopBepCap": "29,1",
+      "partPopBac": "15,7",
+      "partPopBacSup": "12,6"
+    },
+    {
+      "libGeo": "Charente-Maritime",
+      "indiceJeunesse": "1,1",
+      "txChom": "29,0",
+      "txEmp": "46,3",
+      "partPopSansDip": "37,0",
+      "partPopBepCap": "33,5",
+      "partPopBac": "15,7",
+      "partPopBacSup": "13,7"
+    },
+    {
+      "libGeo": "Cher",
+      "indiceJeunesse": "1,3",
+      "txChom": "38,0",
+      "txEmp": "37,7",
+      "partPopSansDip": "46,3",
+      "partPopBepCap": "27,2",
+      "partPopBac": "14,2",
+      "partPopBacSup": "12,3"
+    },
+    {
+      "libGeo": "Corrèze",
+      "indiceJeunesse": "1,4",
+      "txChom": "29,6",
+      "txEmp": "44,0",
+      "partPopSansDip": "51,6",
+      "partPopBepCap": "24,6",
+      "partPopBac": "14,3",
+      "partPopBacSup": "9,4"
+    },
+    {
+      "libGeo": "Côte-d'Or",
+      "indiceJeunesse": "1,6",
+      "txChom": "30,2",
+      "txEmp": "45,8",
+      "partPopSansDip": "45,9",
+      "partPopBepCap": "24,9",
+      "partPopBac": "15,3",
+      "partPopBacSup": "14,0"
+    },
+    {
+      "libGeo": "Côtes-d'Armor",
+      "indiceJeunesse": "1,5",
+      "txChom": "34,9",
+      "txEmp": "40,4",
+      "partPopSansDip": "40,8",
+      "partPopBepCap": "31,0",
+      "partPopBac": "15,8",
+      "partPopBacSup": "12,4"
+    },
+    {
+      "libGeo": "Creuse",
+      "indiceJeunesse": "1,5",
+      "txChom": "29,6",
+      "txEmp": "46,4",
+      "partPopSansDip": "36,4",
+      "partPopBepCap": "32,7",
+      "partPopBac": "13,1",
+      "partPopBacSup": "17,8"
+    },
+    {
+      "libGeo": "Dordogne",
+      "indiceJeunesse": "0,7",
+      "txChom": "27,9",
+      "txEmp": "49,8",
+      "partPopSansDip": "37,8",
+      "partPopBepCap": "25,9",
+      "partPopBac": "18,2",
+      "partPopBacSup": "18,2"
+    },
+    {
+      "libGeo": "Doubs",
+      "indiceJeunesse": "1,8",
+      "txChom": "31,5",
+      "txEmp": "41,4",
+      "partPopSansDip": "45,4",
+      "partPopBepCap": "24,3",
+      "partPopBac": "14,6",
+      "partPopBacSup": "15,7"
+    },
+    {
+      "libGeo": "Drôme",
+      "indiceJeunesse": "1,5",
+      "txChom": "31,0",
+      "txEmp": "43,2",
+      "partPopSansDip": "45,8",
+      "partPopBepCap": "24,5",
+      "partPopBac": "15,5",
+      "partPopBacSup": "14,2"
+    },
+    {
+      "libGeo": "Eure",
+      "indiceJeunesse": "2,1",
+      "txChom": "32,6",
+      "txEmp": "43,9",
+      "partPopSansDip": "47,3",
+      "partPopBepCap": "25,4",
+      "partPopBac": "15,0",
+      "partPopBacSup": "12,4"
+    },
+    {
+      "libGeo": "Eure-et-Loir",
+      "indiceJeunesse": "2,0",
+      "txChom": "32,8",
+      "txEmp": "43,6",
+      "partPopSansDip": "49,9",
+      "partPopBepCap": "24,3",
+      "partPopBac": "14,9",
+      "partPopBacSup": "10,9"
+    },
+    {
+      "libGeo": "Finistère",
+      "indiceJeunesse": "1,4",
+      "txChom": "31,5",
+      "txEmp": "43,5",
+      "partPopSansDip": "38,3",
+      "partPopBepCap": "31,6",
+      "partPopBac": "16,1",
+      "partPopBacSup": "14,0"
+    },
+    {
+      "libGeo": "Corse-du-Sud",
+      "indiceJeunesse": "1,4",
+      "txChom": "16,0",
+      "txEmp": "54,5",
+      "partPopSansDip": "42,0",
+      "partPopBepCap": "29,4",
+      "partPopBac": "17,8",
+      "partPopBacSup": "10,8"
+    },
+    {
+      "libGeo": "Haute-Corse",
+      "indiceJeunesse": "0,8",
+      "txChom": "16,5",
+      "txEmp": "52,2",
+      "partPopSansDip": "47,0",
+      "partPopBepCap": "23,5",
+      "partPopBac": "18,6",
+      "partPopBacSup": "10,9"
+    },
+    {
+      "libGeo": "Gard",
+      "indiceJeunesse": "1,3",
+      "txChom": "38,7",
+      "txEmp": "34,3",
+      "partPopSansDip": "48,5",
+      "partPopBepCap": "24,1",
+      "partPopBac": "14,7",
+      "partPopBacSup": "12,8"
+    },
+    {
+      "libGeo": "Haute-Garonne",
+      "indiceJeunesse": "1,8",
+      "txChom": "26,1",
+      "txEmp": "47,4",
+      "partPopSansDip": "37,1",
+      "partPopBepCap": "21,3",
+      "partPopBac": "18,6",
+      "partPopBacSup": "23,0"
+    },
+    {
+      "libGeo": "Gers",
+      "indiceJeunesse": "1,4",
+      "txChom": "38,4",
+      "txEmp": "39,2",
+      "partPopSansDip": "48,5",
+      "partPopBepCap": "26,0",
+      "partPopBac": "14,1",
+      "partPopBacSup": "11,4"
+    },
+    {
+      "libGeo": "Gironde",
+      "indiceJeunesse": "1,6",
+      "txChom": "25,5",
+      "txEmp": "50,0",
+      "partPopSansDip": "38,2",
+      "partPopBepCap": "24,9",
+      "partPopBac": "17,1",
+      "partPopBacSup": "19,8"
+    },
+    {
+      "libGeo": "Hérault",
+      "indiceJeunesse": "1,4",
+      "txChom": "31,6",
+      "txEmp": "40,8",
+      "partPopSansDip": "43,7",
+      "partPopBepCap": "21,4",
+      "partPopBac": "15,9",
+      "partPopBacSup": "19,0"
+    },
+    {
+      "libGeo": "Ille-et-Vilaine",
+      "indiceJeunesse": "1,8",
+      "txChom": "29,5",
+      "txEmp": "44,0",
+      "partPopSansDip": "39,4",
+      "partPopBepCap": "23,8",
+      "partPopBac": "17,9",
+      "partPopBacSup": "18,8"
+    },
+    {
+      "libGeo": "Indre",
+      "indiceJeunesse": "1,7",
+      "txChom": "34,8",
+      "txEmp": "42,4",
+      "partPopSansDip": "41,3",
+      "partPopBepCap": "30,8",
+      "partPopBac": "14,3",
+      "partPopBacSup": "13,6"
+    },
+    {
+      "libGeo": "Indre-et-Loire",
+      "indiceJeunesse": "1,6",
+      "txChom": "32,6",
+      "txEmp": "45,1",
+      "partPopSansDip": "41,2",
+      "partPopBepCap": "26,9",
+      "partPopBac": "15,3",
+      "partPopBacSup": "16,6"
+    },
+    {
+      "libGeo": "Isère",
+      "indiceJeunesse": "1,9",
+      "txChom": "27,7",
+      "txEmp": "47,0",
+      "partPopSansDip": "45,8",
+      "partPopBepCap": "22,4",
+      "partPopBac": "14,7",
+      "partPopBacSup": "17,1"
+    },
+    {
+      "libGeo": "Jura",
+      "indiceJeunesse": "1,4",
+      "txChom": "25,9",
+      "txEmp": "43,5",
+      "partPopSansDip": "43,9",
+      "partPopBepCap": "29,9",
+      "partPopBac": "13,5",
+      "partPopBacSup": "12,7"
+    },
+    {
+      "libGeo": "Landes",
+      "indiceJeunesse": "1,5",
+      "txChom": "29,5",
+      "txEmp": "46,2",
+      "partPopSansDip": "38,8",
+      "partPopBepCap": "28,3",
+      "partPopBac": "16,5",
+      "partPopBacSup": "16,4"
+    },
+    {
+      "libGeo": "Loir-et-Cher",
+      "indiceJeunesse": "1,8",
+      "txChom": "32,1",
+      "txEmp": "43,0",
+      "partPopSansDip": "50,6",
+      "partPopBepCap": "22,8",
+      "partPopBac": "14,3",
+      "partPopBacSup": "12,2"
+    },
+    {
+      "libGeo": "Loire",
+      "indiceJeunesse": "1,4",
+      "txChom": "28,5",
+      "txEmp": "45,1",
+      "partPopSansDip": "45,1",
+      "partPopBepCap": "25,5",
+      "partPopBac": "14,9",
+      "partPopBacSup": "14,5"
+    },
+    {
+      "libGeo": "Haute-Loire",
+      "indiceJeunesse": "1,1",
+      "txChom": "30,0",
+      "txEmp": "46,6",
+      "partPopSansDip": "43,9",
+      "partPopBepCap": "27,2",
+      "partPopBac": "16,0",
+      "partPopBacSup": "12,9"
+    },
+    {
+      "libGeo": "Loire-Atlantique",
+      "indiceJeunesse": "2,0",
+      "txChom": "29,1",
+      "txEmp": "48,3",
+      "partPopSansDip": "38,3",
+      "partPopBepCap": "27,0",
+      "partPopBac": "15,9",
+      "partPopBacSup": "18,8"
+    },
+    {
+      "libGeo": "Loiret",
+      "indiceJeunesse": "2,1",
+      "txChom": "30,9",
+      "txEmp": "45,4",
+      "partPopSansDip": "46,7",
+      "partPopBepCap": "22,4",
+      "partPopBac": "15,3",
+      "partPopBacSup": "15,5"
+    },
+    {
+      "libGeo": "Lot",
+      "indiceJeunesse": "1,7",
+      "txChom": "30,8",
+      "txEmp": "45,5",
+      "partPopSansDip": "38,0",
+      "partPopBepCap": "28,0",
+      "partPopBac": "17,8",
+      "partPopBacSup": "16,2"
+    },
+    {
+      "libGeo": "Lot-et-Garonne",
+      "indiceJeunesse": "1,3",
+      "txChom": "31,0",
+      "txEmp": "44,1",
+      "partPopSansDip": "45,1",
+      "partPopBepCap": "25,1",
+      "partPopBac": "14,5",
+      "partPopBacSup": "15,4"
+    },
+    {
+      "libGeo": "Lozère",
+      "indiceJeunesse": "1,4",
+      "txChom": "16,9",
+      "txEmp": "60,1",
+      "partPopSansDip": "42,2",
+      "partPopBepCap": "22,3",
+      "partPopBac": "17,7",
+      "partPopBacSup": "17,8"
+    },
+    {
+      "libGeo": "Maine-et-Loire",
+      "indiceJeunesse": "1,8",
+      "txChom": "34,7",
+      "txEmp": "45,3",
+      "partPopSansDip": "43,7",
+      "partPopBepCap": "26,3",
+      "partPopBac": "15,8",
+      "partPopBacSup": "14,2"
+    },
+    {
+      "libGeo": "Manche",
+      "indiceJeunesse": "1,3",
+      "txChom": "28,1",
+      "txEmp": "48,8",
+      "partPopSansDip": "37,6",
+      "partPopBepCap": "32,1",
+      "partPopBac": "16,0",
+      "partPopBacSup": "14,3"
+    },
+    {
+      "libGeo": "Marne",
+      "indiceJeunesse": "1,7",
+      "txChom": "33,8",
+      "txEmp": "42,2",
+      "partPopSansDip": "46,5",
+      "partPopBepCap": "26,6",
+      "partPopBac": "13,6",
+      "partPopBacSup": "13,2"
+    },
+    {
+      "libGeo": "Haute-Marne",
+      "indiceJeunesse": "1,1",
+      "txChom": "38,0",
+      "txEmp": "38,0",
+      "partPopSansDip": "51,0",
+      "partPopBepCap": "28,2",
+      "partPopBac": "12,5",
+      "partPopBacSup": "8,2"
+    },
+    {
+      "libGeo": "Mayenne",
+      "indiceJeunesse": "1,4",
+      "txChom": "30,6",
+      "txEmp": "45,8",
+      "partPopSansDip": "48,6",
+      "partPopBepCap": "27,1",
+      "partPopBac": "12,1",
+      "partPopBacSup": "12,2"
+    },
+    {
+      "libGeo": "Meurthe-et-Moselle",
+      "indiceJeunesse": "1,4",
+      "txChom": "30,1",
+      "txEmp": "43,6",
+      "partPopSansDip": "42,8",
+      "partPopBepCap": "25,4",
+      "partPopBac": "14,9",
+      "partPopBacSup": "16,9"
+    },
+    {
+      "libGeo": "Meuse",
+      "indiceJeunesse": "1,3",
+      "txChom": "35,6",
+      "txEmp": "41,7",
+      "partPopSansDip": "39,0",
+      "partPopBepCap": "30,4",
+      "partPopBac": "16,1",
+      "partPopBacSup": "14,5"
+    },
+    {
+      "libGeo": "Morbihan",
+      "indiceJeunesse": "2,0",
+      "txChom": "32,6",
+      "txEmp": "40,6",
+      "partPopSansDip": "40,8",
+      "partPopBepCap": "30,6",
+      "partPopBac": "15,6",
+      "partPopBacSup": "13,0"
+    },
+    {
+      "libGeo": "Moselle",
+      "indiceJeunesse": "1,5",
+      "txChom": "32,2",
+      "txEmp": "41,0",
+      "partPopSansDip": "49,6",
+      "partPopBepCap": "25,5",
+      "partPopBac": "13,6",
+      "partPopBacSup": "11,4"
+    },
+    {
+      "libGeo": "Nièvre",
+      "indiceJeunesse": "1,2",
+      "txChom": "42,8",
+      "txEmp": "30,8",
+      "partPopSansDip": "53,8",
+      "partPopBepCap": "25,7",
+      "partPopBac": "12,6",
+      "partPopBacSup": "7,9"
+    },
+    {
+      "libGeo": "Nord",
+      "indiceJeunesse": "1,9",
+      "txChom": "32,3",
+      "txEmp": "42,8",
+      "partPopSansDip": "42,1",
+      "partPopBepCap": "25,4",
+      "partPopBac": "15,9",
+      "partPopBacSup": "16,5"
+    },
+    {
+      "libGeo": "Oise",
+      "indiceJeunesse": "2,4",
+      "txChom": "31,3",
+      "txEmp": "43,5",
+      "partPopSansDip": "49,4",
+      "partPopBepCap": "22,5",
+      "partPopBac": "14,8",
+      "partPopBacSup": "13,3"
+    },
+    {
+      "libGeo": "Orne",
+      "indiceJeunesse": "1,2",
+      "txChom": "36,8",
+      "txEmp": "39,6",
+      "partPopSansDip": "48,5",
+      "partPopBepCap": "29,8",
+      "partPopBac": "11,7",
+      "partPopBacSup": "10,0"
+    },
+    {
+      "libGeo": "Pas-de-Calais",
+      "indiceJeunesse": "1,6",
+      "txChom": "33,3",
+      "txEmp": "41,6",
+      "partPopSansDip": "44,2",
+      "partPopBepCap": "31,6",
+      "partPopBac": "14,8",
+      "partPopBacSup": "9,4"
+    },
+    {
+      "libGeo": "Puy-de-Dôme",
+      "indiceJeunesse": "1,6",
+      "txChom": "29,9",
+      "txEmp": "43,8",
+      "partPopSansDip": "41,6",
+      "partPopBepCap": "26,0",
+      "partPopBac": "15,5",
+      "partPopBacSup": "16,9"
+    },
+    {
+      "libGeo": "Pyrénées-Atlantiques",
+      "indiceJeunesse": "1,2",
+      "txChom": "28,8",
+      "txEmp": "45,4",
+      "partPopSansDip": "40,8",
+      "partPopBepCap": "28,2",
+      "partPopBac": "15,1",
+      "partPopBacSup": "15,9"
+    },
+    {
+      "libGeo": "Hautes-Pyrénées",
+      "indiceJeunesse": "1,2",
+      "txChom": "34,8",
+      "txEmp": "38,9",
+      "partPopSansDip": "42,5",
+      "partPopBepCap": "29,0",
+      "partPopBac": "13,8",
+      "partPopBacSup": "14,7"
+    },
+    {
+      "libGeo": "Pyrénées-Orientales",
+      "indiceJeunesse": "1,6",
+      "txChom": "35,8",
+      "txEmp": "33,7",
+      "partPopSansDip": "43,9",
+      "partPopBepCap": "21,8",
+      "partPopBac": "15,6",
+      "partPopBacSup": "18,7"
+    },
+    {
+      "libGeo": "Bas-Rhin",
+      "indiceJeunesse": "1,9",
+      "txChom": "28,8",
+      "txEmp": "44,5",
+      "partPopSansDip": "45,2",
+      "partPopBepCap": "23,4",
+      "partPopBac": "14,6",
+      "partPopBacSup": "16,7"
+    },
+    {
+      "libGeo": "Haut-Rhin",
+      "indiceJeunesse": "1,9",
+      "txChom": "34,5",
+      "txEmp": "40,3",
+      "partPopSansDip": "48,5",
+      "partPopBepCap": "25,3",
+      "partPopBac": "13,2",
+      "partPopBacSup": "12,9"
+    },
+    {
+      "libGeo": "Rhône",
+      "indiceJeunesse": "1,8",
+      "txChom": "26,1",
+      "txEmp": "47,4",
+      "partPopSansDip": "45,0",
+      "partPopBepCap": "23,0",
+      "partPopBac": "15,9",
+      "partPopBacSup": "16,1"
+    },
+    {
+      "libGeo": "Haute-Saône",
+      "indiceJeunesse": "1,1",
+      "txChom": "34,6",
+      "txEmp": "40,7",
+      "partPopSansDip": "51,4",
+      "partPopBepCap": "27,3",
+      "partPopBac": "12,1",
+      "partPopBacSup": "9,2"
+    },
+    {
+      "libGeo": "Saône-et-Loire",
+      "indiceJeunesse": "1,4",
+      "txChom": "32,5",
+      "txEmp": "42,5",
+      "partPopSansDip": "49,1",
+      "partPopBepCap": "27,3",
+      "partPopBac": "13,4",
+      "partPopBacSup": "10,2"
+    },
+    {
+      "libGeo": "Sarthe",
+      "indiceJeunesse": "1,8",
+      "txChom": "37,7",
+      "txEmp": "41,2",
+      "partPopSansDip": "45,0",
+      "partPopBepCap": "29,3",
+      "partPopBac": "14,8",
+      "partPopBacSup": "10,9"
+    },
+    {
+      "libGeo": "Savoie",
+      "indiceJeunesse": "1,7",
+      "txChom": "27,4",
+      "txEmp": "47,6",
+      "partPopSansDip": "43,9",
+      "partPopBepCap": "26,8",
+      "partPopBac": "15,6",
+      "partPopBacSup": "13,7"
+    },
+    {
+      "libGeo": "Haute-Savoie",
+      "indiceJeunesse": "1,8",
+      "txChom": "23,8",
+      "txEmp": "49,8",
+      "partPopSansDip": "51,9",
+      "partPopBepCap": "22,6",
+      "partPopBac": "13,9",
+      "partPopBacSup": "11,7"
+    },
+    {
+      "libGeo": "Paris",
+      "indiceJeunesse": "1,1",
+      "txChom": "18,7",
+      "txEmp": "57,0",
+      "partPopSansDip": "36,8",
+      "partPopBepCap": "15,8",
+      "partPopBac": "16,9",
+      "partPopBacSup": "30,5"
+    },
+    {
+      "libGeo": "Seine-Maritime",
+      "indiceJeunesse": "1,6",
+      "txChom": "33,8",
+      "txEmp": "42,8",
+      "partPopSansDip": "44,0",
+      "partPopBepCap": "28,8",
+      "partPopBac": "14,6",
+      "partPopBacSup": "12,6"
+    },
+    {
+      "libGeo": "Seine-et-Marne",
+      "indiceJeunesse": "2,6",
+      "txChom": "23,1",
+      "txEmp": "52,0",
+      "partPopSansDip": "43,6",
+      "partPopBepCap": "22,3",
+      "partPopBac": "17,2",
+      "partPopBacSup": "16,9"
+    },
+    {
+      "libGeo": "Yvelines",
+      "indiceJeunesse": "2,2",
+      "txChom": "22,7",
+      "txEmp": "52,3",
+      "partPopSansDip": "46,2",
+      "partPopBepCap": "20,5",
+      "partPopBac": "17,0",
+      "partPopBacSup": "16,3"
+    },
+    {
+      "libGeo": "Deux-Sèvres",
+      "indiceJeunesse": "1,5",
+      "txChom": "34,2",
+      "txEmp": "45,0",
+      "partPopSansDip": "44,7",
+      "partPopBepCap": "26,2",
+      "partPopBac": "13,5",
+      "partPopBacSup": "15,6"
+    },
+    {
+      "libGeo": "Somme",
+      "indiceJeunesse": "2,1",
+      "txChom": "37,2",
+      "txEmp": "38,0",
+      "partPopSansDip": "45,0",
+      "partPopBepCap": "26,4",
+      "partPopBac": "15,0",
+      "partPopBacSup": "13,6"
+    },
+    {
+      "libGeo": "Tarn",
+      "indiceJeunesse": "1,2",
+      "txChom": "33,4",
+      "txEmp": "42,3",
+      "partPopSansDip": "46,0",
+      "partPopBepCap": "25,7",
+      "partPopBac": "14,5",
+      "partPopBacSup": "13,7"
+    },
+    {
+      "libGeo": "Tarn-et-Garonne",
+      "indiceJeunesse": "1,5",
+      "txChom": "26,6",
+      "txEmp": "46,1",
+      "partPopSansDip": "44,9",
+      "partPopBepCap": "17,9",
+      "partPopBac": "15,9",
+      "partPopBacSup": "21,3"
+    },
+    {
+      "libGeo": "Var",
+      "indiceJeunesse": "1,2",
+      "txChom": "27,3",
+      "txEmp": "45,4",
+      "partPopSansDip": "42,4",
+      "partPopBepCap": "26,0",
+      "partPopBac": "16,4",
+      "partPopBacSup": "15,2"
+    },
+    {
+      "libGeo": "Vaucluse",
+      "indiceJeunesse": "1,6",
+      "txChom": "33,1",
+      "txEmp": "41,6",
+      "partPopSansDip": "49,3",
+      "partPopBepCap": "21,8",
+      "partPopBac": "14,9",
+      "partPopBacSup": "14,0"
+    },
+    {
+      "libGeo": "Vendée",
+      "indiceJeunesse": "1,6",
+      "txChom": "28,4",
+      "txEmp": "49,9",
+      "partPopSansDip": "36,5",
+      "partPopBepCap": "31,3",
+      "partPopBac": "14,8",
+      "partPopBacSup": "17,5"
+    },
+    {
+      "libGeo": "Vienne",
+      "indiceJeunesse": "1,7",
+      "txChom": "32,7",
+      "txEmp": "43,3",
+      "partPopSansDip": "39,2",
+      "partPopBepCap": "26,1",
+      "partPopBac": "17,0",
+      "partPopBacSup": "17,7"
+    },
+    {
+      "libGeo": "Haute-Vienne",
+      "indiceJeunesse": "1,6",
+      "txChom": "34,9",
+      "txEmp": "41,2",
+      "partPopSansDip": "46,7",
+      "partPopBepCap": "24,9",
+      "partPopBac": "14,6",
+      "partPopBacSup": "13,7"
+    },
+    {
+      "libGeo": "Vosges",
+      "indiceJeunesse": "1,3",
+      "txChom": "39,5",
+      "txEmp": "36,3",
+      "partPopSansDip": "49,2",
+      "partPopBepCap": "26,3",
+      "partPopBac": "13,8",
+      "partPopBacSup": "10,8"
+    },
+    {
+      "libGeo": "Yonne",
+      "indiceJeunesse": "1,7",
+      "txChom": "33,2",
+      "txEmp": "42,7",
+      "partPopSansDip": "47,4",
+      "partPopBepCap": "28,2",
+      "partPopBac": "13,2",
+      "partPopBacSup": "11,3"
+    },
+    {
+      "libGeo": "Territoire de Belfort",
+      "indiceJeunesse": "1,3",
+      "txChom": "32,1",
+      "txEmp": "43,1",
+      "partPopSansDip": "44,8",
+      "partPopBepCap": "25,8",
+      "partPopBac": "13,6",
+      "partPopBacSup": "15,8"
+    },
+    {
+      "libGeo": "Essonne",
+      "indiceJeunesse": "2,7",
+      "txChom": "19,6",
+      "txEmp": "55,5",
+      "partPopSansDip": "37,7",
+      "partPopBepCap": "22,2",
+      "partPopBac": "19,5",
+      "partPopBacSup": "20,6"
+    },
+    {
+      "libGeo": "Hauts-de-Seine",
+      "indiceJeunesse": "1,6",
+      "txChom": "21,3",
+      "txEmp": "55,6",
+      "partPopSansDip": "40,0",
+      "partPopBepCap": "21,2",
+      "partPopBac": "17,3",
+      "partPopBacSup": "21,4"
+    },
+    {
+      "libGeo": "Seine-Saint-Denis",
+      "indiceJeunesse": "2,1",
+      "txChom": "22,1",
+      "txEmp": "53,4",
+      "partPopSansDip": "44,2",
+      "partPopBepCap": "17,9",
+      "partPopBac": "17,5",
+      "partPopBacSup": "20,4"
+    },
+    {
+      "libGeo": "Val-de-Marne",
+      "indiceJeunesse": "1,9",
+      "txChom": "19,5",
+      "txEmp": "55,8",
+      "partPopSansDip": "40,9",
+      "partPopBepCap": "21,1",
+      "partPopBac": "17,4",
+      "partPopBacSup": "20,6"
+    },
+    {
+      "libGeo": "Val-d'Oise",
+      "indiceJeunesse": "2,3",
+      "txChom": "20,4",
+      "txEmp": "54,0",
+      "partPopSansDip": "41,9",
+      "partPopBepCap": "21,0",
+      "partPopBac": "18,1",
+      "partPopBacSup": "19,0"
+    }
+  ]
