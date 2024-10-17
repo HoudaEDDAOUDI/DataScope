@@ -408,21 +408,190 @@ li{
 }
 
 /*-------------DEPARTEMENT--------------------------------*/
+/* liste déroulante */ 
+.select {
+    width: fit-content;
+    cursor: pointer;
+    transition: 300ms;
+    color: white;
+    overflow: hidden;
+    bottom: 0px;
+    width: 260px;
+  }
+  
+  .selected {
+    background-color: #464646;
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    z-index: 100000;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .arrow {
+    position: relative;
+    right: 0px;
+    height: 20px;
+    transform: rotate(-90deg);
+    width: 25px;
+    fill: white;
+    z-index: 100000;
+    transition: 300ms;
+  }
+  
+  .options {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #464646;
+    opacity: 0;
+    transition: 300ms;
+    
+    /* Limite la hauteur à 10 options */
+    max-height: 200px; /* Ajuste selon la hauteur de chaque option */
+    overflow-y: auto; /* Ajoute la barre de défilement */
+  }
+  
+  .select:hover > .options {
+    opacity: 1;
+  }
+  
+  .select:hover > .selected .arrow {
+    transform: rotate(0deg);
+  }
+  
+  .option {
+    border-radius: 5px;
+    padding: 5px;
+    transition: 300ms;
+    background-color: #464646;
+    width: 150px;
+    font-size: 15px;
+  }
+  .option:hover {
+    background-color: #4a4cd7c5;
+  }
+  
+  .options input[type="radio"] {
+    display: none;
+  }
+  
+  .options label {
+    display: inline-block;
+  }
+  /* .options label::before {
+    content: attr(data-txt);
+  } */
+  
+  /* .options input[type="radio"]:checked + label {
+    display: none;
+  } */
+  
+  .options input[type="radio"]#all:checked + label {
+    display: none;
+  }
+  
+  .select:has(.options input[type="radio"]#all:checked) .selected::before {
+    content: attr(data-default);
+  }
+  /* .select:has(.options input[type="radio"]#option-1:checked) .selected::before {
+    content: attr(data-one);
+  }
+  .select:has(.options input[type="radio"]#option-2:checked) .selected::before {
+    content: attr(data-two);
+  }
+  .select:has(.options input[type="radio"]#option-3:checked) .selected::before {
+    content: attr(data-three);
+  } */
+/* bouton radio */
+.label {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    padding: 5px 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+.label:hover,
+.label:focus-within,
+.label:active {
+  background: hsla(0, 0%, 71%, 0.139);
+}
 
+.radio-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+}
+.radio-design {
+    width: 17px;
+    height: 17px;
+    border-radius: 100px;
+    background: #4a4cd7c5;
+    position: relative;
+}
+  
+.radio-design::before {
+    content: '';
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: #464646;
+    transform: scale(1);
+    transition: .3s;
+}
+.radio-input:checked+.radio-design::before {
+    transform: scale(0);
+  }
 
+  .label-text {
+    color: #464646;
+    margin-left: 14px;
+    letter-spacing: 3px;
+    /* text-transform: uppercase; */
+    font-size: 15px;
+    font-weight: 600;
+    transition: .3s;
+  }
 
+  .radio-input:checked~.label-text {
+    color: #464646;
+    font-weight: 900;
+  }
+  
 .select_param_depart{
     width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #F5F5F5;
     border-radius: 12px;
     position: relative;
     z-index: 1000;
 }
-
+.map-tooltip {
+    position: absolute;
+    text-align: center;
+    z-index: 1000;
+    color: black;
+    font: 12px sans-serif;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
 .fixed {
     position: fixed;
     top: 0;
@@ -432,7 +601,7 @@ li{
     border-radius: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
 
 #form_depart{
@@ -449,10 +618,10 @@ li{
     gap: 20px;
     padding: 20px;
     width: 96%;
-    height: 600px;
     margin: 20px 0 20px 0;
     background-color: #F5F5F5;
     border-radius: 12px;
+    height: 500px;
 }
 
 .item_carte, .item_classement, .item_inscrit_depart, .item_votants_depart, .item_repart_vote{

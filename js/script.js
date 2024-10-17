@@ -1,23 +1,24 @@
-// FONCTION SELECT DÉPARTEMENT 
-function createDropdown(data) {
-    const dropdown = document.getElementById('departementDropdown');
+// // FONCTION SELECT DÉPARTEMENT 
+// function createDropdown(data) {
+//     const dropdown = document.getElementById('departementDropdown');
 
-    // Parcours de chaque objet du tableau et récupération du libellé du département
-    data.forEach(function (item) {
-        const option = document.createElement('option');
-        option.textContent = item.libelle_du_departement_t1;  // Libellé du département
-        option.value = item.code_du_departement_t1;  // Utilisation du code département comme valeur
-        dropdown.appendChild(option);
-    });
-}
+//     // Parcours de chaque objet du tableau et récupération du libellé du département
+//     data.forEach(function (item) {
+//         const option = document.createElement('option');
+//         option.textContent = item.libelle_du_departement_t1;  // Libellé du département
+//         option.value = item.code_du_departement_t1;  // Utilisation du code département comme valeur
+//         dropdown.appendChild(option);
+//     });
+// }
 
-// Récupération du fichier JSON
-fetch('json/resultats_t1.json')
-    .then(response => response.json())  // Convertir la réponse en objet JSON
-    .then(data => {
-        createDropdown(data);  // Appel de la fonction pour remplir la liste déroulante
-    })
-    .catch(error => console.error('Erreur lors du chargement du fichier JSON :', error));
+// // Récupération du fichier JSON
+// fetch('json/resultats_t1.json')
+//     .then(response => response.json())  // Convertir la réponse en objet JSON
+//     .then(data => {
+//         createDropdown(data);  // Appel de la fonction pour remplir la liste déroulante
+//     })
+//     .catch(error => console.error('Erreur lors du chargement du fichier JSON :', error));
+
 // PAGE FRANCE -------------------------------------------------------------------------
 // FRANCE - REPARTITION DES VOTES TOUR 1 
 fetch('json/resultats_t1.json')
@@ -54,11 +55,11 @@ fetch('json/resultats_t1.json')
             },
             title: {
                 text: 'Répartition des Votes au Tour 1',
-                align: 'center', 
+                align: 'center',
                 style: {
-                    fontSize: '15px', 
-                    fontWeight: '300', 
-                    color: '#464646' 
+                    fontSize: '15px',
+                    fontWeight: '300',
+                    color: '#464646'
                 }
             },
             plotOptions: {
@@ -137,11 +138,11 @@ fetch('json/resultats_t2.json')
             },
             title: {
                 text: 'Répartition des Votes au Tour 2',
-                align: 'center', 
+                align: 'center',
                 style: {
-                    fontSize: '15px', 
-                    fontWeight: '300', 
-                    color: '#464646' 
+                    fontSize: '15px',
+                    fontWeight: '300',
+                    color: '#464646'
                 }
             },
             plotOptions: {
@@ -555,7 +556,7 @@ fetch('json/resultats_t2.json')
 // PAGE DEPARTMENT ---------------------------------------------------------------------------------------------
 
 // DEPARTMENT - CARTE
-const width = 550, height = 550;
+const width = 550, height = 500;
 const path = d3.geoPath();
 
 const projection = d3.geoConicConformal()
@@ -576,14 +577,16 @@ let selectedTour = null;
 let dataJson = null;
 let originalColors = {};
 
+let lastSelectedDepartment = null;
+
 fetch('json/resultats_t2.json')
     .then(response => response.json())
     .then(data => {
         dataJson = data;
 
         // Charger les données GeoJSON
-        d3.json('json/departements-avec-outre-mer.geojson').then(function (geojson) {
-            const departments = deps.selectAll("path")
+        d3.json('json/a-dep2021.json').then(function (geojson) {
+            deps.selectAll("path")
                 .data(geojson.features)
                 .enter()
                 .append("path")
@@ -593,63 +596,105 @@ fetch('json/resultats_t2.json')
                 .attr("stroke", "#ffff")
                 .on("mouseover", function (event, d) {
                     d3.select(this).attr("fill", "black");  // Changer la couleur au survol
+                    div.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    div.html(d.properties.libgeo)
+                        .style("left", (event.pageX + 20) + "px")
+                        .style("top", (event.pageY - 20) + "px")
                 })
                 .on("mouseout", function (event, d) {
-                    const depart = d.properties.nom;  // Le nom du département
-
-                    // Récupérer la couleur d'origine du département
-                    // const fillColor = originalColors[depart] || "#C8C8C8"; // Grisé par défaut si pas de couleur stockée
+                    div.html('');
+                    const depart = d.properties.libgeo;
                     const fillColor = "#C8C8C8";
-                    // Appliquer la couleur d'origine
                     d3.select(this).attr("fill", fillColor);
                 })
                 .on("click", function (event, d) {
                     const h2Element = document.querySelector("h2");
-                    // Vider le texte à l'intérieur
                     h2Element.textContent = "";
-
-                    const depart = d.properties.nom;
-                    // Appeler la fonction pour colorer les départements selon le tour sélectionné
-                    if (selectedTour === 'tour2') {
-                        carteCouleurT2(depart);
-                    } else {
-                        carteCouleurT1(depart);
-                    }
-                    // Colorer en noir le département sélectionné
+                    const depart = d.properties.libgeo;
+                    carteCouleurT1(depart);
                     d3.timeout(() => {
                         d3.select(this).attr("fill", "black");  // Mettre en noir après la sélection
                     }, 10);
+                    document.querySelector('.selected').innerHTML = `${d.properties.libgeo} <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 512 512"
+                        class="arrow">
+                        <path
+                            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path>
+                    </svg>`;
+                    document.querySelector('input[name="choix"][value="tour1"]').checked = true;
                 });
 
         });
     })
     .catch(error => console.error('Erreur lors du chargement du JSON :', error));
+let div = d3.select("body").append("div")
+    .attr("class", "map-tooltip")
+    .style("opacity", 0);
 
-// DEPARTEMENT - LISTE DEROULANTE
 function liste() {
-    // // Charger les résultats du tour 2
-    fetch('json/resultats_t2.json')  // Assurez-vous que ce chemin est correct
+    fetch('json/resultats_t2.json')
         .then(response => response.json())
         .then(data => {
-            dataJsonT2 = data;  // Stocker les données du tour 2
-            const select = document.getElementById('departements');
-            // Ajouter une option pour chaque département du tour 2
-            data.forEach(departement => {
-                const option = document.createElement('option');
-                option.value = departement.libelle_du_departement_t2;  // Utilisez le libellé du tour 2
-                option.textContent = departement.libelle_du_departement_t2;  // Utilisez le libellé du tour 2
-                select.appendChild(option);
+            const optionsContainer = document.getElementById('departements');
+            optionsContainer.innerHTML = ''; // Vider le conteneur avant de le remplir
+
+            // Générer dynamiquement les options avec des <div> et <input type="radio">
+            data.forEach((departement, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.setAttribute('title', departement.libelle_du_departement_t2);
+
+                const inputRadio = document.createElement('input');
+                inputRadio.type = 'radio';
+                inputRadio.id = `option-${index + 1}`;
+                inputRadio.name = 'option';
+                inputRadio.value = departement.libelle_du_departement_t2;
+
+                // Ajout du gestionnaire d'événements pour le click
+                inputRadio.addEventListener('click', () => {
+                    document.querySelector('.selected').innerHTML = `${departement.libelle_du_departement_t2} <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 512 512"
+                            class="arrow">
+                            <path
+                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path>
+                        </svg>`;
+                });
+
+                const label = document.createElement('label');
+                label.className = 'option';
+                label.setAttribute('for', `option-${index + 1}`);
+                label.setAttribute('data-txt', departement.libelle_du_departement_t2); // Ajout de data-txt
+                label.textContent = departement.libelle_du_departement_t2;
+
+                optionDiv.appendChild(inputRadio);
+                optionDiv.appendChild(label);
+
+                optionsContainer.appendChild(optionDiv);
             });
+
+            // Affichez le texte par défaut dans l'élément .selected
+            document.querySelector('.selected').innerHTML = `Sélectionner un département <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1em"
+                        viewBox="0 0 512 512"
+                        class="arrow">
+                        <path
+                            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path>
+                    </svg>`;
         })
         .catch(error => console.error('Erreur lors du chargement du JSON pour le tour 2 :', error));
 
     document.getElementById('submitButton').addEventListener('click', () => {
         const h2Element = document.querySelector("h2");
-
-        // Vider le texte à l'intérieur
         h2Element.textContent = "";
 
-        const depart = document.getElementById('departements').value;
+        // Récupérer la valeur du département sélectionné via les boutons radio
+        const selectedDepartement = document.querySelector('input[name="option"]:checked').value;
 
         const radios = document.querySelectorAll('input[name="choix"]');
         let selectedTour;
@@ -660,9 +705,9 @@ function liste() {
         });
 
         if (selectedTour === 'tour2') {
-            carteCouleurT2(depart);
+            carteCouleurT2(selectedDepartement);
         } else {
-            carteCouleurT1(depart);
+            carteCouleurT1(selectedDepartement);
         }
     });
 }
@@ -673,22 +718,20 @@ liste();
 // DEPARTEMENT - COULEUR CARTE T1
 function carteCouleurT1(depart) {
     // Charger les résultats du tour 1
-    fetch('json/resultats_t1.json')  // Assurez-vous que ce chemin est correct
+    fetch('json/resultats_t1.json')
         .then(response => response.json())
         .then(data => {
-            dataJsonT1 = data;  // Stocker les données du tour 1
+            dataJsonT1 = data;
 
-            // Charger les données GeoJSON
-            d3.json('json/departements-avec-outre-mer.geojson').then(function (geojson) {
+            d3.json('json/a-dep2021.json').then(function (geojson) {
                 deps.selectAll("path")
                     .data(geojson.features)
                     .join("path")
                     .attr('class', 'department')
                     .attr("d", path)
                     .attr("fill", function (d) {
-                        const departmentData = dataJsonT1.find(item => item.libelle_du_departement_t1 === d.properties.nom);
+                        const departmentData = dataJsonT1.find(item => item.libelle_du_departement_t1 === d.properties.libgeo);
                         if (departmentData) {
-                            // Récupération des voix des candidats pour le tour 1
                             let totalMacronT1 = departmentData.voix_c1_t1;
                             let totalLassaleT1 = departmentData.voix_c3_t1;
                             let totalLePenT1 = departmentData.voix_c2_t1;
@@ -696,31 +739,34 @@ function carteCouleurT1(depart) {
                             let totalMelanchonT1 = departmentData.voix_c5_t1;
                             let totalPecresseT1 = departmentData.voix_c6_t1;
 
-                            // Association des candidats à leurs voix et leurs couleurs
                             let candidats = [
-                                { voix: totalMacronT1, couleur: "#C1A5DB" },       // Macron
-                                { voix: totalLassaleT1, couleur: "orange" },     // Lassalle
-                                { voix: totalLePenT1, couleur: "#8CABED" },          // Le Pen
-                                { voix: totalZemmourT1, couleur: "purple" },     // Zemmour
-                                { voix: totalMelanchonT1, couleur: "#71E3D0" },     // Mélenchon
-                                { voix: totalPecresseT1, couleur: "pink" }       // Pécresse
+                                { voix: totalMacronT1, couleur: "#C1A5DB" },
+                                { voix: totalLassaleT1, couleur: "orange" },
+                                { voix: totalLePenT1, couleur: "#8CABED" },
+                                { voix: totalZemmourT1, couleur: "purple" },
+                                { voix: totalMelanchonT1, couleur: "#71E3D0" },
+                                { voix: totalPecresseT1, couleur: "pink" }
                             ];
 
-                            // Tri des candidats en fonction des voix (du plus grand au plus petit)
                             candidats.sort((a, b) => b.voix - a.voix);
 
-                            // Récupération du candidat en tête et application de sa couleur
-                            return candidats[0].couleur;  // La couleur du candidat avec le plus de voix
+                            return candidats[0].couleur;
                         }
-                        return "#C8C8C8";  // Grisé si pas de données pour ce département
+                        return "#C8C8C8";
                     })
                     .on("mouseover", function (event, d) {
-                        d3.select(this).attr("fill", "black");  // Changer la couleur au survol
+                        d3.select(this).attr("fill", "black");
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        div.html(d.properties.libgeo)
+                            .style("left", (event.pageX + 20) + "px")
+                            .style("top", (event.pageY - 20) + "px")
                     })
                     .on("mouseout", function (event, d) {
-                        const departmentData = dataJsonT1.find(item => item.libelle_du_departement_t1 === d.properties.nom);
+                        div.html('');
+                        const departmentData = dataJsonT1.find(item => item.libelle_du_departement_t1 === d.properties.libgeo);
                         if (departmentData) {
-                            // Récupération des voix des candidats pour le tour 1
                             let totalMacronT1 = departmentData.voix_c1_t1;
                             let totalLassaleT1 = departmentData.voix_c3_t1;
                             let totalLePenT1 = departmentData.voix_c2_t1;
@@ -728,32 +774,27 @@ function carteCouleurT1(depart) {
                             let totalMelanchonT1 = departmentData.voix_c5_t1;
                             let totalPecresseT1 = departmentData.voix_c6_t1;
 
-                            // Association des candidats à leurs voix et leurs couleurs
                             let candidats = [
-                                { voix: totalMacronT1, couleur: "#C1A5DB" },       // Macron
-                                { voix: totalLassaleT1, couleur: "orange" },     // Lassalle
-                                { voix: totalLePenT1, couleur: "#8CABED" },          // Le Pen
-                                { voix: totalZemmourT1, couleur: "purple" },     // Zemmour
-                                { voix: totalMelanchonT1, couleur: "#71E3D0" },     // Mélenchon
-                                { voix: totalPecresseT1, couleur: "pink" }       // Pécresse
+                                { voix: totalMacronT1, couleur: "#C1A5DB" },
+                                { voix: totalLassaleT1, couleur: "orange" },
+                                { voix: totalLePenT1, couleur: "#8CABED" },
+                                { voix: totalZemmourT1, couleur: "purple" },
+                                { voix: totalMelanchonT1, couleur: "#71E3D0" },
+                                { voix: totalPecresseT1, couleur: "pink" }
                             ];
 
-                            // Tri des candidats en fonction des voix (du plus grand au plus petit)
                             candidats.sort((a, b) => b.voix - a.voix);
 
                             const fillColor = candidats[0].couleur;
-                            console.log('fillColor : ', fillColor);
-                            d3.select(this).attr("fill", fillColor);  // Appliquer la couleur d'origine
+                            d3.select(this).attr("fill", fillColor);
                         }
                     })
 
-                // Colorer le département sélectionné en noir
                 deps.selectAll("path")
-                    .filter(d => d.properties.nom === depart)  // Filtrer pour trouver le département correspondant
-                    .attr("fill", "black");  // Appliquer la couleur noire
+                    .filter(d => d.properties.libgeo === depart)
+                    .attr("fill", "black");
             });
 
-            // Appel des fonctions pour afficher les informations supplémentaires
             afficherRepartitionVoteT1(depart);
             afficherVoteExprimeT1(depart);
             afficherTop3Candidat(depart);
@@ -827,7 +868,6 @@ function afficherRepartitionVoteT1(depart) {
                 var options = {
                     series: [totalExprimesT1, totalBlancsT1, totalNulsT1, totalAbstententionsT1],
                     chart: {
-                        height: 350,
                         type: 'radialBar',
                     },
                     title: {
@@ -899,8 +939,7 @@ function afficherVoteExprimeT1(depart) {
             document.getElementById('voteExprime').innerHTML = `${totalExprimesT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> exprimés`;
             document.getElementById('votant').innerHTML = `${totalVotantT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
             document.getElementById('inscrit').innerHTML = `${totalInscritsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
-            document.getElementById('nomDepart').innerHTML = `${depart}`;
-            document.getElementById('tour').innerHTML = `Tour 2`;
+            document.getElementById('nomDepart').innerHTML = `Vous avez choisi le département ${depart} pour le Tour 1.`;
         })
         .catch(error => console.error("Erreur lors du chargement des données:", error));
 }
@@ -916,27 +955,33 @@ function carteCouleurT2(depart) {
             dataJsonT2 = data;  // Stocker les données du tour 2
 
             // Charger les données GeoJSON
-            d3.json('json/departements-avec-outre-mer.geojson').then(function (geojson) {
+            d3.json('json/a-dep2021.json').then(function (geojson) {
                 deps.selectAll("path")
                     .data(geojson.features)
                     .join("path")
                     .attr('class', 'department')
                     .attr("d", path)
                     .attr("fill", function (d) {
-                        const departmentData = dataJsonT2.find(item => item.libelle_du_departement_t2 === d.properties.nom);
+                        const departmentData = dataJsonT2.find(item => item.libelle_du_departement_t2 === d.properties.libgeo);
                         if (departmentData) {
                             let totalMacronT2 = departmentData.voix_c1_t2;
                             let totalLePenT2 = departmentData.voix_c2_t2;
-                            return totalMacronT2 > totalLePenT2 ? "#C1A5DB" : "#8CABED";  // Vert pour Macron, rouge pour Le Pen
+                            return totalMacronT2 > totalLePenT2 ? "#C1A5DB" : "#8CABED";
                         }
-                        return "#C8C8C8";  // Grisé si pas de données pour ce département
+                        return "#C8C8C8";
                     })
                     .on("mouseover", function (event, d) {
-                        // Changer la couleur au survol
-                        d3.select(this).attr("fill", "black");  // Colorer en noir au survol
+                        d3.select(this).attr("fill", "black");
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        div.html(d.properties.libgeo)
+                            .style("left", (event.pageX + 20) + "px")
+                            .style("top", (event.pageY - 20) + "px")
                     })
                     .on("mouseout", function (event, d) {
-                        const departmentData = dataJsonT2.find(item => item.libelle_du_departement_t2 === d.properties.nom);
+                        div.html('');
+                        const departmentData = dataJsonT2.find(item => item.libelle_du_departement_t2 === d.properties.libgeo);
                         if (departmentData) {
                             let totalMacronT2 = departmentData.voix_c1_t2;
                             let totalLePenT2 = departmentData.voix_c2_t2;
@@ -949,7 +994,7 @@ function carteCouleurT2(depart) {
 
                 // Colorer le département sélectionné en noir
                 deps.selectAll("path")
-                    .filter(d => d.properties.nom === depart)  // Filtrer pour trouver le département correspondant
+                    .filter(d => d.properties.libgeo === depart)  // Filtrer pour trouver le département correspondant
                     .attr("fill", "black");  // Appliquer la couleur noire
             });
 
@@ -1037,7 +1082,6 @@ function afficherRepartitionVoteT2(depart) {
                 var options = {
                     series: [totalExprimesT2, totalBlancsT2, totalNulsT2, totalAbstententionsT2],
                     chart: {
-                        height: 250,
                         type: 'radialBar',
                     },
                     title: {
@@ -1111,8 +1155,7 @@ function afficherVoteExprimeT2(depart) {
             document.getElementById('voteExprime').innerHTML = `${totalExprimesT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> exprimés`;
             document.getElementById('votant').innerHTML = `${totalVotantT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
             document.getElementById('inscrit').innerHTML = `${totalInscritsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
-            document.getElementById('nomDepart').innerHTML = `${depart}`;
-            document.getElementById('tour').innerHTML = `Tour 2`;
+            document.getElementById('nomDepart').innerHTML = `Vous avez choisi le département ${depart} pour le Tour 2.`;
         })
         .catch(error => console.error("Erreur lors du chargement des données:", error));
 }
