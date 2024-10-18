@@ -1467,22 +1467,17 @@ body.dark-mode .coord_perso a:hover {
 }
 /*TEXTE--------------------------------*/
 body.dark-mode .block_accueil p, 
-body.dark-mode .item_age_titre,
-body.dark-mode .item_socio_titre,
-body.dark-mode .item_inscrit_depart,
-body.dark-mode .item_votants_depart,
-body.dark-mode .item_classement,
 body.dark-mode #nomDepart,
 body.dark-mode #explication_socio p,
 body.dark-mode .coord_perso a,
 body.dark-mode header a,
 body.dark-mode .p_analyse,
-body.dark-mode .nb_votants,
 body.dark-mode .titre_tours{
     color: #EBEBFB;
 }
 
-body.dark-mode header .current{
+body.dark-mode header .current,
+body.dark-mode #h3_ref{
     color: #c8c8fd;
 }
 
@@ -1502,29 +1497,11 @@ body.dark-mode .block{
 }
 
 /*II. CASE---------------------------*/
-body.dark-mode .item2, 
-body.dark-mode .item4, 
-body.dark-mode .item5, 
-body.dark-mode .item6, 
-body.dark-mode .tour2_item2, 
-body.dark-mode .tour2_item4, 
-body.dark-mode .tour2_item5, 
-body.dark-mode .tour2_item6, 
-body.dark-mode .nb_votants,
-body.dark-mode .item1,
-body.dark-mode .item3,
-body.dark-mode .tour2_item1,
-body.dark-mode .tour2_item3,
 body.dark-mode .item_age_legende,
-body.dark-mode .item_age_titre,
-body.dark-mode .item_socio_titre,
-body.dark-mode .item_votants_depart,
-body.dark-mode .item_classement,
-body.dark-mode .item_inscrit_depart,
-body.dark-mode .item_graph_votant,
 body.dark-mode #explication_socio,
 body.dark-mode #houda,
-body.dark-mode #julie
+body.dark-mode #julie,
+body.dark-mode .item_repart_vote
 {
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -1536,6 +1513,4 @@ body.dark-mode .logo_menu
     filter: invert(1);
 }
 /**/
-body.dark-mode .item_repart_vote{
-    background: transparent;
-}
+

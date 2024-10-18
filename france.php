@@ -18,7 +18,7 @@ include("autres_pages/header.php");
 
                 <div id="voteExprime_t1" class="item2"></div>
 
-                <canvas id="top3t1" class="item3"></canvas>
+                <div id="top3t1" class="item3"></div>
 
                 <div id="voteNul_t1" class="item4"></div>
                 <div id="voteBlanc_t1" class="item5"></div>
@@ -35,7 +35,7 @@ include("autres_pages/header.php");
 
                 <div id="voteExprime_t2" class="tour2_item2"></div>
 
-                <canvas id="top2t2" class="tour2_item3"></canvas>
+                <div id="top2t2" class="tour2_item3"></div>
 
                 <div id="voteNul_t2" class="tour2_item4"></div>
                 <div id="voteBlanc_t2" class="tour2_item5"></div>

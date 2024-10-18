@@ -1,19 +1,5 @@
 // PAGE FRANCE -------------------------------------------------------------------------
-// FRANCE - REPARTITION DES VOTES TOUR 1 
-// document.addEventListener('DOMContentLoaded', function () {
-    // Vérification de l'état du dark mode via localStorage
-    // function isDarkModeEnabled() {
-    //     return localStorage.getItem('darkModeEnabled') === 'true';
-    // }
-
-    // // Palettes de couleurs pour les modes clair et sombre
-    // const lightModeColors = ['#7237B9', '#4D32E7', '#0b74d5', '#0F8385'];
-    // const darkModeColors = ['red', 'red', 'red', 'red'];
-    // console.log("Dark Mode Activé: ", localStorage.getItem('darkModeEnabled') === 'true');
-
-    // // Choisir les couleurs en fonction du dark mode
-    // const chartColors = isDarkModeEnabled() ? darkModeColors : lightModeColors;
-
+// FRANCE - REPARTITION DES VOTES TOUR 2
     fetch('json/resultats_t1.json')
         .then(response => response.json())
         .then(dataJson => {
@@ -77,7 +63,6 @@
             chart.render();
         })
         .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
-// });
 // FRANCE - REPARTITION DES VOTES TOUR 2
 fetch('json/resultats_t2.json')
     .then(response => response.json())
@@ -154,108 +139,147 @@ fetch('json/resultats_t1.json')
         let totalZemmourT1 = 0;
         let totalMelanchonT1 = 0;
         let totalPecresseT1 = 0;
-        let nomMacron = 0;
-        let nomLassale = 0;
-        let nomLePen = 0;
-        let nomZemmour = 0;
-        let nomMelanchon = 0;
-        let nomPecresse = 0;
 
+        // Variables pour les noms des candidats
+        let nomMacron, nomLassale, nomLePen, nomZemmour, nomMelanchon, nomPecresse;
+
+        // Calculer les voix pour chaque candidat
         for (const departement in dataJson) {
             nomMacron = dataJson[departement].nom_c1_t1;
-            totalMacronT1 += dataJson[departement].voix_c1_t1;
+            totalMacronT1 += dataJson[departement].voix_c1_t1 || 0;
 
             nomLassale = dataJson[departement].nom_c3_2;
-            totalLassaleT1 += dataJson[departement].voix_c3_t1;
+            totalLassaleT1 += dataJson[departement].voix_c3_t1 || 0;
 
             nomLePen = dataJson[departement].nom_c2_t1;
-            totalLePenT1 += dataJson[departement].voix_c2_t1;
+            totalLePenT1 += dataJson[departement].voix_c2_t1 || 0;
 
             nomZemmour = dataJson[departement].nom_c4_t1;
-            totalZemmourT1 += dataJson[departement].voix_c4_t1;
+            totalZemmourT1 += dataJson[departement].voix_c4_t1 || 0;
 
             nomMelanchon = dataJson[departement].nom_c5_t1;
-            totalMelanchonT1 += dataJson[departement].voix_c5_t1;
+            totalMelanchonT1 += dataJson[departement].voix_c5_t1 || 0;
 
             nomPecresse = dataJson[departement].nom_c6_t1;
-            totalPecresseT1 += dataJson[departement].voix_c6_t1;
+            totalPecresseT1 += dataJson[departement].voix_c6_t1 || 0;
         }
 
+        // Vérifier les totaux
+        console.log("Total Macron: ", totalMacronT1);
+        console.log("Total Lassale: ", totalLassaleT1);
+        console.log("Total Le Pen: ", totalLePenT1);
+        console.log("Total Zemmour: ", totalZemmourT1);
+        console.log("Total Melanchon: ", totalMelanchonT1);
+        console.log("Total Pecresse: ", totalPecresseT1);
+
+        // Créer le tableau des candidats
         let candidats = [
-            {
-                nom: nomMacron,
-                voix: totalMacronT1
-            },
-            {
-                nom: nomLassale,
-                voix: totalLassaleT1
-            },
-            {
-                nom: nomLePen,
-                voix: totalLePenT1
-            },
-            {
-                nom: nomZemmour,
-                voix: totalZemmourT1
-            },
-            {
-                nom: nomMelanchon,
-                voix: totalMelanchonT1
-            },
-            {
-                nom: nomPecresse,
-                voix: totalPecresseT1
-            }
+            { nom: nomMacron, voix: totalMacronT1 },
+            { nom: nomLassale, voix: totalLassaleT1 },
+            { nom: nomLePen, voix: totalLePenT1 },
+            { nom: nomZemmour, voix: totalZemmourT1 },
+            { nom: nomMelanchon, voix: totalMelanchonT1 },
+            { nom: nomPecresse, voix: totalPecresseT1 }
         ];
 
         candidats.sort((a, b) => b.voix - a.voix);
         let top3Candidats = candidats.slice(0, 3);
 
-
-        const top3t1 = new Chart(
-            document.getElementById('top3t1'),
-            {
-                type: 'bar',
-                data: {
-                    labels: [
-                        top3Candidats[0].nom,
-                        top3Candidats[1].nom,
-                        top3Candidats[2].nom
-                    ],
-                    datasets: [{
-                        label: 'Nombres de voix:',
-                        backgroundColor: [
-                            '#7237B9',
-                            '#4D32E7',
-                            '#0b74d5',
-                        ],
-                        hoverOffset: 4,
-                        data: [top3Candidats[0].voix, top3Candidats[1].voix, top3Candidats[2].voix],
-                        borderRadius: 50,
-                        barPercentage: 0.7, // Ajuste la largeur des barres 
-                        // categoryPercentage: 1, // Ajuste la largeur relative des barres dans la catégorie
-                        // barThickness: 30, // Définit une épaisseur fixe pour les barres
-                        // maxBarThickness: 40, // Limite maximale de la largeur des barres
-                    }]
+        var options = {
+            series: [{
+                data: [
+                    top3Candidats[0].voix, 
+                    top3Candidats[1].voix, 
+                    top3Candidats[2].voix
+                ] 
+            }],
+            chart: {
+                id: 'barYear',
+                width: '100%',
+                type: 'bar'
+            },
+            plotOptions: {
+                bar: {
+                    distributed: true,
+                    horizontal: true,
+                    borderRadius: 7, 
+                    barHeight: '50%',
+                    dataLabels: {
+                        position: 'bottom'
+                    }
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                textAnchor: 'start',
+                style: {
+                    colors: ['#fff'], 
+                    fontSize: 15
                 },
-                options: {
-                    plugins: {
-                        title: {
-                            text: 'Répartition des votes tour 2',
-                            display: true
-                        }
-                    },
-                    scales: {
-                        x: {
-                            display: false,
-                        },
-                        y: {
-                            display: false,
+                formatter: function (val, opt) {
+                    return top3Candidats[opt.dataPointIndex].nom; 
+                },
+                offsetX: 0,
+            },
+            colors: ['#4D32E7', '#0b74d5', '#7237B9'],
+            states: {
+                normal: {
+                    filter: {
+                        type: 'desaturate'
+                    }
+                },
+                active: {
+                    allowMultipleDataPointsSelection: true,
+                    filter: {
+                        type: 'darken',
+                        value: 1
+                    }
+                }
+            },
+            tooltip: {
+                x: {
+                    show: false
+                },
+                y: {
+                    title: {
+                        formatter: function (val, opts) {
+                            const voix = opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex];
+                            return `${top3Candidats[opts.dataPointIndex].nom}: `;
                         }
                     }
                 }
+            },
+            title: {
+                text: 'Top 3 des candidats au Tour 1',
+                offsetX: 15,
+                style: {
+                    fontSize: '15px',
+                    fontWeight: '300',
+                    color: '#464646'
+                }
+            },
+            legend: {
+                show: false 
+            },
+            grid: {
+                show: false 
+            },
+            xaxis: {
+                labels: {
+                    show: false 
+                },
+                show: false
+            },
+            yaxis: {
+                labels: {
+                    show: true 
+                },
+                show: false 
             }
-        );
+        };
+        var top3t1 = new ApexCharts(document.querySelector("#top3t1"), options);
+        top3t1.render();
+
     })
     .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
 
@@ -293,48 +317,102 @@ fetch('json/resultats_t2.json')
         cand.sort((a, b) => b.voix - a.voix);
         let top2Candidats = cand.slice(0, 2);
 
-        const top2t2 = new Chart(
-            document.getElementById('top2t2'),
-            {
-                type: 'bar',
-                data: {
-                    labels: [
-                        top2Candidats[0].nom,
-                        top2Candidats[1].nom,
-                    ],
-                    datasets: [{
-                        label: 'Nombres de voix:',
-                        backgroundColor: [
-                            '#7237B9',
-                            '#4D32E7',
-                        ],
-                        hoverOffset: 4,
-                        data: [top2Candidats[0].voix, top2Candidats[1].voix],
-                        borderRadius: 70,
-                        barPercentage: 0.6,
-                    }]
+        var options = {
+            series: [{
+                data: [
+                    top2Candidats[0].voix, 
+                    top2Candidats[1].voix
+                ] 
+            }],
+            chart: {
+                id: 'barYear',
+                width: '300',
+                type: 'bar'
+            },
+            plotOptions: {
+                bar: {
+                    distributed: true,
+                    horizontal: true,
+                    borderRadius: 7, 
+                    barHeight: '40%',
+                    dataLabels: {
+                        position: 'bottom'
+                    }
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                textAnchor: 'start',
+                style: {
+                    colors: ['#fff'], 
+                    fontSize: 15
                 },
-                options: {
-                    plugins: {
-                        title: {
-                            text: 'Répartition des votes tour 2',
-                            display: true
-                        }
-                    },
-                    scales: {
-                        x: {
-                            display: false, // Cache l'axe X
-                        },
-                        y: {
-                            display: false, // Cache l'axe Y et les chiffres
+                formatter: function (val, opt) {
+                    return top2Candidats[opt.dataPointIndex].nom; 
+                },
+                offsetX: 0,
+            },
+            colors: ['#4D32E7', '#0b74d5'],
+            states: {
+                normal: {
+                    filter: {
+                        type: 'desaturate'
+                    }
+                },
+                active: {
+                    allowMultipleDataPointsSelection: true,
+                    filter: {
+                        type: 'darken',
+                        value: 1
+                    }
+                }
+            },
+            tooltip: {
+                x: {
+                    show: false
+                },
+                y: {
+                    title: {
+                        formatter: function (val, opts) {
+                            const voix = opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex];
+                            return `${top2Candidats[opts.dataPointIndex].nom}: `;
                         }
                     }
                 }
+            },
+            title: {
+                text: 'Top 2 des candidats au Tour 2',
+                offsetX: 15,
+                style: {
+                    fontSize: '15px',
+                    fontWeight: '300',
+                    color: '#464646'
+                }
+            },
+            legend: {
+                show: false 
+            },
+            grid: {
+                show: false 
+            },
+            xaxis: {
+                labels: {
+                    show: false 
+                },
+                show: false
+            },
+            yaxis: {
+                labels: {
+                    show: true 
+                },
+                show: false 
             }
-        );
+        };
+        var top2t2 = new ApexCharts(document.querySelector("#top2t2"), options);
+        top2t2.render();
+
     })
     .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
-
 // FRANCE - AGE
 fetch('json/vote_tour_age.json')
     .then(response => response.json())
