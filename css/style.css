@@ -37,7 +37,7 @@ h1 {
 }
 
 .h2_titre {
-    color: #4A4DD7;
+    color: #3F42D4;
     font-size: 20pt;
     text-align: center;
     margin-top: 0;
@@ -100,15 +100,34 @@ header li {
 }
 
 header a {
-    color: #8F9296;
+    color: #57595C;
     padding: 10px 10px;
     display: flex;
     align-items: center;
+    position: relative; 
+    overflow: hidden; 
+    text-decoration: none; 
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #c7c7ff; 
+    opacity: 0.2;
+    transition: left 0.3s ease;
+    border-radius: 15px; 
+}
+
+header a:hover::after {
+    left: 0;
 }
 
 header a:hover {
-    background-color: #EBEBFB;
-    border-radius: 15px;
+    color: #3537c9;
 }
 
 header a img {
@@ -127,7 +146,7 @@ li {
 
 .current a {
     background-color: #EBEBFB;
-    color: #4A4DD7;
+    color: #3F42D4;
     border-radius: 15px;
     font-weight: bold;
 
@@ -222,7 +241,7 @@ li {
 }
 
 .chang_page {
-    background-color: #4A4DD7;
+    background-color: #3F42D4;
     color: white;
     border: 0px;
     padding: 5px 12px;
@@ -275,7 +294,7 @@ li {
 .tours_france,
 .titre_tours {
     text-align: center;
-    color: #4A4DD7;
+    color: #3F42D4;
     font-weight: 600;
     font-style: normal;
     font-size: 15pt;
@@ -312,7 +331,7 @@ li {
 
 /* Adjust button colors */
 .item2 {
-    color: #C1A5DB;
+    color: #7237B9;
     grid-row: 2 /3;
     grid-column: 2 /3;
 }
@@ -320,19 +339,19 @@ li {
 .item4 {
     grid-row: 3 /4;
     grid-column: 2 /3;
-    color: #7a67ee;
+    color: #4D32E7;
 }
 
 .item5 {
     grid-row: 4 /5;
     grid-column: 2 /3;
-    color: #8CABED;
+    color: #0b74d5;
 }
 
 .item6 {
     grid-row: 5 /6;
     grid-column: 2 /3;
-    color: #71E3D0;
+    color: #0F8385;
 }
 
 .item1,
@@ -393,7 +412,7 @@ li {
 }
 
 .tour2_item2 {
-    color: #C1A5DB;
+    color: #7237B9;
     grid-row: 2 /3;
     grid-column: 1 /2;
 }
@@ -401,19 +420,19 @@ li {
 .tour2_item4 {
     grid-row: 3 /4;
     grid-column: 1 /2;
-    color: #7a67ee;
+    color: #4D32E7;
 }
 
 .tour2_item5 {
     grid-row: 4 /5;
     grid-column: 1 /2;
-    color: #8CABED;
+    color: #0b74d5;
 }
 
 .tour2_item6 {
     grid-row: 5 / 6;
     grid-column: 1 /2;
-    color: #71E3D0;
+    color: #0F8385;
 }
 
 /*-----container graphique âge----*/
@@ -689,12 +708,26 @@ li {
     z-index: -1;
 }
 
-.radio-design {
+/* .radio-design {
     width: 17px;
     height: 17px;
     border-radius: 100px;
     background: #4a4cd7c5;
     position: relative;
+} */
+
+.radio-container {
+    display: flex;
+    align-items: center;
+}
+
+.radio-design {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #4a4cd7c5;
 }
 
 .radio-design::before {
@@ -782,7 +815,7 @@ li {
 }
 
 .envoyer:hover {
-    background-color: #4A4DD7;
+    background-color: #3F42D4;
     box-shadow: 0px;
 }
 
@@ -817,7 +850,7 @@ li {
 .item_classement {
     grid-column: 2 / 4;
     grid-row: 1/ 2;
-    color: #4A4DD7;
+    color: #3F42D4;
     font-weight: bold;
     font-size: 16px;
     display: flex;
@@ -833,7 +866,7 @@ li {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    color: #4A4DD7;
+    color: #3F42D4;
     font-size: 20px;
 
 
@@ -846,7 +879,7 @@ li {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    color: #4A4DD7;
+    color: #3F42D4;
     font-size: 20px;
 
 }
@@ -1009,7 +1042,7 @@ li {
     margin-top: 10%;
     font-size: 80px;
     font-weight: 600;
-    color: #4A4DD7;
+    color: #3F42D4;
 }
 
 .image_info {
@@ -1042,7 +1075,7 @@ li {
 }
 
 .item_gras {
-    color: #4A4DD7;
+    color: #3F42D4;
     font-weight: bold;
     padding: 0px 5px;
 }
@@ -1130,7 +1163,7 @@ li {
     margin-top: 8px;
     font-weight: 500;
     font-size: 25px;
-    color: #4A4DD7;
+    color: #3F42D4;
 
 }
 
@@ -1166,7 +1199,7 @@ li {
 }
 
 .coord_perso a:hover {
-    color: #4A4DD7;
+    color: #3F42D4;
 }
 
 /*-------------RÉFÉRENCES--------------------------------*/
@@ -1190,9 +1223,9 @@ li {
     position: relative;
     overflow: hidden;
     height: 150px;
-    /* Hauteur initiale de la div */
+
     transition: height 0.4s ease;
-    /* Transition fluide pour l'agrandissement */
+
 }
 
 #insee_ref p,
@@ -1200,9 +1233,9 @@ li {
 #open_data_ref p,
 #open_data_ref a {
     opacity: 0;
-    /* Cache le texte et le bouton au départ */
+   
     transition: opacity 0.3s ease;
-    /* Transition fluide pour l'apparition du texte et du bouton */
+   
 }
 
 #insee_ref img,
@@ -1210,13 +1243,13 @@ li {
     margin-top: 20px;
     height: 100px;
     transition: transform 0.3s ease;
-    /* Optionnel : animation de zoom sur l'image */
+  
 }
 
 #insee_ref:hover,
 #open_data_ref:hover {
     height: 108%;
-    /* Hauteur agrandie pendant le survol */
+   
 }
 
 #insee_ref:hover p,
@@ -1224,13 +1257,13 @@ li {
 #open_data_ref:hover p,
 #open_data_ref:hover a {
     opacity: 1;
-    /* Fait apparaître le texte et le bouton lors du survol */
+   
 }
 
 #insee_ref:hover img,
 #open_data_ref:hover img {
     transform: scale(1.05);
-    /* Optionnel : effet de zoom sur l'image */
+   
 }
 
 #insee_ref p,
@@ -1238,7 +1271,157 @@ li {
     margin: 20px;
 }
 
+#grid_ref{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr;
+    height: 150px;
+    padding: 20px;
+}
+
+.ref_tour1, .ref_tour2, .ref_estimation{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    transition: all 0.3s ease;
+}
+
+.ref_tour1:hover, .ref_tour2:hover, .ref_estimation:hover{
+    scale: 1.05;
+
+}
+
+.ref_icones{
+    height: 40px;
+}
+
+#h3_ref{
+    color: #464646;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 20px;
+}
+
+
 /* DARK MODE */
+
+.dark {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 68%;
+  }
+  
+  .dark i {
+    display: inline-block;
+    position: relative;
+    top: -9px;
+  }
+  
+  label .switch{
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .switch-container{
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+  }
+  
+  .switch-container > label.btn-color-mode-switch-inner {
+    margin: 0px;
+    width: 140px;
+    height: 30px;
+    background: #E0E0E0;
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+      /*box-shadow: 0px 0px 8px 0px rgba(17, 17, 17, 0.34) inset;*/
+    display: block;
+  }
+  
+  .switch-container > label.btn-color-mode-switch-inner:before {
+    content: attr(data-on);
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    top: 7px;
+    right: 20px;
+  }
+  
+  .switch-container > label.btn-color-mode-switch-inner:after {
+    content: attr(data-off);
+    width: 70px;
+    height: 16px;
+    background: #fff;
+    border-radius: 26px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 6px -2px #111;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+  }
+  
+  .switch-container > .alert {
+    display: none;
+    background: #FF9800;
+    border: none;
+    color: #fff;
+  }
+  
+  .switch-container input[type="checkbox"] {
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0px;
+  }
+  
+  .switch-container input[type="checkbox"]:checked + label.btn-color-mode-switch-inner {
+    background: #151515;
+    color: #fff;
+  }
+  
+  .switch-container input[type="checkbox"]:checked + label.btn-color-mode-switch-inner:after {
+    content: attr(data-on);
+    left: 68px;
+    background: #3c3c3c;
+  }
+  
+  .switch-container input[type="checkbox"]:checked + label.btn-color-mode-switch-inner:before {
+    content: attr(data-off);
+    right: auto;
+    left: 20px;
+  }
+  
+  .switch-container input[type="checkbox"]:checked ~ .alert {
+    display: block;
+  }
+  
+  .dark-preview {
+    background: #0d0d0d;
+  }
+  
+  .white-preview {
+    background: #fff;
+  }
+
+
 
 /*FOND-------------------------*/
 body.dark-mode{

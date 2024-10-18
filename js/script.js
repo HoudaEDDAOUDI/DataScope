@@ -7,7 +7,7 @@
     // }
 
     // // Palettes de couleurs pour les modes clair et sombre
-    // const lightModeColors = ['#C1A5DB', '#9472F7', '#8CABED', '#71E3D0'];
+    // const lightModeColors = ['#7237B9', '#4D32E7', '#0b74d5', '#0F8385'];
     // const darkModeColors = ['red', 'red', 'red', 'red'];
     // console.log("Dark Mode Activé: ", localStorage.getItem('darkModeEnabled') === 'true');
 
@@ -70,7 +70,7 @@
                     }
                 },
                 labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
-                colors: ['#C1A5DB', '#9472F7', '#8CABED', '#71E3D0']
+                colors: ['#7237B9', '#4D32E7', '#0b74d5', '#0F8385']
             };
 
             var chart = new ApexCharts(document.querySelector("#chart"), options);
@@ -136,7 +136,7 @@ fetch('json/resultats_t2.json')
                 }
             },
             labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
-            colors: ['#C1A5DB', '#9472F7', '#8CABED', '#71E3D0']
+            colors: ['#7237B9', '#4D32E7', '#0b74d5', '#0F8385']
         };
 
         var chartencore = new ApexCharts(document.querySelector("#chartencore"), options);
@@ -225,9 +225,9 @@ fetch('json/resultats_t1.json')
                     datasets: [{
                         label: 'Nombres de voix:',
                         backgroundColor: [
-                            '#C1A5DB',
-                            '#9472F7',
-                            '#8CABED',
+                            '#7237B9',
+                            '#4D32E7',
+                            '#0b74d5',
                         ],
                         hoverOffset: 4,
                         data: [top3Candidats[0].voix, top3Candidats[1].voix, top3Candidats[2].voix],
@@ -305,8 +305,8 @@ fetch('json/resultats_t2.json')
                     datasets: [{
                         label: 'Nombres de voix:',
                         backgroundColor: [
-                            '#C1A5DB',
-                            '#9472F7',
+                            '#7237B9',
+                            '#4D32E7',
                         ],
                         hoverOffset: 4,
                         data: [top2Candidats[0].voix, top2Candidats[1].voix],
@@ -831,7 +831,7 @@ function ajouterLegendeT1() {
         .text("Département sélectionné");
 
     const candidats = [
-        { nom: "Macron", couleur: "#C1A5DB" },
+        { nom: "Macron", couleur: "#9472F7" },
         { nom: "Le Pen", couleur: "#8CABED" },
         { nom: "Mélenchon", couleur: "#71E3D0" },
     ];
@@ -955,7 +955,7 @@ function afficherRepartitionVoteT1(depart) {
                         }
                     },
                     labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
-                    colors: ['#C1A5DB', '#9472F7', '#8CABED', '#71E3D0']
+                    colors: ['#7237B9', '#4D32E7', '#0b74d5', '#0F8385']
                 };
 
                 document.querySelector("#tendanceVote").innerHTML = "";
@@ -1029,7 +1029,7 @@ function carteCouleurT2(depart) {
                         if (departmentData) {
                             let totalMacronT2 = departmentData.voix_c1_t2;
                             let totalLePenT2 = departmentData.voix_c2_t2;
-                            return totalMacronT2 > totalLePenT2 ? "#C1A5DB" : "#8CABED";
+                            return totalMacronT2 > totalLePenT2 ? "#7237B9" : "#0b74d5";
                         }
                         return "#C8C8C8";
                     })
@@ -1048,7 +1048,7 @@ function carteCouleurT2(depart) {
                         if (departmentData) {
                             let totalMacronT2 = departmentData.voix_c1_t2;
                             let totalLePenT2 = departmentData.voix_c2_t2;
-                            const fillColor = totalMacronT2 > totalLePenT2 ? "#C1A5DB" : "#8CABED";
+                            const fillColor = totalMacronT2 > totalLePenT2 ? "#7237B9" : "#0b74d5";
                             d3.select(this).attr("fill", fillColor);
                         } else {
                             d3.select(this).attr("fill", "#C8C8C8");
@@ -1095,8 +1095,8 @@ function ajouterLegendeT2() {
         .text("Département sélectionné");
 
     const candidats = [
-        { nom: "Macron", couleur: "#C1A5DB" },
-        { nom: "Le Pen", couleur: "#8CABED" },
+        { nom: "Macron", couleur: "#7237B9" },
+        { nom: "Le Pen", couleur: "#0b74d5" },
     ];
 
     candidats.forEach((candidat, index) => {
@@ -1214,7 +1214,7 @@ function afficherRepartitionVoteT2(depart) {
                         }
                     },
                     labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
-                    colors: ['#C1A5DB', '#9472F7', '#8CABED', '#71E3D0']
+                    colors: ['#7237B9', '#4D32E7', '#0b74d5', '#0F8385']
                 };
 
                 document.querySelector("#tendanceVote").innerHTML = "";
@@ -1334,7 +1334,7 @@ function afficherCsp(depart) {
                         xaxis: {
                             categories: ['Agriculteurs', 'Artisans', 'Cadres', 'Professions intermédiaires', 'Employés', 'Ouvriers', 'Retraités', 'Autres inactifs'],
                         },
-                        colors: ['#C1A5DB']
+                        colors: ['#7237B9']
 
                     };
 
@@ -1487,7 +1487,7 @@ function afficherAge(depart) {
                 xaxis: {
                     categories: ['20-39 ans', '40-59 ans', '60-74 ans', '75 et plus']
                 },
-                colors: ['#C1A5DB']
+                colors: ['#7237B9']
             };
             document.querySelector("#age_dep").innerHTML = "";
             var age_dep = new ApexCharts(document.querySelector("#age_dep"), options);

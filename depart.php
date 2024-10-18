@@ -17,19 +17,15 @@ include("autres_pages/header.php");
         </div>
 
         <label class="label">
-            <input type="radio" id="tour1" name="choix" value="tour1" class="radio-input" />
-            <div class="radio-design"></div>
-            <div class="label-text">Tour 1</div>
-
-            <!-- <label for="tour1">Tour 1</label> -->
-        </label>
-        <label class="label">
-            <input type="radio" id="tour2" name="choix" value="tour2" class="radio-input" />
-            <div class="radio-design"></div>
-            <div class="label-text">Tour 2</div>
-
-            <!-- <label for="tour2">Tour 2</label> -->
-        </label>
+    <input type="radio" id="tour1" name="choix" value="tour1" class="radio-input">
+    <span class="radio-design"></span> <!-- Utilisation de <span> -->
+    <span class="label-text">Tour 1</span>
+</label>
+<label class="label">
+    <input type="radio" id="tour2" name="choix" value="tour2" class="radio-input">
+    <span class="radio-design"></span> <!-- Utilisation de <span> -->
+    <span class="label-text">Tour 2</span>
+</label>
         <button type="submit" id="submitButton" class="envoyer">&#10004;</button>
         <!-- </form> -->
     </div>

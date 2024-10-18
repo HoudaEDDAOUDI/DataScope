@@ -2,16 +2,16 @@
 <html lang="fr">
 
 <head>
-    <meta name="description" content="DataScope met en avant les résultats des élections présidentielles 2022 en France. Explorez des visualisations interactives et détaillées des données électorales par département pour une analyse complète." />
+    <meta name="description" content="DataScope met en avant les résultats des élections présidentielles 2022 en France. Explorez des visualisations interactives et détaillées des données électorales par département pour une analyse complète.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataScope</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" type="image/png" href="images/logos/fav_noir.png" />
+    <link rel="shortcut icon" type="image/png" href="images/logos/fav_noir.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="js/graph.js" defer type="module"></script>
+    <script src="js/graph.js" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
@@ -30,14 +30,13 @@
                 <li <?php echo (basename($_SERVER['PHP_SELF']) == "ref.php") ? 'class="current"' : ''; ?>><a href="ref.php"><img src="<?php echo (basename($_SERVER['PHP_SELF']) == "ref.php") ? 'images/icones/ref_bleu.png' : 'images/icones/ref_gris.png'; ?>" alt="icone références">Références</a></li>
             </ul>
         </nav>
-            <div id="dark">
-                <label class="switch-container">
-                    <input type="checkbox">
-                    <span class="slider"></span>
+            <div class="dark">
+                <label for="color_mode" class="switch switch-container">
+                    <input value="1" id="color_mode" name="color_mode" type="checkbox">
+                    <label class="btn-color-mode-switch-inner" data-off="Light" data-on="Dark" for="color_mode"></label>
                 </label>
-            </div>
+        	</div>
     </header>
 
-</body>
 
-</html>
+

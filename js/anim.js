@@ -1,6 +1,6 @@
 // DARK MODE
 document.addEventListener('DOMContentLoaded', function () {
-    const checkbox = document.querySelector('#dark input[type="checkbox"]');
+    const checkbox = document.querySelector('#color_mode');
     const body = document.body;
 
     // Vérifie si le dark mode est activé dans le localStorage
