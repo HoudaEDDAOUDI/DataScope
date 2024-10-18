@@ -1,7 +1,7 @@
 <?php
     include("autres_pages/header.php");
 ?>
-    <div class="block_principale">
+    <div class="block_principale block">
         <h1>Nos coordonnées</h1>
         <div id="fiche_coord">
             <div id="houda">

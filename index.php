@@ -2,7 +2,7 @@
     include("autres_pages/header.php");
 ?>
     <!-- <div id="content" class="hidden"> -->
-    <div class="block_principale2">
+    <div class="block_principale2 block">
         <div class="block_accueil">
         <img src="images/logos/logo_noir.png" alt="logo DataScope">
         <h1>L’agence de data analyse sur les élections françaises</h1>

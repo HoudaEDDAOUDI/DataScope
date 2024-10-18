@@ -1,7 +1,7 @@
 <?php
     include("autres_pages/header.php");
 ?>
-    <div class="block_principale">
+    <div class="block_principale block">
         <h1>Nos références</h1>
         <div id="references_grid">
             <div id="insee_ref"><img src="images/logos/insee_logo.png" alt="logo insee">

@@ -1,106 +1,83 @@
-// // FONCTION SELECT DÉPARTEMENT 
-// function createDropdown(data) {
-//     const dropdown = document.getElementById('departementDropdown');
-
-//     // Parcours de chaque objet du tableau et récupération du libellé du département
-//     data.forEach(function (item) {
-//         const option = document.createElement('option');
-//         option.textContent = item.libelle_du_departement_t1;  // Libellé du département
-//         option.value = item.code_du_departement_t1;  // Utilisation du code département comme valeur
-//         dropdown.appendChild(option);
-//     });
-// }
-
-// // Récupération du fichier JSON
-// fetch('json/resultats_t1.json')
-//     .then(response => response.json())  // Convertir la réponse en objet JSON
-//     .then(data => {
-//         createDropdown(data);  // Appel de la fonction pour remplir la liste déroulante
-//     })
-//     .catch(error => console.error('Erreur lors du chargement du fichier JSON :', error));
-
 // PAGE FRANCE -------------------------------------------------------------------------
 // FRANCE - REPARTITION DES VOTES TOUR 1 
-fetch('json/resultats_t1.json')
-    .then(response => response.json())
-    .then(dataJson => {
-        let totalExprimes = 0;
-        let totalBlancs = 0;
-        let totalNuls = 0;
-        let totalAbstententions = 0;
+// document.addEventListener('DOMContentLoaded', function () {
+    // Vérification de l'état du dark mode via localStorage
+    // function isDarkModeEnabled() {
+    //     return localStorage.getItem('darkModeEnabled') === 'true';
+    // }
 
-        // Calcul des totaux
-        for (const departement in dataJson) {
-            totalExprimes += dataJson[departement].exprimes_t1;
-            totalBlancs += dataJson[departement].blancs_t1;
-            totalNuls += dataJson[departement].nuls_t1;
-            totalAbstententions += dataJson[departement].abstentions_t1;
-        }
+    // // Palettes de couleurs pour les modes clair et sombre
+    // const lightModeColors = ['#C1A5DB', '#9472F7', '#8CABED', '#71E3D0'];
+    // const darkModeColors = ['red', 'red', 'red', 'red'];
+    // console.log("Dark Mode Activé: ", localStorage.getItem('darkModeEnabled') === 'true');
 
-        // Calcul du total des votes pour les pourcentages
-        let totalVotes = 0;
-        totalVotes = totalExprimes + totalBlancs + totalNuls + totalAbstententions;
+    // // Choisir les couleurs en fonction du dark mode
+    // const chartColors = isDarkModeEnabled() ? darkModeColors : lightModeColors;
 
-        // Calcul des pourcentages
-        let pourcentageExprimes = Math.round((totalExprimes / totalVotes) * 100);
-        let pourcentageBlancs = Math.round((totalBlancs / totalVotes) * 100);
-        let pourcentageNuls = Math.round((totalNuls / totalVotes) * 100);
-        let pourcentageAbstentions = Math.round((totalAbstententions / totalVotes) * 100);
+    fetch('json/resultats_t1.json')
+        .then(response => response.json())
+        .then(dataJson => {
+            let totalExprimes = 0;
+            let totalBlancs = 0;
+            let totalNuls = 0;
+            let totalAbstententions = 0;
 
-        // Configuration du graphique RadialBar avec les pourcentages
-        var options = {
-            series: [pourcentageExprimes, pourcentageBlancs, pourcentageNuls, pourcentageAbstentions],
-            chart: {
-                type: 'radialBar',
-            },
-            title: {
-                text: 'Répartition des Votes au Tour 1',
-                align: 'center',
-                style: {
-                    fontSize: '15px',
-                    fontWeight: '300',
-                    color: '#464646'
-                }
-            },
-            plotOptions: {
-                radialBar: {
-                    dataLabels: {
-                        total: {
-                            show: true,
-                            label: 'Total',
-                            formatter: function () {
-                                return totalVotes.toLocaleString();  // Affiche le total en nombre
+            // Calcul des totaux
+            for (const departement in dataJson) {
+                totalExprimes += dataJson[departement].exprimes_t1;
+                totalBlancs += dataJson[departement].blancs_t1;
+                totalNuls += dataJson[departement].nuls_t1;
+                totalAbstententions += dataJson[departement].abstentions_t1;
+            }
+
+            // Calcul du total des votes pour les pourcentages
+            let totalVotes = 0;
+            totalVotes = totalExprimes + totalBlancs + totalNuls + totalAbstententions;
+
+            // Calcul des pourcentages
+            let pourcentageExprimes = Math.round((totalExprimes / totalVotes) * 100);
+            let pourcentageBlancs = Math.round((totalBlancs / totalVotes) * 100);
+            let pourcentageNuls = Math.round((totalNuls / totalVotes) * 100);
+            let pourcentageAbstentions = Math.round((totalAbstententions / totalVotes) * 100);
+
+            // Configuration du graphique RadialBar avec les pourcentages
+            var options = {
+                series: [pourcentageExprimes, pourcentageBlancs, pourcentageNuls, pourcentageAbstentions],
+                chart: {
+                    type: 'radialBar',
+                },
+                title: {
+                    text: 'Répartition des Votes au Tour 1',
+                    align: 'center',
+                    style: {
+                        fontSize: '15px',
+                        fontWeight: '300',
+                        color: '#464646'
+                        // color: isDarkModeEnabled() ? '#FFFFFF' : '#464646'
+                    }
+                },
+                plotOptions: {
+                    radialBar: {
+                        dataLabels: {
+                            total: {
+                                show: true,
+                                label: 'Total',
+                                formatter: function () {
+                                    return totalVotes.toLocaleString();  // Affiche le total en nombre
+                                }
                             }
-                        }
-                    },
-                    // hollow: {
-                    //     margin: 15, // Marge entre le bord du graphique et le centre vide
-                    //     size: '40%' // Taille du centre vide
-                    // },
-                    // track: {
-                    //     show: true, // Afficher le cercle de fond
-                    //     background: '#e7e7e7', // Couleur de fond du cercle
-                    //     strokeWidth: '97%', // Épaisseur de la ligne de fond
-                    // },
-                    // Ajuste la largeur des barres
-                    // dataLabels: {
-                    //     show: true, // Afficher les étiquettes des barres
-                    // },
-                    // // Largeur des barres (un pourcentage de la largeur totale)
-                    // barHeight: '100%', // Ajuster la hauteur des barres
-                    // // Pour arrondir les barres
-                    // rounded: true
-                }
-            },
-            labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
-            colors: ['#C1A5DB', '#9472F7', '#8CABED', '#71E3D0']
-        };
+                        },
+                    }
+                },
+                labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
+                colors: ['#C1A5DB', '#9472F7', '#8CABED', '#71E3D0']
+            };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-    })
-    .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
-
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+        })
+        .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
+// });
 // FRANCE - REPARTITION DES VOTES TOUR 2
 fetch('json/resultats_t2.json')
     .then(response => response.json())
@@ -234,7 +211,7 @@ fetch('json/resultats_t1.json')
         candidats.sort((a, b) => b.voix - a.voix);
         let top3Candidats = candidats.slice(0, 3);
 
-        
+
         const top3t1 = new Chart(
             document.getElementById('top3t1'),
             {
@@ -606,18 +583,30 @@ fetch('json/resultats_t2.json')
                 })
                 .on("mouseout", function (event, d) {
                     div.html('');
-                    const depart = d.properties.libgeo;
-                    const fillColor = "#C8C8C8";
-                    d3.select(this).attr("fill", fillColor);
+                    if (d.properties.libgeo !== selectedDepartment) {
+                        d3.select(this).attr("fill", "#C8C8C8");  // Couleur grise par défaut
+                    }
                 })
                 .on("click", function (event, d) {
                     const h2Element = document.querySelector("h2");
                     h2Element.textContent = "";
-                    const depart = d.properties.libgeo;
-                    carteCouleurT1(depart);
-                    d3.timeout(() => {
-                        d3.select(this).attr("fill", "black");  // Mettre en noir après la sélection
-                    }, 10);
+                    let depart = '';
+                    // if (lastSelectedDepartment && lastSelectedDepartment !== selectedDepartment) {
+                    //     d3.select(lastSelectedDepartment).attr("fill", "#C8C8C8");
+                    // }
+                    selectedDepartment = d.properties.libgeo;
+                    // lastSelectedDepartment = this;
+                    // d3.select(this).attr("fill", "black");
+
+                    const radioToSelect = document.querySelector(`input[type="radio"][value="${selectedDepartment}"]`);
+                    if (radioToSelect) {
+                        radioToSelect.checked = true;
+                    }
+                    if (selectedTour === 'tour2') {
+                        carteCouleurT2(selectedDepartment);
+                    } else {
+                        carteCouleurT1(selectedDepartment);
+                    }
                     document.querySelector('.selected').innerHTML = `${d.properties.libgeo} <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="1em"
@@ -627,8 +616,18 @@ fetch('json/resultats_t2.json')
                             d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path>
                     </svg>`;
                     document.querySelector('input[name="choix"][value="tour1"]').checked = true;
-                });
 
+                    // lastSelectedDepartment = this;
+                    // if (lastSelectedDepartment && lastSelectedDepartment !== this) {
+                    //     d3.select(lastSelectedDepartment).attr("fill", originalColors[lastSelectedDepartment.properties.libgeo]);
+                    // }
+
+                    // depart = d.properties.libgeo;
+
+                    // originalColors[depart] = d3.select(this).attr("fill");
+                    // d3.select(this).attr("fill", "black");
+
+                });
         });
     })
     .catch(error => console.error('Erreur lors du chargement du JSON :', error));
@@ -642,9 +641,14 @@ function liste() {
         .then(response => response.json())
         .then(data => {
             const optionsContainer = document.getElementById('departements');
-            optionsContainer.innerHTML = ''; // Vider le conteneur avant de le remplir
+            optionsContainer.innerHTML = '';
 
-            // Générer dynamiquement les options avec des <div> et <input type="radio">
+            const defaultOption = document.createElement('div');
+            const defaultLabel = document.createElement('label');
+            defaultLabel.textContent = 'Sélectionner un département';
+            defaultOption.appendChild(defaultLabel);
+            optionsContainer.appendChild(defaultOption);
+
             data.forEach((departement, index) => {
                 const optionDiv = document.createElement('div');
                 optionDiv.setAttribute('title', departement.libelle_du_departement_t2);
@@ -670,7 +674,7 @@ function liste() {
                 const label = document.createElement('label');
                 label.className = 'option';
                 label.setAttribute('for', `option-${index + 1}`);
-                label.setAttribute('data-txt', departement.libelle_du_departement_t2); // Ajout de data-txt
+                label.setAttribute('data-txt', departement.libelle_du_departement_t2);
                 label.textContent = departement.libelle_du_departement_t2;
 
                 optionDiv.appendChild(inputRadio);
@@ -678,8 +682,6 @@ function liste() {
 
                 optionsContainer.appendChild(optionDiv);
             });
-
-            // Affichez le texte par défaut dans l'élément .selected
             document.querySelector('.selected').innerHTML = `Sélectionner un département <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="1em"
@@ -695,8 +697,8 @@ function liste() {
         const h2Element = document.querySelector("h2");
         h2Element.textContent = "";
 
-        // Récupérer la valeur du département sélectionné via les boutons radio
-        const selectedDepartement = document.querySelector('input[name="option"]:checked').value;
+        const selectedRadioDepartment = document.querySelector('input[name="option"]:checked');
+        const depart = selectedRadioDepartment ? selectedRadioDepartment.value : selectedDepartment;
 
         const radios = document.querySelectorAll('input[name="choix"]');
         let selectedTour;
@@ -707,9 +709,9 @@ function liste() {
         });
 
         if (selectedTour === 'tour2') {
-            carteCouleurT2(selectedDepartement);
+            carteCouleurT2(depart);
         } else {
-            carteCouleurT1(selectedDepartement);
+            carteCouleurT1(depart);
         }
     });
 }
@@ -793,18 +795,17 @@ function carteCouleurT1(depart) {
                     })
 
                 deps.selectAll("path")
-                    .filter(d => d.properties.libgeo === depart)
+                    .filter(d => d.properties.libgeo === selectedDepartment)
                     .attr("fill", "black");
             });
             afficherDiplome(depart);
             afficherRepartitionVoteT1(depart);
             afficherVoteExprimeT1(depart);
             afficherTop3Candidat(depart);
-            afficherIndiceDeJeune(depart);
+            afficherIndiceDeJeune(depart)
             afficherAge(depart);
             afficherCsp(depart);
             ajouterLegendeT1();
-
         })
         .catch(error => console.error('Erreur lors du chargement du JSON pour le tour 1 :', error));
 }
@@ -815,20 +816,19 @@ function ajouterLegendeT1() {
 
     const legend = svg.append("g")
         .attr("class", "legend")
-        .attr("transform", "translate(10, 20)"); // Position de la légende
+        .attr("transform", "translate(10, 20)");
 
-    // Ajouter un cercle pour la couleur de sélection
     legend.append("circle")
-        .attr("cx", 9) // Position horizontale du cercle
-        .attr("cy", 9) // Position verticale du cercle (première position)
-        .attr("r", 9) // Rayon du cercle
-        .attr("fill", "black"); // Couleur noire pour le département sélectionné
+        .attr("cx", 9)
+        .attr("cy", 9)
+        .attr("r", 9)
+        .attr("fill", "black");
 
-    // Ajouter le texte pour le département sélectionné
     legend.append("text")
-        .attr("x", 25) // Position horizontale du texte
-        .attr("y", 14) // Position verticale du texte (aligné avec le cercle)
-        .text("Département sélectionné"); // Texte pour le département sélectionné
+        .attr("x", 25)
+        .attr("y", 14)
+        .style("font-size", "14px")
+        .text("Département sélectionné");
 
     const candidats = [
         { nom: "Macron", couleur: "#C1A5DB" },
@@ -836,18 +836,18 @@ function ajouterLegendeT1() {
         { nom: "Mélenchon", couleur: "#71E3D0" },
     ];
 
-    // Ajouter des cercles et du texte pour chaque candidat
     candidats.forEach((candidat, index) => {
-        legend.append("circle") // Créer un cercle pour chaque candidat
-            .attr("cx", 9) // Position horizontale du cercle
-            .attr("cy", (index + 1) * 25 + 9) // Position verticale du cercle
-            .attr("r", 9) // Rayon du cercle
-            .attr("fill", candidat.couleur); // Couleur du cercle
+        legend.append("circle")
+            .attr("cx", 9)
+            .attr("cy", (index + 1) * 25 + 9)
+            .attr("r", 9)
+            .attr("fill", candidat.couleur);
 
         legend.append("text")
-            .attr("x", 25) // Position horizontale du texte
-            .attr("y", (index + 1) * 25 + 14) // Position verticale du texte
-            .text(candidat.nom + " en tête"); // Texte du candidat
+            .attr("x", 25)
+            .attr("y", (index + 1) * 25 + 14)
+            .style("font-size", "10px")
+            .text(candidat.nom + " en tête");
     });
 }
 // DEPARTEMENT - graphique podium 
@@ -902,9 +902,9 @@ function afficherTop3Candidat(depart) {
             candidats.sort((a, b) => b.voix - a.voix);
             let top3Candidats = candidats.slice(0, 3);
 
-            document.getElementById('top1').innerHTML = `1. ${top3Candidats[0].nom}`;
-            document.getElementById('top2').innerHTML = `2. ${top3Candidats[1].nom}`;
-            document.getElementById('top3').innerHTML = ` 3. ${top3Candidats[2].nom}`;
+            document.getElementById('top1').innerHTML = `1.<br> ${top3Candidats[0].nom}`;
+            document.getElementById('top2').innerHTML = `2.<br> ${top3Candidats[1].nom}`;
+            document.getElementById('top3').innerHTML = ` 3.<br> ${top3Candidats[2].nom}`;
         })
         .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
 }
@@ -981,12 +981,12 @@ function afficherVoteExprimeT1(depart) {
             let totalBlancsT1 = 0;
             let totalAbstententionsT1 = 0;
             let totalNulsT1 = 0;
-            let totalExprimesT1 = 0; // Utiliser let pour pouvoir modifier la variable
+            let totalExprimesT1 = 0;
             let totalVotantT1 = 0;
             let totalInscritsT1 = 0;
 
             if (departmentData) {
-                totalExprimesT1 = departmentData.exprimes_t1; // Utiliser la bonne clé pour obtenir le nombre de votes exprimés
+                totalExprimesT1 = departmentData.exprimes_t1;
                 totalBlancsT1 = departmentData.blancs_t1;
                 totalNulsT1 = departmentData.nuls_t1;
                 totalAbstententionsT1 = departmentData.abstentions_t1;
@@ -1001,7 +1001,7 @@ function afficherVoteExprimeT1(depart) {
             document.getElementById('voteExprime').innerHTML = `${totalExprimesT1.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> exprimés`;
             document.getElementById('votant').innerHTML = `${totalVotantT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
             document.getElementById('inscrit').innerHTML = `${totalInscritsT1.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
-            document.getElementById('nomDepart').innerHTML = `Vous avez choisi le département ${depart} pour le Tour 1.`;
+            document.getElementById('nomDepart').innerHTML = `Vous avez choisi le département <span class="item_gras"> ${depart} </span> pour le <span class="item_gras"> Tour 1 </span>.`;
             document.getElementById('titre').innerHTML = `${depart}`;
         })
         .catch(error => console.error("Erreur lors du chargement des données:", error));
@@ -1012,7 +1012,7 @@ function afficherVoteExprimeT1(depart) {
 // DEPARTEMENT - COULEUR CARTE T2
 function carteCouleurT2(depart) {
     // Charger les résultats du tour 2
-    fetch('json/resultats_t2.json')  // Assurez-vous que ce chemin est correct
+    fetch('json/resultats_t2.json')
         .then(response => response.json())
         .then(data => {
             dataJsonT2 = data;  // Stocker les données du tour 2
@@ -1048,17 +1048,16 @@ function carteCouleurT2(depart) {
                         if (departmentData) {
                             let totalMacronT2 = departmentData.voix_c1_t2;
                             let totalLePenT2 = departmentData.voix_c2_t2;
-                            const fillColor = totalMacronT2 > totalLePenT2 ? "#C1A5DB" : "#8CABED";  // Vert pour Macron, rouge pour Le Pen
-                            d3.select(this).attr("fill", fillColor);  // Appliquer la couleur d'origine
+                            const fillColor = totalMacronT2 > totalLePenT2 ? "#C1A5DB" : "#8CABED";
+                            d3.select(this).attr("fill", fillColor);
                         } else {
-                            d3.select(this).attr("fill", "#C8C8C8");  // Grisé si pas de données
+                            d3.select(this).attr("fill", "#C8C8C8");
                         }
                     });
 
-                // Colorer le département sélectionné en noir
                 deps.selectAll("path")
-                    .filter(d => d.properties.libgeo === depart)  // Filtrer pour trouver le département correspondant
-                    .attr("fill", "black");  // Appliquer la couleur noire
+                    .filter(d => d.properties.libgeo === selectedDepartment)
+                    .attr("fill", "black");
             });
 
             // Appel des fonctions pour afficher les informations supplémentaires
@@ -1149,8 +1148,8 @@ function afficherTop2Candidat(depart) {
             cand.sort((a, b) => b.voix - a.voix);
             let top2Candidats = cand.slice(0, 2);
 
-            document.getElementById('top1').innerHTML = `1. ${top2Candidats[0].nom}`;
-            document.getElementById('top2').innerHTML = `2. ${top2Candidats[1].nom}`;
+            document.getElementById('top1').innerHTML = `1.<br> ${top2Candidats[0].nom}`;
+            document.getElementById('top2').innerHTML = `2.<br> ${top2Candidats[1].nom}`;
             document.getElementById('top3').innerHTML = ``;
 
         })
@@ -1263,7 +1262,7 @@ function afficherVoteExprimeT2(depart) {
             document.getElementById('voteExprime').innerHTML = `${totalExprimesT2.toLocaleString('fr-FR').replace(/\s/g, '   ')}<br> exprimés`;
             document.getElementById('votant').innerHTML = `${totalVotantT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} votants`;
             document.getElementById('inscrit').innerHTML = `${totalInscritsT2.toLocaleString('fr-FR').replace(/\s/g, '   ')} inscrits`;
-            document.getElementById('nomDepart').innerHTML = `Vous avez choisi le département ${depart} pour le Tour 2.`;
+            document.getElementById('nomDepart').innerHTML = `Vous avez choisi le département <span class="item_gras">${depart}</span> pour le <span class="item_gras">Tour 2</span>.`;
             document.getElementById('titre').innerHTML = `${depart}`;
         })
         .catch(error => console.error("Erreur lors du chargement des données:", error));
@@ -1425,11 +1424,19 @@ function afficherDiplome(depart) {
                         }
                     }
                 };
+                document.querySelector("#graph_test").innerHTML = "";
                 var graph_test = new ApexCharts(document.querySelector("#graph_test"), options);
                 graph_test.render();
 
+            } else {
+                // Si le département n'a pas de données, afficher un message dans le conteneur #csp
+                document.querySelector("#csp").innerHTML = `Données non disponibles pour : ${depart}`;
             }
         })
+        .catch(error => {
+            console.error("Erreur lors du chargement du fichier JSON :", error);
+            document.querySelector("#csp").innerHTML = `Erreur lors du chargement des données pour : ${depart}`;
+        });
 }
 
 //-----------------AFFICHE TANCHE AGE

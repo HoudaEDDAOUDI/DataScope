@@ -1,7 +1,7 @@
 <?php
     include("autres_pages/header.php");
 ?>
-    <div class="block_principale">
+    <div class="block_principale block">
         <div id="analyse">
         <h1>Analyse</h1>
         <h2 class="h2_titre">Les chiffres clés des élections présidentielles en France en 2022</h2>

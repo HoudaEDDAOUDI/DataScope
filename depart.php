@@ -30,7 +30,7 @@ include("autres_pages/header.php");
 
             <!-- <label for="tour2">Tour 2</label> -->
         </label>
-        <button type="submit" id="submitButton">Envoyer</button>
+        <button type="submit" id="submitButton" class="envoyer">&#10004;</button>
         <!-- </form> -->
     </div>
     <div id="nomDepart">Veuillez choisir un département</div>
