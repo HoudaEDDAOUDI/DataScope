@@ -1,68 +1,68 @@
 // PAGE FRANCE -------------------------------------------------------------------------
 // FRANCE - REPARTITION DES VOTES TOUR 2
-    fetch('json/resultats_t1.json')
-        .then(response => response.json())
-        .then(dataJson => {
-            let totalExprimes = 0;
-            let totalBlancs = 0;
-            let totalNuls = 0;
-            let totalAbstententions = 0;
+fetch('json/resultats_t1.json')
+    .then(response => response.json())
+    .then(dataJson => {
+        let totalExprimes = 0;
+        let totalBlancs = 0;
+        let totalNuls = 0;
+        let totalAbstententions = 0;
 
-            // Calcul des totaux
-            for (const departement in dataJson) {
-                totalExprimes += dataJson[departement].exprimes_t1;
-                totalBlancs += dataJson[departement].blancs_t1;
-                totalNuls += dataJson[departement].nuls_t1;
-                totalAbstententions += dataJson[departement].abstentions_t1;
-            }
+        // Calcul des totaux
+        for (const departement in dataJson) {
+            totalExprimes += dataJson[departement].exprimes_t1;
+            totalBlancs += dataJson[departement].blancs_t1;
+            totalNuls += dataJson[departement].nuls_t1;
+            totalAbstententions += dataJson[departement].abstentions_t1;
+        }
 
-            // Calcul du total des votes pour les pourcentages
-            let totalVotes = 0;
-            totalVotes = totalExprimes + totalBlancs + totalNuls + totalAbstententions;
+        // Calcul du total des votes pour les pourcentages
+        let totalVotes = 0;
+        totalVotes = totalExprimes + totalBlancs + totalNuls + totalAbstententions;
 
-            // Calcul des pourcentages
-            let pourcentageExprimes = Math.round((totalExprimes / totalVotes) * 100);
-            let pourcentageBlancs = Math.round((totalBlancs / totalVotes) * 100);
-            let pourcentageNuls = Math.round((totalNuls / totalVotes) * 100);
-            let pourcentageAbstentions = Math.round((totalAbstententions / totalVotes) * 100);
+        // Calcul des pourcentages
+        let pourcentageExprimes = Math.round((totalExprimes / totalVotes) * 100);
+        let pourcentageBlancs = Math.round((totalBlancs / totalVotes) * 100);
+        let pourcentageNuls = Math.round((totalNuls / totalVotes) * 100);
+        let pourcentageAbstentions = Math.round((totalAbstententions / totalVotes) * 100);
 
-            // Configuration du graphique RadialBar avec les pourcentages
-            var options = {
-                series: [pourcentageExprimes, pourcentageBlancs, pourcentageNuls, pourcentageAbstentions],
-                chart: {
-                    type: 'radialBar',
-                },
-                title: {
-                    text: 'Répartition des Votes au Tour 1',
-                    align: 'center',
-                    style: {
-                        fontSize: '15px',
-                        fontWeight: '300',
-                        color: '#464646'
-                        // color: isDarkModeEnabled() ? '#FFFFFF' : '#464646'
-                    }
-                },
-                plotOptions: {
-                    radialBar: {
-                        dataLabels: {
-                            total: {
-                                show: true,
-                                label: 'Total',
-                                formatter: function () {
-                                    return totalVotes.toLocaleString();  // Affiche le total en nombre
-                                }
+        // Configuration du graphique RadialBar avec les pourcentages
+        var options = {
+            series: [pourcentageExprimes, pourcentageBlancs, pourcentageNuls, pourcentageAbstentions],
+            chart: {
+                type: 'radialBar',
+            },
+            title: {
+                text: 'Répartition des Votes au Tour 1',
+                align: 'center',
+                style: {
+                    fontSize: '15px',
+                    fontWeight: '300',
+                    color: '#464646'
+                    // color: isDarkModeEnabled() ? '#FFFFFF' : '#464646'
+                }
+            },
+            plotOptions: {
+                radialBar: {
+                    dataLabels: {
+                        total: {
+                            show: true,
+                            label: 'Total',
+                            formatter: function () {
+                                return totalVotes.toLocaleString();  // Affiche le total en nombre
                             }
-                        },
-                    }
-                },
-                labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
-                colors: ['#7237B9', '#4D32E7', '#0b74d5', '#0F8385']
-            };
+                        }
+                    },
+                }
+            },
+            labels: ['Exprimé', 'Vote nul', 'Vote blanc', 'Abstention'],
+            colors: ['#7237B9', '#4D32E7', '#0b74d5', '#0F8385']
+        };
 
-            var chart = new ApexCharts(document.querySelector("#chart"), options);
-            chart.render();
-        })
-        .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    })
+    .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
 // FRANCE - REPARTITION DES VOTES TOUR 2
 fetch('json/resultats_t2.json')
     .then(response => response.json())
@@ -188,10 +188,10 @@ fetch('json/resultats_t1.json')
         var options = {
             series: [{
                 data: [
-                    top3Candidats[0].voix, 
-                    top3Candidats[1].voix, 
+                    top3Candidats[0].voix,
+                    top3Candidats[1].voix,
                     top3Candidats[2].voix
-                ] 
+                ]
             }],
             chart: {
                 id: 'barYear',
@@ -202,7 +202,7 @@ fetch('json/resultats_t1.json')
                 bar: {
                     distributed: true,
                     horizontal: true,
-                    borderRadius: 7, 
+                    borderRadius: 7,
                     barHeight: '50%',
                     dataLabels: {
                         position: 'bottom'
@@ -213,11 +213,11 @@ fetch('json/resultats_t1.json')
                 enabled: true,
                 textAnchor: 'start',
                 style: {
-                    colors: ['#fff'], 
+                    colors: ['#fff'],
                     fontSize: 15
                 },
                 formatter: function (val, opt) {
-                    return top3Candidats[opt.dataPointIndex].nom; 
+                    return top3Candidats[opt.dataPointIndex].nom;
                 },
                 offsetX: 0,
             },
@@ -259,22 +259,22 @@ fetch('json/resultats_t1.json')
                 }
             },
             legend: {
-                show: false 
+                show: false
             },
             grid: {
-                show: false 
+                show: false
             },
             xaxis: {
                 labels: {
-                    show: false 
+                    show: false
                 },
                 show: false
             },
             yaxis: {
                 labels: {
-                    show: true 
+                    show: true
                 },
-                show: false 
+                show: false
             }
         };
         var top3t1 = new ApexCharts(document.querySelector("#top3t1"), options);
@@ -320,9 +320,9 @@ fetch('json/resultats_t2.json')
         var options = {
             series: [{
                 data: [
-                    top2Candidats[0].voix, 
+                    top2Candidats[0].voix,
                     top2Candidats[1].voix
-                ] 
+                ]
             }],
             chart: {
                 id: 'barYear',
@@ -333,7 +333,7 @@ fetch('json/resultats_t2.json')
                 bar: {
                     distributed: true,
                     horizontal: true,
-                    borderRadius: 7, 
+                    borderRadius: 7,
                     barHeight: '40%',
                     dataLabels: {
                         position: 'bottom'
@@ -344,11 +344,11 @@ fetch('json/resultats_t2.json')
                 enabled: true,
                 textAnchor: 'start',
                 style: {
-                    colors: ['#fff'], 
+                    colors: ['#fff'],
                     fontSize: 15
                 },
                 formatter: function (val, opt) {
-                    return top2Candidats[opt.dataPointIndex].nom; 
+                    return top2Candidats[opt.dataPointIndex].nom;
                 },
                 offsetX: 0,
             },
@@ -390,22 +390,22 @@ fetch('json/resultats_t2.json')
                 }
             },
             legend: {
-                show: false 
+                show: false
             },
             grid: {
-                show: false 
+                show: false
             },
             xaxis: {
                 labels: {
-                    show: false 
+                    show: false
                 },
                 show: false
             },
             yaxis: {
                 labels: {
-                    show: true 
+                    show: true
                 },
-                show: false 
+                show: false
             }
         };
         var top2t2 = new ApexCharts(document.querySelector("#top2t2"), options);
@@ -685,6 +685,7 @@ fetch('json/resultats_t2.json')
                     } else {
                         carteCouleurT1(selectedDepartment);
                     }
+
                     document.querySelector('.selected').innerHTML = `${d.properties.libgeo} <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="1em"
@@ -876,6 +877,7 @@ function carteCouleurT1(depart) {
                     .filter(d => d.properties.libgeo === selectedDepartment)
                     .attr("fill", "black");
             });
+
             afficherDiplome(depart);
             afficherRepartitionVoteT1(depart);
             afficherVoteExprimeT1(depart);
@@ -884,6 +886,7 @@ function carteCouleurT1(depart) {
             afficherAge(depart);
             afficherCsp(depart);
             ajouterLegendeT1();
+
         })
         .catch(error => console.error('Erreur lors du chargement du JSON pour le tour 1 :', error));
 }
@@ -928,7 +931,7 @@ function ajouterLegendeT1() {
             .text(candidat.nom + " en tête");
     });
 }
-// DEPARTEMENT - graphique podium 
+// DEPARTEMENT - PODIUM
 function afficherTop3Candidat(depart) {
     fetch('json/resultats_t1.json')
         .then(response => response.json())
@@ -1009,6 +1012,8 @@ function afficherRepartitionVoteT1(depart) {
                     series: [totalExprimesT1, totalBlancsT1, totalNulsT1, totalAbstententionsT1],
                     chart: {
                         type: 'radialBar',
+                        height: 200,
+                        width: 250,
                     },
                     title: {
                         text: `Répartition des Votes`,
@@ -1139,6 +1144,7 @@ function carteCouleurT2(depart) {
             });
 
             // Appel des fonctions pour afficher les informations supplémentaires
+
             afficherDiplome(depart);
             afficherRepartitionVoteT2(depart);
             afficherVoteExprimeT2(depart);
@@ -1191,7 +1197,6 @@ function ajouterLegendeT2() {
             .text(candidat.nom + " en tête");
     });
 }
-
 
 // DEPARTEMENT - PODIUM
 function afficherTop2Candidat(depart) {
@@ -1268,6 +1273,8 @@ function afficherRepartitionVoteT2(depart) {
                     series: [totalExprimesT2, totalBlancsT2, totalNulsT2, totalAbstententionsT2],
                     chart: {
                         type: 'radialBar',
+                        height: 200,
+                        width: 250,
                     },
                     title: {
                         text: `Répartition des Votes`,
@@ -1413,7 +1420,6 @@ function afficherCsp(depart) {
                             categories: ['Agriculteurs', 'Artisans', 'Cadres', 'Professions intermédiaires', 'Employés', 'Ouvriers', 'Retraités', 'Autres inactifs'],
                         },
                         colors: ['#7237B9']
-
                     };
 
                     document.querySelector("#csp").innerHTML = "";
